@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm000bx22fsx8"
-path="res://.godot/imported/painel cadeado.png-ee53c8446e35fcdc102b9159129eac2a.ctex"
+uid="uid://db8s2mogj61iv"
+path="res://.godot/imported/cabo_plugado.png-50856e8c7076b9f460c89007ac1bc1a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artes/painel cadeado.png"
-dest_files=["res://.godot/imported/painel cadeado.png-ee53c8446e35fcdc102b9159129eac2a.ctex"]
+source_file="res://Artes/cabo_plugado.png"
+dest_files=["res://.godot/imported/cabo_plugado.png-50856e8c7076b9f460c89007ac1bc1a7.ctex"]
 
 [params]
 
