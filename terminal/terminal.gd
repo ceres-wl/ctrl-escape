@@ -19,7 +19,8 @@ var ACTIONS = {
 	"cp": cp,
 	"mv": mv,
 	"cat": cat,
-	"pwd": pwd
+	"pwd": pwd,
+	"grep": grep
 }
 
 var lastOutput = "";
@@ -61,9 +62,11 @@ func ls(args: PackedStringArray):
 
 # TODO -p = Criar diretórios pais inexistentes
 func mkdir(args: PackedStringArray):
+	# FIXME não deixar recriar uma pasta que já existe
 	%FileSystem.create_folder("".join(args));
 
 func touch(args: PackedStringArray):
+	# FIXME não deixar recriar um arquivo que já existe
 	%FileSystem.create_file("".join(args));
 
 # TODO -r = Apagar pastas
@@ -81,6 +84,14 @@ func cat(args: PackedStringArray):
 	pass
 
 func pwd(args: PackedStringArray):
+	echo(PackedStringArray([%FileSystem.cur_path]));
+
+# TODO -r = recursivomkd
+func grep(args: PackedStringArray):
+	pass
+
+# Nome provisório, comando que prepara arquivo do projetor
+func zip(args: PackedStringArray):
 	pass
 
 # === Funções auxiliares === #
@@ -105,10 +116,16 @@ func parse_command(input: String):
 	}
 
 func _on_submit_pressed():
+	# TODO Adicionar sinal(sinaliza o output do comando, não o comando em si)
 	var args: PackedStringArray =  %Input.text.split(" ");
 	var cmd = args[0]; # args é um PackedStringArray então não tem pop_front
-	args.remove_at(0);
 	
+	# Printar comando que foi executado
+	var display_cmd = args.duplicate();
+	display_cmd.insert(0, ">>");
+	echo(display_cmd);
+	
+	args.remove_at(0);
 	if(ACTIONS.get(cmd)):
 		ACTIONS[cmd].call(args);
 	else:

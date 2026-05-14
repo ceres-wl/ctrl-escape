@@ -87,6 +87,7 @@ offset_right = 1082.0
 offset_bottom = 538.0
 bbcode_enabled = true
 scroll_following = true
+autowrap_mode = 1
 vertical_alignment = 2
 
 [node name="FileSystem" type="Node" parent="." unique_id=494663331]
