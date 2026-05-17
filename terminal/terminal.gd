@@ -3,10 +3,14 @@ extends Control
 
 # TODO checar o comportamento de todos esses comandos pra ver se tão certos
 # TODO acho que tá faltando vários feedbacks qnd o comando não é completado com sucesso
-# TODO redirecionamento
 # TODO variáveis
 
-# TODO separar o terminal do sistema de arquivos
+# Existe algum processo rodando (grep)
+var procRunning = false;
+# Fila de Entrada do terminal enquanto um processo está rodando
+var stdin = "";
+# Fila de saida do terminal enquanto um processo está rodando
+var stdout = "";
 
 var ACTIONS = {
 	"clear": clear,
@@ -28,26 +32,27 @@ var lastOutput = "";
 func _ready():
 	%DisplayPath.text = %FileSystem.cur_path;
 
-# Função de uso interno, o texto tem que ser sanitizado por causa do BBcode
-func t_print(text_: String):
+# Função de uso interno, com opção de sanitizar o bbcode
+func t_print(text_: String, sanitize = false, newline = true):
+	if(sanitize): text_ = text_.replace("[", "[lb]");
 	%Output.append_text(text_);
-	%Output.newline();
+	if(newline): %Output.newline();
 
-func clear(_args: PackedStringArray):
+func clear(_args: PackedStringArray, _flags: Dictionary):
 	%Output.clear();
 
 # TODO -m = não adicionar quebra de linha
-func echo(args: PackedStringArray):
+func echo(args: PackedStringArray, flags: Dictionary):
 	var text = " ".join(args);
-	text = text.replace("[", "[lb]")
-	t_print(text);
+	text = text.replace("[", "[lb]");
+	return text;
 
-func cd(args: PackedStringArray):
+func cd(args: PackedStringArray, _flags: Dictionary):
 	%FileSystem.navigate("".join(args));
 	%DisplayPath.text = %FileSystem.cur_path;
 
 # TODO -a = Mostrar arquivos escondidos
-func ls(args: PackedStringArray):
+func ls(args: PackedStringArray, flags: Dictionary):
 	var path = "".join(args);
 	var folders = %FileSystem.list_folders(path);
 	var files = %FileSystem.list_files(path);
@@ -58,40 +63,42 @@ func ls(args: PackedStringArray):
 	for file: File in files:
 		tokens.push_back("[color=#FFA0A0]%s[/color]" % file.file_name);
 	tokens.sort();
-	t_print(" ".join(tokens));
+	return " ".join(tokens);
 
 # TODO -p = Criar diretórios pais inexistentes
-func mkdir(args: PackedStringArray):
+func mkdir(args: PackedStringArray, flags: Dictionary):
+	# FIXME sanitizar nome da pasta
 	# FIXME não deixar recriar uma pasta que já existe
 	%FileSystem.create_folder("".join(args));
 
-func touch(args: PackedStringArray):
+func touch(args: PackedStringArray, _flags: Dictionary):
+	# FIXME sanitizar nome do arquivo
 	# FIXME não deixar recriar um arquivo que já existe
 	%FileSystem.create_file("".join(args));
 
 # TODO -r = Apagar pastas
-func rm(args: PackedStringArray):
+func rm(args: PackedStringArray, flags: Dictionary):
 	pass
 
 # TODO -r = Copiar pastas
-func cp(args: PackedStringArray):
+func cp(args: PackedStringArray, flags: Dictionary):
 	pass
 
-func mv(args: PackedStringArray):
+func mv(args: PackedStringArray, _flags: Dictionary):
 	pass
 
-func cat(args: PackedStringArray):
+func cat(args: PackedStringArray, _flags: Dictionary):
 	pass
 
-func pwd(args: PackedStringArray):
-	echo(PackedStringArray([%FileSystem.cur_path]));
+func pwd(_args: PackedStringArray, _flags: Dictionary):
+	return %FileSystem.cur_path.replace("[", "[lb]");
 
-# TODO -r = recursivomkd
-func grep(args: PackedStringArray):
+# TODO -r = recursivo
+func grep(args: PackedStringArray, flags: Dictionary):
 	pass
 
 # Nome provisório, comando que prepara arquivo do projetor
-func zip(args: PackedStringArray):
+func zip(args: PackedStringArray, _flags: Dictionary):
 	pass
 
 # === Funções auxiliares === #
@@ -100,39 +107,68 @@ func zip(args: PackedStringArray):
 # TODO adicionar "a b" ou a\ b como um argumento só
 # TODO substituir quebra de linha por [br]
 # TODO atualizar lastOutput
+# TODO mudar o nome dessa função, não me faz mt sentido esse
 func parse(input: String):
-	# ls | grep [>>, >] arquivo.txt
-	# TODO Função que roda os comandos, aplicando os operadores
-	pass
+	# Regex que dá split nos operadores pra achar os comandos
+	var regexCmds = RegEx.create_from_string("[^|>]+");
+	
+	# Regex que acha os operadores
+	# A pattern sem os escapes de string é \s+>>\s+|\s+>\s+|\s+\|\s+
+	# Provavelmente tem como deixar essa pattern mais bonitinha
+	var regexOp = RegEx.create_from_string("\\s+>>\\s+|\\s+>\\s+|\\s+\\|\\s+");
+	
+	# Printar linha que foi executada
+	t_print(">> "+input, true);
+	
+	var ops = [];
+	for op in regexOp.search_all(input):
+		ops.push_back(op.get_string());
+	
+	# TODO Problema pra implementar operadores:
+	# Essa área inteira assume que os comandos são sincronos e instantâneos,
+	# que não é o caso do grep
+	# Uma ideia que tive é transformar esses comandos que são programas mais complexos
+	# em uma classe separada, dai dá pra passar o stdin do terminal pra eles por sinais
+	# e eles podem por sua vez enviar um sinal quando o comando terminar de rodar, dai o terminal fica esperando
+	var cmds = regexCmds.search_all(input); 
+	for i in len(cmds):
+		var cmd = parse_command(cmds[i].get_string().strip_edges());
+		var op = ops[i-1] if i > 0 else null;
+		if(ACTIONS.get(cmd.command)):
+			var output = ACTIONS[cmd.command].call(cmd.args, cmd.flags);
+			match op:
+				">>":
+					pass
+				">":
+					pass
+				"|":
+					pass
+				_:
+					if(output): t_print(output);
+		else:
+			t_print("O comando %s não existe" % cmd.command, true);
+			break; # Se algum comando falhar, os outros são cancelados
 
-# Supõe que a entrada é um comando, sem redirecionamento por exemplo
-func parse_command(input: String):
+# Supõe que a entrada é um comando unico, sem redirecionamento
+# Argumentos para flags não foram implementados
+func parse_command(input: String) -> Dictionary:
+	var args: PackedStringArray =  input.strip_edges().split(" ");
+	var cmd = args[0]; # args é um PackedStringArray então não tem pop_front
+	var flags = {} # Flags são um set mas poderiam ser uma lista sem problemas
+	args.remove_at(0);
+	
+	for token: String in args:
+		if(token[0] == "-"):
+			# Como tou supondo que nenhuma flag tem argumento,
+			# O argumento da flag é sempre null
+			flags.set(token.substr(1), null)
+	
 	return {
-		"command": "cmd",
-		"args": [],
-		"flags": {
-				"p": "arg"
-			}
+		"command": cmd,
+		"args": args,
+		"flags": flags
 	}
 
-func _on_submit_pressed():
-	# TODO Adicionar sinal(sinaliza o output do comando, não o comando em si)
-	var args: PackedStringArray =  %Input.text.split(" ");
-	var cmd = args[0]; # args é um PackedStringArray então não tem pop_front
-	
-	# Printar comando que foi executado
-	var display_cmd = args.duplicate();
-	display_cmd.insert(0, ">>");
-	echo(display_cmd);
-	
-	args.remove_at(0);
-	if(ACTIONS.get(cmd)):
-		ACTIONS[cmd].call(args);
-	else:
-		echo(PackedStringArray(["O comando %s não existe" % cmd]));
-	
-	%Input.text = "";
-
-
 func _on_input_text_submitted(_new_text):
-	_on_submit_pressed();
+	parse(%Input.text);
+	%Input.text = "";
