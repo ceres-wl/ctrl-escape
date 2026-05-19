@@ -110,45 +110,50 @@ func zip(args: PackedStringArray, _flags: Dictionary):
 # TODO mudar o nome dessa função, não me faz mt sentido esse
 func parse(input: String):
 	# Regex que dá split nos operadores pra achar os comandos
-	var regexCmds = RegEx.create_from_string("[^|>]+");
+	var regexCmds = RegEx.create_from_string("[^>]+");
 	
 	# Regex que acha os operadores
-	# A pattern sem os escapes de string é \s+>>\s+|\s+>\s+|\s+\|\s+
+	# A pattern sem os escapes de string é \s+>>\s+|\s+>\s+
 	# Provavelmente tem como deixar essa pattern mais bonitinha
-	var regexOp = RegEx.create_from_string("\\s+>>\\s+|\\s+>\\s+|\\s+\\|\\s+");
+	var regexOp = RegEx.create_from_string("\\s+>>\\s+|\\s+>\\s+");
 	
 	# Printar linha que foi executada
 	t_print(">> "+input, true);
 	
 	var ops = [];
 	for op in regexOp.search_all(input):
-		ops.push_back(op.get_string());
+		ops.push_back(op.get_string().strip_edges());
+	if len(ops) > 1:
+		# Como só temos os operadores > e >>, não podemos ter mais de 2 operadores
+		# Obviamente essa solução é bem especifica pro nosso caso, mas está correta
+		t_print("Quantidade inválida de operadores")
+		return;
 	
-	# TODO Problema pra implementar operadores:
-	# Essa área inteira assume que os comandos são sincronos e instantâneos,
-	# que não é o caso do grep
-	# Uma ideia que tive é transformar esses comandos que são programas mais complexos
-	# em uma classe separada, dai dá pra passar o stdin do terminal pra eles por sinais
-	# e eles podem por sua vez enviar um sinal quando o comando terminar de rodar, dai o terminal fica esperando
-	var cmds = regexCmds.search_all(input); 
-	for i in len(cmds):
+	var cmds = regexCmds.search_all(input);
+	
+	var i = 0;
+	while i < len(cmds):
 		var cmd = parse_command(cmds[i].get_string().strip_edges());
-		var op = ops[i-1] if i > 0 else null;
+		var op = ops[i] if i+1 != len(cmds) else null;
 		if(ACTIONS.get(cmd.command)):
 			var output = ACTIONS[cmd.command].call(cmd.args, cmd.flags);
 			match op:
-				">>":
-					pass
-				">":
-					pass
-				"|":
-					pass
+				">>": # Append
+					i+=1;
+					# Isso deveria ser um path válido, se não for é papel do sistema de arquivos testar
+					var path = cmds[i].get_string().strip_edges();
+					%FileSystem.append_content(path, output);
+				">": # Sobrescreve
+					i+=1;
+					# Isso deveria ser um path válido, se não for é papel do sistema de arquivos testar
+					var path = cmds[i].get_string().strip_edges();;
+					%FileSystem.set_content(path, output);
 				_:
 					if(output): t_print(output);
 		else:
 			t_print("O comando %s não existe" % cmd.command, true);
 			break; # Se algum comando falhar, os outros são cancelados
-
+		i+=1;
 # Supõe que a entrada é um comando unico, sem redirecionamento
 # Argumentos para flags não foram implementados
 func parse_command(input: String) -> Dictionary:

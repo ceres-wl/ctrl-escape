@@ -63,13 +63,35 @@ func remove_file(path: String):
 
 # TODO atualizar lastModifiedFile
 # TODO lastModifiedFolder
+# Cria arquivo no path se ele não existe e o folder pai existe
 func append_content(path: String, content: String):
-	pass
+	var file = resolve_file(path);
+	if(!file):
+		return false;
+	file.append_content(content);
+	return true;
 
 # TODO atualizar lastModifiedFile
 # TODO lastModifiedFolder
 func set_content(path: String, content: String):
-	pass
+	var file = resolve_file(path);
+	if(!file):
+		return false;
+	file.set_content(content);
+	return true;
+
+# Cria arquivo no path se ele não existe e o folder pai existe
+func resolve_file(path):
+	var formatted = format_path(path);
+	var file_name = formatted.tokens[formatted.tokens.size()-1]
+	formatted.tokens.remove_at(formatted.tokens.size()-1);
+	
+	var folder = resolve_path_tokens(formatted.tokens, formatted.cur);
+	if(!folder):
+		return null;
+	if(!folder.get_file(file_name)):
+		create_file(path);
+	return folder.get_file(file_name);
 
 func get_content(path: String):
 	pass

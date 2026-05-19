@@ -30,6 +30,9 @@ func get_folder(name_: String) -> Folder:
 	if(name_ == ".."): return parent;
 	return folders.get(name_);
 
+func get_file(name_: String) -> File:
+	return files.get(name_);
+
 func get_files() -> Array[File]:
 	return files.values();
 
