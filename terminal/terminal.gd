@@ -47,6 +47,7 @@ func echo(args: PackedStringArray, flags: Dictionary):
 	text = text.replace("[", "[lb]");
 	return text;
 
+# TODO Corrigir bug do 'cd a b' equivalente a 'cd "a b"'
 func cd(args: PackedStringArray, _flags: Dictionary):
 	%FileSystem.navigate("".join(args));
 	%DisplayPath.text = %FileSystem.cur_path;
@@ -69,12 +70,14 @@ func ls(args: PackedStringArray, flags: Dictionary):
 func mkdir(args: PackedStringArray, flags: Dictionary):
 	# FIXME sanitizar nome da pasta
 	# FIXME não deixar recriar uma pasta que já existe
-	%FileSystem.create_folder("".join(args));
+	for arg in args:
+		%FileSystem.create_folder(arg);
 
 func touch(args: PackedStringArray, _flags: Dictionary):
 	# FIXME sanitizar nome do arquivo
 	# FIXME não deixar recriar um arquivo que já existe
-	%FileSystem.create_file("".join(args));
+	for arg in args:
+		%FileSystem.create_file(arg);
 
 # TODO -r = Apagar pastas
 func rm(args: PackedStringArray, flags: Dictionary):
@@ -162,7 +165,24 @@ func parse_command(input: String) -> Dictionary:
 	var flags = {} # Flags são um set mas poderiam ser uma lista sem problemas
 	args.remove_at(0);
 	
-	for token: String in args:
+	var quotedArgs = []
+	var i = 0
+	var currentQuotedArg = ""
+	var inQuotedArg = false
+	while i < len(args):
+		if (args[i][0] == '"'):
+			inQuotedArg = true
+			args[i] = args[i].erase(0)
+		if (args[i][-1] == '"'):
+			inQuotedArg = false
+			args[i] = args[i].erase(len(args[i]) - 1)
+		currentQuotedArg += " " + args[i]
+		if (not inQuotedArg):
+			quotedArgs.append(currentQuotedArg)
+			currentQuotedArg = ""
+		i += 1
+	
+	for token: String in quotedArgs:
 		if(token[0] == "-"):
 			# Como tou supondo que nenhuma flag tem argumento,
 			# O argumento da flag é sempre null
@@ -170,7 +190,7 @@ func parse_command(input: String) -> Dictionary:
 	
 	return {
 		"command": cmd,
-		"args": args,
+		"args": quotedArgs,
 		"flags": flags
 	}
 
