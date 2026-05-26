@@ -1,5 +1,4 @@
 class_name File
-extends Node
 
 # Classe que representa um arquivo
 

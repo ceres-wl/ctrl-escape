@@ -51,6 +51,8 @@ func echo(args: PackedStringArray, flags: Dictionary):
 func cd(args: PackedStringArray, _flags: Dictionary):
 	%FileSystem.navigate("".join(args));
 	%DisplayPath.text = %FileSystem.cur_path;
+	print("".join(PackedStringArray(["a", "b"])))
+	print (args)
 
 # TODO -a = Mostrar arquivos escondidos
 func ls(args: PackedStringArray, flags: Dictionary):
@@ -170,13 +172,14 @@ func parse_command(input: String) -> Dictionary:
 	var currentQuotedArg = ""
 	var inQuotedArg = false
 	while i < len(args):
+		if inQuotedArg: currentQuotedArg += " "
 		if (args[i][0] == '"'):
 			inQuotedArg = true
 			args[i] = args[i].erase(0)
 		if (args[i][-1] == '"'):
 			inQuotedArg = false
 			args[i] = args[i].erase(len(args[i]) - 1)
-		currentQuotedArg += " " + args[i]
+		currentQuotedArg += args[i]
 		if (not inQuotedArg):
 			quotedArgs.append(currentQuotedArg)
 			currentQuotedArg = ""
