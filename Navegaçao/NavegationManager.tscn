@@ -14,20 +14,24 @@ grow_vertical = 2
 script = ExtResource("1_hcw78")
 
 [node name="right_arrow" type="TextureButton" parent="." unique_id=1454904284]
+top_level = true
 layout_mode = 0
 offset_left = 1081.0
 offset_top = 300.0
 offset_right = 1131.0
 offset_bottom = 350.0
+action_mode = 0
 texture_normal = ExtResource("1_hq208")
 texture_pressed = ExtResource("2_hcw78")
 
 [node name="left_arrow" type="TextureButton" parent="." unique_id=129057116]
+top_level = true
 layout_mode = 0
 offset_left = 26.0
 offset_top = 300.0
 offset_right = 76.0
 offset_bottom = 350.0
+action_mode = 0
 texture_normal = ExtResource("1_hq208")
 texture_pressed = ExtResource("2_hcw78")
 flip_h = true

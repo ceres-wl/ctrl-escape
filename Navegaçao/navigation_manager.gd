@@ -2,6 +2,7 @@ extends Node
 
 var current_room : Node = null
 func _ready() -> void:
+	
 	$right_arrow.pressed.connect(_on_right_arrow_pressed)
 	$left_arrow.pressed.connect(_on_left_arrow_pressed)
 	var sala_1_tscn = preload("res://Navegaçao/Rooms/room_1.tscn")
