@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpis1p6rbp381"
-path="res://.godot/imported/pen_drive_preto.png-72ff3fe8751841dbb0a7b78c72d246d0.ctex"
+uid="uid://6e0matlgvite"
+path="res://.godot/imported/config_principal.png-01d36b06ff7dffd723b722491816f89d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artes/pen_drive_preto.png"
-dest_files=["res://.godot/imported/pen_drive_preto.png-72ff3fe8751841dbb0a7b78c72d246d0.ctex"]
+source_file="res://Artes/config_principal.png"
+dest_files=["res://.godot/imported/config_principal.png-01d36b06ff7dffd723b722491816f89d.ctex"]
 
 [params]
 

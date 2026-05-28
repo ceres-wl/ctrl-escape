@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb8wad3owheqp"
-path="res://.godot/imported/config grande.png-87eb2bfd9f74c78ca227b85de37099b0.ctex"
+uid="uid://baibjdh35y3dj"
+path="res://.godot/imported/barra_recolhimento_inventario.png-a0d9694e4aa98b271221867765d11b81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artes/config grande.png"
-dest_files=["res://.godot/imported/config grande.png-87eb2bfd9f74c78ca227b85de37099b0.ctex"]
+source_file="res://Artes/botoes/barra_recolhimento_inventario.png"
+dest_files=["res://.godot/imported/barra_recolhimento_inventario.png-a0d9694e4aa98b271221867765d11b81.ctex"]
 
 [params]
 

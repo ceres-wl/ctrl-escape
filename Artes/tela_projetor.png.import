@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1ajpnn2vdhg2"
-path="res://.godot/imported/botão polit de priv.png-277b8589bb2e04eb4fbfc1df434a1724.ctex"
+uid="uid://dcqgdipq0cv5n"
+path="res://.godot/imported/tela_projetor.png-07ea3be0c91fbc3a53505b816fb66d3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artes/botoes/botão polit de priv.png"
-dest_files=["res://.godot/imported/botão polit de priv.png-277b8589bb2e04eb4fbfc1df434a1724.ctex"]
+source_file="res://Artes/tela_projetor.png"
+dest_files=["res://.godot/imported/tela_projetor.png-07ea3be0c91fbc3a53505b816fb66d3d.ctex"]
 
 [params]
 

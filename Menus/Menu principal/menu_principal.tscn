@@ -9,13 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://b7mjy65eu4xd1" path="res://Artes/botoes/botão jogar claro.png" id="5_rr5ew"]
 [ext_resource type="Texture2D" uid="uid://bsxkyjggqgq3u" path="res://Artes/botoes/botao configuração claro.png" id="8_xvmgg"]
 [ext_resource type="Texture2D" uid="uid://cmutq4ecnkfup" path="res://Artes/botoes/botão saída claro.png" id="10_c2jsc"]
-[ext_resource type="Texture2D" uid="uid://cb8wad3owheqp" path="res://Artes/config grande.png" id="10_t6qnv"]
+[ext_resource type="Texture2D" uid="uid://6e0matlgvite" path="res://Artes/config_principal.png" id="10_nnast"]
 [ext_resource type="Texture2D" uid="uid://dnu4qb381rpeh" path="res://Artes/botoes/botão x.png" id="11_7p2ec"]
-[ext_resource type="Texture2D" uid="uid://b1ajpnn2vdhg2" path="res://Artes/botoes/botão polit de priv.png" id="11_wfatn"]
 [ext_resource type="Texture2D" uid="uid://dmdxjh6rq4hw3" path="res://Artes/botoes/botão x claro.png" id="12_fv4n1"]
-[ext_resource type="Texture2D" uid="uid://bshweoc2w8qfl" path="res://Artes/botoes/botão polit de priv claro.png" id="12_nnast"]
 [ext_resource type="Texture2D" uid="uid://r43vgpl74wx0" path="res://Artes/botoes/botão creditos.png" id="13_fnw8w"]
 [ext_resource type="Texture2D" uid="uid://djgvs4cd41thh" path="res://Artes/botoes/botão creditos claro.png" id="14_68770"]
+[ext_resource type="Texture2D" uid="uid://cg6lj3ccmv3tj" path="res://Artes/creditos.png" id="17_68770"]
+[ext_resource type="Texture2D" uid="uid://l6pftu5y7o2t" path="res://Artes/botoes/seta navegação.png" id="18_uhxpd"]
+[ext_resource type="Texture2D" uid="uid://b76augd2k5axi" path="res://Artes/botoes/seta navegação clara.png" id="19_rm1gh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6qnv"]
 bg_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
@@ -104,18 +105,27 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 0.5882353)
 
-[node name="Menu Config" type="TextureRect" parent="CanvasLayer" unique_id=81304035]
-offset_left = 226.0
-offset_top = 76.0
-offset_right = 926.0
-offset_bottom = 576.0
-texture = ExtResource("10_t6qnv")
+[node name="Menu Config" type="TextureRect" parent="CanvasLayer/ColorRect" unique_id=81304035]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -250.0
+offset_right = 350.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_nnast")
 
-[node name="Slider musica" type="HSlider" parent="CanvasLayer" unique_id=1501235259]
-offset_left = 343.0
-offset_top = 267.0
-offset_right = 809.0
-offset_bottom = 283.0
+[node name="Slider musica" type="HSlider" parent="CanvasLayer/ColorRect/Menu Config" unique_id=1501235259]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 191.0
+offset_right = 583.0
+offset_bottom = 207.0
 mouse_default_cursor_shape = 2
 theme_override_styles/slider = SubResource("StyleBoxFlat_t6qnv")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_7p2ec")
@@ -123,11 +133,12 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_fv4n1")
 min_value = -80.0
 max_value = 0.0
 
-[node name="Slider som" type="HSlider" parent="CanvasLayer" unique_id=635075835]
-offset_left = 343.0
-offset_top = 355.0
-offset_right = 809.0
-offset_bottom = 371.0
+[node name="Slider som" type="HSlider" parent="CanvasLayer/ColorRect/Menu Config" unique_id=635075835]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 279.0
+offset_right = 583.0
+offset_bottom = 295.0
 mouse_default_cursor_shape = 2
 theme_override_styles/slider = SubResource("StyleBoxFlat_t6qnv")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_7p2ec")
@@ -135,23 +146,12 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_fv4n1")
 min_value = -80.0
 max_value = 0.0
 
-[node name="Polit de Priv" type="TextureButton" parent="CanvasLayer" unique_id=1799193951]
-offset_left = 339.0
-offset_top = 418.0
-offset_right = 570.0
-offset_bottom = 462.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("11_wfatn")
-texture_pressed = ExtResource("12_nnast")
-texture_hover = ExtResource("12_nnast")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Creditos" type="TextureButton" parent="CanvasLayer" unique_id=1942553230]
-offset_left = 582.0
-offset_top = 418.0
-offset_right = 813.0
-offset_bottom = 462.0
+[node name="Botao_creditos" type="TextureButton" parent="CanvasLayer/ColorRect/Menu Config" unique_id=1942553230]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 341.0
+offset_right = 466.0
+offset_bottom = 385.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("13_fnw8w")
 texture_pressed = ExtResource("14_68770")
@@ -159,11 +159,12 @@ texture_hover = ExtResource("14_68770")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="X" type="TextureButton" parent="CanvasLayer" unique_id=1352707505]
-offset_left = 895.0
-offset_top = 66.0
-offset_right = 937.0
-offset_bottom = 108.0
+[node name="X" type="TextureButton" parent="CanvasLayer/ColorRect/Menu Config" unique_id=1352707505]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 67.0
+offset_bottom = 66.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("11_7p2ec")
 texture_pressed = ExtResource("12_fv4n1")
@@ -171,9 +172,34 @@ texture_hover = ExtResource("12_fv4n1")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="Creditos" type="TextureRect" parent="CanvasLayer/ColorRect" unique_id=831626367]
+visible = false
+layout_mode = 0
+offset_left = 226.0
+offset_top = 77.0
+offset_right = 926.0
+offset_bottom = 577.0
+texture = ExtResource("17_68770")
+
+[node name="Voltar_creditos" type="TextureButton" parent="CanvasLayer/ColorRect/Creditos" unique_id=807027233]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 26.0
+offset_right = 67.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("18_uhxpd")
+texture_pressed = ExtResource("19_rm1gh")
+texture_hover = ExtResource("19_rm1gh")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
 [connection signal="ready" from="Jogar" to="." method="_on_texture_button_ready"]
 [connection signal="pressed" from="Config" to="." method="_on_config_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
-[connection signal="value_changed" from="CanvasLayer/Slider musica" to="." method="_on_slider_musica_value_changed"]
-[connection signal="value_changed" from="CanvasLayer/Slider som" to="." method="_on_slider_som_value_changed"]
-[connection signal="pressed" from="CanvasLayer/X" to="." method="_on_x_pressed"]
+[connection signal="value_changed" from="CanvasLayer/ColorRect/Menu Config/Slider musica" to="." method="_on_slider_musica_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/ColorRect/Menu Config/Slider som" to="." method="_on_slider_som_value_changed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/Menu Config/Botao_creditos" to="." method="_on_botao_creditos_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/Menu Config/X" to="." method="_on_x_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/Creditos/Voltar_creditos" to="." method="_on_voltar_creditos_pressed"]

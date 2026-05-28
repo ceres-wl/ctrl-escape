@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bshweoc2w8qfl"
-path="res://.godot/imported/botão polit de priv claro.png-930591e9d4188fb87a2fc02b55c57c02.ctex"
+uid="uid://cpjn73cfknjsf"
+path="res://.godot/imported/cabo_enrolado_inclinado.png-17093f298e9c75287f5d8828c220648d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artes/botoes/botão polit de priv claro.png"
-dest_files=["res://.godot/imported/botão polit de priv claro.png-930591e9d4188fb87a2fc02b55c57c02.ctex"]
+source_file="res://Artes/cabo_enrolado_inclinado.png"
+dest_files=["res://.godot/imported/cabo_enrolado_inclinado.png-17093f298e9c75287f5d8828c220648d.ctex"]
 
 [params]
 

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://p7o6q6o5fspc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jt0p8"]
+bg_color = Color(0.2509804, 0.24313726, 0.24313726, 1)
+
+[node name="Slot" type="TextureButton" unique_id=1977477175]
+custom_minimum_size = Vector2(91, 91)
+mouse_default_cursor_shape = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="." unique_id=1701855975]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jt0p8")
+
+[node name="Label" type="Label" parent="." unique_id=1545675460]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -23.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1

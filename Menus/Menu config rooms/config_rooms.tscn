@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://ckowb7fsl5gx3"]
+
+[ext_resource type="Script" uid="uid://yycqmt3ao6ys" path="res://Menus/Menu config rooms/config_rooms.gd" id="1_g1y3d"]
+[ext_resource type="Texture2D" uid="uid://nblgcowxdrfk" path="res://Artes/botoes/botão configuração.png" id="2_q1qsk"]
+[ext_resource type="Texture2D" uid="uid://bsxkyjggqgq3u" path="res://Artes/botoes/botao configuração claro.png" id="3_xrfgk"]
+[ext_resource type="Texture2D" uid="uid://djcgpwg2p0qbw" path="res://Artes/Config_sala.png" id="4_vsvbv"]
+[ext_resource type="Texture2D" uid="uid://dnsaorwdxettr" path="res://Artes/botoes/botão_salvar_e_sair.png" id="5_h74hx"]
+[ext_resource type="Texture2D" uid="uid://bbmb7p4vibwxp" path="res://Artes/botoes/botão_salvar_e_sair_claro.png" id="6_33ssu"]
+[ext_resource type="Texture2D" uid="uid://dnu4qb381rpeh" path="res://Artes/botoes/botão x.png" id="7_dbmnh"]
+[ext_resource type="Texture2D" uid="uid://dmdxjh6rq4hw3" path="res://Artes/botoes/botão x claro.png" id="8_c25kd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqcci"]
+bg_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vm08j"]
+bg_color = Color(0.5372549, 0.5372549, 0.54509807, 1)
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aoprd"]
+bg_color = Color(0.5372549, 0.5372549, 0.54509807, 1)
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvdxv"]
+bg_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4a36c"]
+bg_color = Color(0.5372549, 0.5372549, 0.54509807, 1)
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83d86"]
+bg_color = Color(0.5372549, 0.5372549, 0.54509807, 1)
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+
+[node name="Config_Rooms" type="Node" unique_id=724168216]
+script = ExtResource("1_g1y3d")
+
+[node name="Button_Config" type="TextureButton" parent="." unique_id=1534185471]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -67.0
+offset_top = 25.0
+offset_right = -26.0
+offset_bottom = 66.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_q1qsk")
+texture_pressed = ExtResource("3_xrfgk")
+texture_hover = ExtResource("3_xrfgk")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=129069860]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1387881080]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="Menu_Config" type="TextureRect" parent="CanvasLayer" unique_id=1650379830]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -250.0
+offset_right = 350.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_vsvbv")
+
+[node name="Slider musica" type="HSlider" parent="CanvasLayer/Menu_Config" unique_id=1292750425]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 191.0
+offset_right = 583.0
+offset_bottom = 207.0
+mouse_default_cursor_shape = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_cqcci")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_vm08j")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_aoprd")
+min_value = -80.0
+max_value = 0.0
+
+[node name="Slider som" type="HSlider" parent="CanvasLayer/Menu_Config" unique_id=1678747080]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 279.0
+offset_right = 583.0
+offset_bottom = 295.0
+mouse_default_cursor_shape = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_xvdxv")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_4a36c")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_83d86")
+min_value = -80.0
+max_value = 0.0
+
+[node name="Salvar_e_Sair" type="TextureButton" parent="CanvasLayer/Menu_Config" unique_id=1425534407]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 341.0
+offset_right = 466.0
+offset_bottom = 385.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_h74hx")
+texture_pressed = ExtResource("6_33ssu")
+texture_hover = ExtResource("6_33ssu")
+
+[node name="X" type="TextureButton" parent="CanvasLayer/Menu_Config" unique_id=63525123]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 67.0
+offset_bottom = 66.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_dbmnh")
+texture_pressed = ExtResource("8_c25kd")
+texture_hover = ExtResource("8_c25kd")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="Button_Config" to="." method="_on_button_config_pressed"]
+[connection signal="value_changed" from="CanvasLayer/Menu_Config/Slider musica" to="." method="_on_slider_musica_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Menu_Config/Slider som" to="." method="_on_slider_som_value_changed"]
+[connection signal="pressed" from="CanvasLayer/Menu_Config/Salvar_e_Sair" to="." method="_on_salvar_e_sair_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu_Config/X" to="." method="_on_x_pressed"]

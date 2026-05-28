@@ -1,0 +1,212 @@
+[gd_scene format=3 uid="uid://djo1q3ihdfkw0"]
+
+[ext_resource type="Script" uid="uid://b6uqys2xdax3u" path="res://Inventario/inventory.gd" id="1_u5a7d"]
+[ext_resource type="Texture2D" uid="uid://baibjdh35y3dj" path="res://Artes/botoes/barra_recolhimento_inventario.png" id="2_n8px4"]
+[ext_resource type="Texture2D" uid="uid://h3w35jpart7h" path="res://Artes/inventário.png" id="3_l2rwc"]
+[ext_resource type="Script" uid="uid://duv6j0oelk6cq" path="res://Inventario/hotbar.gd" id="4_mu001"]
+[ext_resource type="PackedScene" uid="uid://p7o6q6o5fspc" path="res://Inventario/inventory_slot.tscn" id="5_n8px4"]
+[ext_resource type="Texture2D" uid="uid://dnu4qb381rpeh" path="res://Artes/botoes/botão x.png" id="5_u434w"]
+[ext_resource type="Texture2D" uid="uid://dmdxjh6rq4hw3" path="res://Artes/botoes/botão x claro.png" id="6_hu6fx"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_l2rwc"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_mu001"]
+events = [SubResource("InputEventKey_l2rwc")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_u434w"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_hu6fx"]
+events = [SubResource("InputEventKey_u434w")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_qm6oc"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_4tjhf"]
+events = [SubResource("InputEventKey_qm6oc")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_n7qwj"]
+device = -1
+keycode = 52
+unicode = 52
+
+[sub_resource type="Shortcut" id="Shortcut_kstle"]
+events = [SubResource("InputEventKey_n7qwj")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_rb7e1"]
+device = -1
+keycode = 53
+unicode = 53
+
+[sub_resource type="Shortcut" id="Shortcut_vsjqv"]
+events = [SubResource("InputEventKey_rb7e1")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_1hnwd"]
+device = -1
+keycode = 54
+unicode = 54
+
+[sub_resource type="Shortcut" id="Shortcut_5htje"]
+events = [SubResource("InputEventKey_1hnwd")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_23cyt"]
+device = -1
+keycode = 55
+unicode = 55
+
+[sub_resource type="Shortcut" id="Shortcut_10xiy"]
+events = [SubResource("InputEventKey_23cyt")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_a7xpp"]
+device = -1
+keycode = 56
+unicode = 56
+
+[sub_resource type="Shortcut" id="Shortcut_cnamu"]
+events = [SubResource("InputEventKey_a7xpp")]
+
+[node name="Inventory" type="Node" unique_id=1803062912]
+script = ExtResource("1_u5a7d")
+
+[node name="barra_expandir" type="TextureButton" parent="." unique_id=954160796]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -94.5
+offset_top = -11.0
+offset_right = 94.5
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_n8px4")
+stretch_mode = 5
+
+[node name="inventary_hotbar" type="CanvasLayer" parent="." unique_id=1328213647]
+
+[node name="inventory_image" type="TextureRect" parent="inventary_hotbar" unique_id=1810146108]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_l2rwc")
+
+[node name="barra_recolher" type="TextureButton" parent="inventary_hotbar" unique_id=1462015215]
+offset_left = 482.0
+offset_top = 524.0
+offset_right = 671.0
+offset_bottom = 564.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_n8px4")
+
+[node name="Hotbar" type="HBoxContainer" parent="inventary_hotbar" unique_id=1654050827]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -388.5
+offset_top = -103.0
+offset_right = 388.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 7
+script = ExtResource("4_mu001")
+
+[node name="Slot" parent="inventary_hotbar/Hotbar" unique_id=1977477175 instance=ExtResource("5_n8px4")]
+layout_mode = 2
+shortcut = SubResource("Shortcut_mu001")
+
+[node name="Slot2" parent="inventary_hotbar/Hotbar" unique_id=1723297111 instance=ExtResource("5_n8px4")]
+layout_mode = 2
+shortcut = SubResource("Shortcut_hu6fx")
+
+[node name="Slot3" parent="inventary_hotbar/Hotbar" unique_id=2031290257 instance=ExtResource("5_n8px4")]
+layout_mode = 2
+shortcut = SubResource("Shortcut_4tjhf")
+
+[node name="Slot4" parent="inventary_hotbar/Hotbar" unique_id=1562520573 instance=ExtResource("5_n8px4")]
+layout_mode = 2
+shortcut = SubResource("Shortcut_kstle")
+
+[node name="Slot5" parent="inventary_hotbar/Hotbar" unique_id=1274400599 instance=ExtResource("5_n8px4")]
+layout_mode = 2
+shortcut = SubResource("Shortcut_vsjqv")
+
+[node name="Slot6" parent="inventary_hotbar/Hotbar" unique_id=1411553426 instance=ExtResource("5_n8px4")]
+layout_mode = 2
+shortcut = SubResource("Shortcut_5htje")
+
+[node name="Slot7" parent="inventary_hotbar/Hotbar" unique_id=1875908015 instance=ExtResource("5_n8px4")]
+layout_mode = 2
+shortcut = SubResource("Shortcut_10xiy")
+
+[node name="Slot8" parent="inventary_hotbar/Hotbar" unique_id=771370880 instance=ExtResource("5_n8px4")]
+layout_mode = 2
+shortcut = SubResource("Shortcut_cnamu")
+
+[node name="Zoom_item" type="CanvasLayer" parent="." unique_id=1323782990]
+visible = false
+
+[node name="Fundo_escuro" type="ColorRect" parent="Zoom_item" unique_id=1887624974]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="imagem_item" type="TextureRect" parent="Zoom_item" unique_id=743047584]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -195.0
+offset_right = 195.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="nome_item" type="Label" parent="Zoom_item" unique_id=892627429]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -235.0
+offset_top = 57.0
+offset_right = 235.0
+offset_bottom = 107.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="x" type="TextureButton" parent="Zoom_item" unique_id=1559479314]
+offset_left = 844.0
+offset_top = 43.0
+offset_right = 885.0
+offset_bottom = 84.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_u434w")
+texture_pressed = ExtResource("6_hu6fx")
+texture_hover = ExtResource("6_hu6fx")
+stretch_mode = 5
+
+[connection signal="pressed" from="barra_expandir" to="." method="_on_barra_expandir_pressed"]
+[connection signal="pressed" from="inventary_hotbar/barra_recolher" to="." method="_on_barra_recolher_pressed"]
+[connection signal="pressed" from="Zoom_item/x" to="." method="_on_x_pressed"]
