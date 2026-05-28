@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://2ac0nxi7oaqc"]
+
+[ext_resource type="Script" uid="uid://cavnlcbk87e3d" path="res://Navegaçao/Walls/wall.gd" id="1_yh3gk"]
+[ext_resource type="Texture2D" uid="uid://bj4a2t5cx7oo3" path="res://Artes/jogo background vazio.png" id="2_jlsgc"]
+
+[node name="Wall" type="Node2D" unique_id=1256029917]
+script = ExtResource("1_yh3gk")
+
+[node name="Sprite2D" type="TextureRect" parent="." unique_id=2036302175]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 636.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 1.02)
+texture = ExtResource("2_jlsgc")
