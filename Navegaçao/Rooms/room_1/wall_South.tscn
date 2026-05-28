@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://csb0qanrg683h"]
+
+[ext_resource type="PackedScene" uid="uid://2ac0nxi7oaqc" path="res://Navegaçao/Walls/Wall.tscn" id="1_mnd3a"]
+[ext_resource type="Texture2D" uid="uid://bsytm5y55kaul" path="res://Artes/porta.png" id="2_lda0m"]
+
+[node name="Wall_South" unique_id=1256029917 instance=ExtResource("1_mnd3a")]
+
+[node name="Porta" type="TextureRect" parent="." index="1" unique_id=697470888]
+offset_left = 707.0
+offset_top = 89.77777
+offset_right = 981.0
+offset_bottom = 516.0
+texture = ExtResource("2_lda0m")
+
+[node name="TextureRect" type="TextureRect" parent="." index="2" unique_id=1798486804]
+offset_right = 40.0
+offset_bottom = 40.0
