@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cokq8wbeqkjdy"]
+
+[ext_resource type="Script" uid="uid://davyx8s34nd6c" path="res://Navegaçao/navigation_manager.gd" id="1_hcw78"]
+[ext_resource type="Texture2D" uid="uid://l6pftu5y7o2t" path="res://Artes/botoes/seta navegação.png" id="1_hq208"]
+[ext_resource type="Texture2D" uid="uid://b76augd2k5axi" path="res://Artes/botoes/seta navegação clara.png" id="2_hcw78"]
+
+[node name="GerenciadorNav" type="Control" unique_id=1341496162]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hcw78")
+
+[node name="right_arrow" type="TextureButton" parent="." unique_id=1454904284]
+top_level = true
+layout_mode = 0
+offset_left = 1081.0
+offset_top = 300.0
+offset_right = 1131.0
+offset_bottom = 350.0
+action_mode = 0
+texture_normal = ExtResource("1_hq208")
+texture_pressed = ExtResource("2_hcw78")
+
+[node name="left_arrow" type="TextureButton" parent="." unique_id=129057116]
+top_level = true
+layout_mode = 0
+offset_left = 26.0
+offset_top = 300.0
+offset_right = 76.0
+offset_bottom = 350.0
+action_mode = 0
+texture_normal = ExtResource("1_hq208")
+texture_pressed = ExtResource("2_hcw78")
+flip_h = true

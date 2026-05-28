@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bibrmh67cqkhm"]
+
+[ext_resource type="PackedScene" uid="uid://2ac0nxi7oaqc" path="res://Navegaçao/Walls/Wall.tscn" id="1_xj4uo"]
+[ext_resource type="Texture2D" uid="uid://cdun88q457rys" path="res://Artes/cela.png" id="2_hms82"]
+[ext_resource type="Texture2D" uid="uid://qlwmseky48hv" path="res://Artes/barras_cela.png" id="3_urxdl"]
+[ext_resource type="Texture2D" uid="uid://dpicov6jgo0da" path="res://Artes/Tux.png" id="4_urxdl"]
+[ext_resource type="Texture2D" uid="uid://c166iohy5pcc2" path="res://Artes/ventilação.png" id="5_i8p2k"]
+[ext_resource type="Texture2D" uid="uid://uuq4l8vamkib" path="res://Artes/escrivaninha.png" id="6_4dgww"]
+[ext_resource type="Texture2D" uid="uid://h2exp171883k" path="res://Artes/tomada.png" id="7_creu3"]
+[ext_resource type="Texture2D" uid="uid://bt5ppgpxt4lvr" path="res://Artes/computador_com_dois_pen_drives.png" id="8_075l2"]
+[ext_resource type="Texture2D" uid="uid://db8s2mogj61iv" path="res://Artes/cabo_plugado.png" id="9_84f8v"]
+[ext_resource type="Texture2D" uid="uid://bjjaa661d4ve0" path="res://Artes/cadeira.png" id="10_pemy7"]
+
+[node name="Wall_North" unique_id=1256029917 instance=ExtResource("1_xj4uo")]
+
+[node name="Cela" type="TextureRect" parent="." index="1" unique_id=248018638]
+offset_left = 539.0
+offset_top = 115.0
+offset_right = 1082.0
+offset_bottom = 603.0
+texture = ExtResource("2_hms82")
+
+[node name="Tux" type="TextureRect" parent="." index="2" unique_id=2006444865]
+offset_left = 657.0
+offset_top = 273.0
+offset_right = 957.0
+offset_bottom = 573.0
+texture = ExtResource("4_urxdl")
+
+[node name="Barras" type="TextureRect" parent="." index="3" unique_id=225468874]
+offset_left = 604.0
+offset_top = 156.0
+offset_right = 1010.0
+offset_bottom = 555.0
+texture = ExtResource("3_urxdl")
+
+[node name="Ventilaç" type="TextureRect" parent="." index="4" unique_id=1981593992]
+offset_left = 231.0
+offset_top = 86.0
+offset_right = 400.0
+offset_bottom = 200.0
+texture = ExtResource("5_i8p2k")
+
+[node name="Escrivaninha" type="TextureRect" parent="." index="5" unique_id=987628334]
+offset_left = 142.0
+offset_top = 421.0
+offset_right = 480.0
+offset_bottom = 560.0
+texture = ExtResource("6_4dgww")
+
+[node name="Tomada" type="TextureRect" parent="." index="6" unique_id=1254267421]
+offset_left = 386.0
+offset_top = 384.0
+offset_right = 426.0
+offset_bottom = 434.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_creu3")
+
+[node name="Computador" type="TextureRect" parent="." index="7" unique_id=442138350]
+offset_left = 183.0
+offset_top = 347.0
+offset_right = 351.0
+offset_bottom = 422.0
+texture = ExtResource("8_075l2")
+
+[node name="Fio" type="TextureRect" parent="." index="8" unique_id=1283823104]
+offset_left = 318.0
+offset_top = 394.0
+offset_right = 485.0
+offset_bottom = 428.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_84f8v")
+
+[node name="Cadeira" type="TextureRect" parent="." index="9" unique_id=1107088056]
+offset_left = 168.0
+offset_top = 406.0
+offset_right = 283.0
+offset_bottom = 585.0206
+texture = ExtResource("10_pemy7")

@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://dnll20q8f7sw6"]
-
-[node name="ObjetoGener" type="Control" unique_id=1439217770]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2

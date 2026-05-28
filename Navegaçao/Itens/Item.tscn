@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://djjflxo61t8qh"]
+
+[ext_resource type="Script" uid="uid://djprsnlfeklco" path="res://Navegaçao/Itens/item.gd" id="1_hiolm"]
+
+[node name="Item" type="Node2D" unique_id=762172843]
+script = ExtResource("1_hiolm")
