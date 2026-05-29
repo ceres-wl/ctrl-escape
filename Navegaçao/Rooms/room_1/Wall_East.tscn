@@ -1,5 +1,28 @@
 [gd_scene format=3 uid="uid://76djvsxgwyp6"]
 
 [ext_resource type="PackedScene" uid="uid://2ac0nxi7oaqc" path="res://Navegaçao/Walls/Wall.tscn" id="1_qc6fj"]
+[ext_resource type="Texture2D" uid="uid://ufnb11awi56h" path="res://Artes/servidor.png" id="2_bpjiw"]
+[ext_resource type="Texture2D" uid="uid://c43xwe338ufoa" path="res://Artes/projetor.png" id="3_kmwe4"]
 
-[node name="Wall" unique_id=1256029917 instance=ExtResource("1_qc6fj")]
+[node name="Wall_East" unique_id=1256029917 instance=ExtResource("1_qc6fj")]
+
+[node name="servidor1" type="TextureRect" parent="." index="1" unique_id=1498054226]
+offset_left = 122.0
+offset_top = 92.214294
+offset_right = 462.0
+offset_bottom = 550.0
+texture = ExtResource("2_bpjiw")
+
+[node name="servidor2" type="TextureRect" parent="." index="2" unique_id=1424994952]
+offset_left = 451.0
+offset_top = 92.0
+offset_right = 791.0
+offset_bottom = 549.7857
+texture = ExtResource("2_bpjiw")
+
+[node name="projetor" type="TextureRect" parent="." index="3" unique_id=1080168497]
+offset_left = 880.0
+offset_top = 258.48572
+offset_right = 987.0
+offset_bottom = 576.4286
+texture = ExtResource("3_kmwe4")

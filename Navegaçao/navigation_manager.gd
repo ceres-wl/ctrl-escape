@@ -1,6 +1,8 @@
 extends Node
 
 var current_room : Node = null
+
+# TODO: mudar o mouse em cima dos botaos
 func _ready() -> void:
 	
 	$right_arrow.pressed.connect(_on_right_arrow_pressed)

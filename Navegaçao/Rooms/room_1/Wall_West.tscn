@@ -1,5 +1,29 @@
 [gd_scene format=3 uid="uid://cwxl8cyegaowx"]
 
 [ext_resource type="PackedScene" uid="uid://2ac0nxi7oaqc" path="res://Navegaçao/Walls/Wall.tscn" id="1_npwb5"]
+[ext_resource type="Texture2D" uid="uid://dcqgdipq0cv5n" path="res://Artes/tela_projetor.png" id="2_k6ekx"]
+[ext_resource type="Texture2D" uid="uid://3br7gcplhdkm" path="res://Artes/quadro_bash.png" id="3_spbat"]
+[ext_resource type="Texture2D" uid="uid://d1oeuoq32c1mn" path="res://Artes/cofre.png" id="4_van3n"]
 
-[node name="Wall" unique_id=1256029917 instance=ExtResource("1_npwb5")]
+[node name="Wall_West" unique_id=1256029917 instance=ExtResource("1_npwb5")]
+
+[node name="tela_projetor" type="TextureRect" parent="." index="1" unique_id=58591054]
+offset_left = 151.0
+offset_top = 63.0
+offset_right = 665.5
+offset_bottom = 406.0
+texture = ExtResource("2_k6ekx")
+
+[node name="quadro_bash" type="TextureRect" parent="." index="2" unique_id=462172863]
+offset_left = 874.0
+offset_top = 200.0
+offset_right = 974.0
+offset_bottom = 300.0
+texture = ExtResource("3_spbat")
+
+[node name="cofre" type="TextureRect" parent="." index="3" unique_id=1554570326]
+offset_left = 766.0
+offset_top = 412.0
+offset_right = 898.0
+offset_bottom = 550.0
+texture = ExtResource("4_van3n")
