@@ -73,7 +73,7 @@ func mkdir(args: PackedStringArray, flags: Dictionary):
 	# FIXME sanitizar nome da pasta
 	# FIXME não deixar recriar uma pasta que já existe
 	for arg in args:
-		%FileSystem.create_folder(arg);
+		if (arg != ""): %FileSystem.create_folder(arg);
 
 func touch(args: PackedStringArray, _flags: Dictionary):
 	# FIXME sanitizar nome do arquivo
@@ -162,38 +162,42 @@ func parse(input: String):
 # Supõe que a entrada é um comando unico, sem redirecionamento
 # Argumentos para flags não foram implementados
 func parse_command(input: String) -> Dictionary:
-	var args: PackedStringArray =  input.strip_edges().split(" ");
-	var cmd = args[0]; # args é um PackedStringArray então não tem pop_front
+	var args_start = input.find(" ") # Identifica final do nome do comando
+	var cmd = input.substr(0, args_start) # Nome do comando executado
+	var args = PackedStringArray() # Lista com os argumentos recebidos
 	var flags = {} # Flags são um set mas poderiam ser uma lista sem problemas
-	args.remove_at(0);
 	
-	var quotedArgs = []
-	var i = 0
-	var currentQuotedArg = ""
-	var inQuotedArg = false
-	while i < len(args):
-		if inQuotedArg: currentQuotedArg += " "
-		if (args[i][0] == '"'):
-			inQuotedArg = true
-			args[i] = args[i].erase(0)
-		if (args[i][-1] == '"'):
-			inQuotedArg = false
-			args[i] = args[i].erase(len(args[i]) - 1)
-		currentQuotedArg += args[i]
-		if (not inQuotedArg):
-			quotedArgs.append(currentQuotedArg)
-			currentQuotedArg = ""
-		i += 1
+	var quotes = ["\"", "\'"]
+	var insideQuotes = false
+	var currentParsedArg = ""
 	
-	for token: String in quotedArgs:
-		if(token[0] == "-"):
+	if args_start != -1:
+		var i = args_start + 1
+		while i < len(input):
+			if (not insideQuotes and input[i] in quotes):
+				insideQuotes = true
+			elif (insideQuotes and input[i] in quotes):
+				insideQuotes = false
+				args.append(currentParsedArg)
+				currentParsedArg = ""
+			elif (not insideQuotes and input[i] == " "):
+				args.append(currentParsedArg)
+				currentParsedArg = ""
+			else: currentParsedArg += input[i]
+			i += 1
+		if (currentParsedArg != ""):
+			args.append(currentParsedArg)
+			currentParsedArg = ""
+	
+	for arg: String in args:
+		if(len(arg) > 0 and arg[0] == "-"):
 			# Como tou supondo que nenhuma flag tem argumento,
 			# O argumento da flag é sempre null
-			flags.set(token.substr(1), null)
+			flags.set(arg.substr(1), null)
 	
 	return {
 		"command": cmd,
-		"args": quotedArgs,
+		"args": args,
 		"flags": flags
 	}
 

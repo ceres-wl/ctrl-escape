@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cm1nfskboxif8"]
 
-[ext_resource type="Script" uid="uid://b423hpodu46gn" path="res://terminal/terminal.gd" id="1_l3hco"]
-[ext_resource type="Script" uid="uid://dv0qlxuj67xgq" path="res://terminal/fileSystem/fileSystem.gd" id="2_cgvah"]
-[ext_resource type="Texture2D" uid="uid://b0cvfvkocwww3" path="res://Artes/Computador terminal.png" id="2_osw5p"]
-[ext_resource type="Texture2D" uid="uid://bobtgwwcc5wt5" path="res://Artes/botoes/enviar_terminal.png" id="3_aig0n"]
-[ext_resource type="Texture2D" uid="uid://25tnkdy7tsrk" path="res://Artes/botoes/enviar_terminal_claro.png" id="4_ccini"]
-[ext_resource type="Texture2D" uid="uid://l6pftu5y7o2t" path="res://Artes/botoes/seta navegação.png" id="4_sd0vt"]
-[ext_resource type="Texture2D" uid="uid://b76augd2k5axi" path="res://Artes/botoes/seta navegação clara.png" id="5_rke4j"]
+[ext_resource type="Script" uid="uid://b423hpodu46gn" path="res://Terminal/terminal.gd" id="1_l3hco"]
+[ext_resource type="Script" uid="uid://dv0qlxuj67xgq" path="res://Terminal/FileSystem/fileSystem.gd" id="2_cgvah"]
+[ext_resource type="Texture2D" uid="uid://b0cvfvkocwww3" path="res://Arts/Computador terminal.png" id="2_osw5p"]
+[ext_resource type="Texture2D" uid="uid://bobtgwwcc5wt5" path="res://Arts/botoes/enviar_terminal.png" id="3_aig0n"]
+[ext_resource type="Texture2D" uid="uid://25tnkdy7tsrk" path="res://Arts/botoes/enviar_terminal_claro.png" id="4_ccini"]
+[ext_resource type="Texture2D" uid="uid://l6pftu5y7o2t" path="res://Arts/botoes/seta navegação.png" id="4_sd0vt"]
+[ext_resource type="Texture2D" uid="uid://b76augd2k5axi" path="res://Arts/botoes/seta navegação clara.png" id="5_rke4j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rke4j"]
 bg_color = Color(0.08235294, 0.08235294, 0.08235294, 1)
