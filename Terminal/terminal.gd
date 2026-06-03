@@ -47,12 +47,9 @@ func echo(args: PackedStringArray, flags: Dictionary):
 	text = text.replace("[", "[lb]");
 	return text;
 
-# TODO Corrigir bug do 'cd a b' equivalente a 'cd "a b"'
 func cd(args: PackedStringArray, _flags: Dictionary):
 	%FileSystem.navigate("".join(args));
 	%DisplayPath.text = %FileSystem.cur_path;
-	print("".join(PackedStringArray(["a", "b"])))
-	print (args)
 
 # TODO -a = Mostrar arquivos escondidos
 func ls(args: PackedStringArray, flags: Dictionary):
