@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://w7lc4nuajmwe"]
 
 [ext_resource type="Script" uid="uid://chg6gp1wv4cvy" path="res://Navegaçao/Rooms/room.gd" id="1_04qk7"]
+[ext_resource type="PackedScene" uid="uid://ckowb7fsl5gx3" path="res://Menus/Menu config rooms/config_rooms.tscn" id="1_5ncum"]
+[ext_resource type="PackedScene" uid="uid://djo1q3ihdfkw0" path="res://Inventario/inventory.tscn" id="2_r4jcj"]
 
 [node name="Room" type="Control" unique_id=599518434]
 show_behind_parent = true
@@ -10,6 +12,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Inventory" parent="." unique_id=1803062912 instance=ExtResource("2_r4jcj")]
+
+[node name="Config_Rooms" parent="." unique_id=724168216 instance=ExtResource("1_5ncum")]
 
 [node name="Walls" type="Control" parent="." unique_id=2098237260]
 anchors_preset = 0

@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 MusicManager="*uid://bmoo1io16ak65"
 SoundManager="*uid://cws43rysw8u1n"
 Inventory="*uid://b6uqys2xdax3u"
+NavegationManager="*uid://cokq8wbeqkjdy"
 
 [dotnet]
 
