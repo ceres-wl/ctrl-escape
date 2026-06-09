@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://8bqxw1sbs0a7"]
+
+[ext_resource type="Script" uid="uid://bq1dyng7okc2e" path="res://Navegaçao/Itens/item_collectible.gd" id="1_stpn5"]
+
+[node name="Area2D" type="Area2D" unique_id=1517403871]
+script = ExtResource("1_stpn5")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1256755050]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=319149319]

@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://p2r1wjffui68"]
+
+[ext_resource type="Script" uid="uid://c56kf4bkfcfb1" path="res://Menus/Main Menu/menu_principal.gd" id="1_0vqsy"]
+[ext_resource type="Texture2D" uid="uid://nblgcowxdrfk" path="res://Arts/botoes/botão configuração.png" id="2_13irf"]
+[ext_resource type="Texture2D" uid="uid://cx831fere2j77" path="res://Arts/menu background.png" id="2_jeylh"]
+[ext_resource type="Texture2D" uid="uid://27qf65avg6g0" path="res://Arts/botoes/botão saída.png" id="3_jeylh"]
+[ext_resource type="Texture2D" uid="uid://sgoufgilhi18" path="res://Arts/botoes/botao jogar.png" id="4_c2jsc"]
+[ext_resource type="Texture2D" uid="uid://c1nqvseyx6du7" path="res://Arts/logo.png" id="4_rg02c"]
+[ext_resource type="Texture2D" uid="uid://b7mjy65eu4xd1" path="res://Arts/botoes/botão jogar claro.png" id="5_rr5ew"]
+[ext_resource type="Texture2D" uid="uid://bsxkyjggqgq3u" path="res://Arts/botoes/botao configuração claro.png" id="8_xvmgg"]
+[ext_resource type="Texture2D" uid="uid://cmutq4ecnkfup" path="res://Arts/botoes/botão saída claro.png" id="10_c2jsc"]
+[ext_resource type="Texture2D" uid="uid://6e0matlgvite" path="res://Arts/config_principal.png" id="10_nnast"]
+[ext_resource type="Texture2D" uid="uid://dnu4qb381rpeh" path="res://Arts/botoes/botão x.png" id="11_7p2ec"]
+[ext_resource type="Texture2D" uid="uid://dmdxjh6rq4hw3" path="res://Arts/botoes/botão x claro.png" id="12_fv4n1"]
+[ext_resource type="Texture2D" uid="uid://r43vgpl74wx0" path="res://Arts/botoes/botão creditos.png" id="13_fnw8w"]
+[ext_resource type="Texture2D" uid="uid://djgvs4cd41thh" path="res://Arts/botoes/botão creditos claro.png" id="14_68770"]
+[ext_resource type="Texture2D" uid="uid://cg6lj3ccmv3tj" path="res://Arts/creditos.png" id="17_68770"]
+[ext_resource type="Texture2D" uid="uid://l6pftu5y7o2t" path="res://Arts/botoes/seta navegação.png" id="18_uhxpd"]
+[ext_resource type="Texture2D" uid="uid://b76augd2k5axi" path="res://Arts/botoes/seta navegação clara.png" id="19_rm1gh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6qnv"]
+bg_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7p2ec"]
+bg_color = Color(0.5372549, 0.5372549, 0.54509807, 1)
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv4n1"]
+bg_color = Color(0.5372549, 0.5372549, 0.54509807, 1)
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+
+[node name="Menu principal" type="Control" unique_id=1543491941]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0vqsy")
+
+[node name="background" type="TextureRect" parent="." unique_id=423699570]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_jeylh")
+expand_mode = 1
+
+[node name="Logo" type="TextureRect" parent="." unique_id=161230064]
+layout_mode = 0
+offset_left = 272.0
+offset_top = -6.0000005
+offset_right = 1355.9102
+offset_bottom = 494.75378
+scale = Vector2(0.6310486, 0.6310486)
+texture = ExtResource("4_rg02c")
+
+[node name="Jogar" type="TextureButton" parent="." unique_id=1088542282]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 523.0
+offset_right = 734.0
+offset_bottom = 645.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_c2jsc")
+texture_pressed = ExtResource("5_rr5ew")
+texture_hover = ExtResource("5_rr5ew")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Config" type="TextureButton" parent="." unique_id=67207902]
+layout_mode = 0
+offset_left = 1030.0
+offset_top = 25.0
+offset_right = 1071.0
+offset_bottom = 66.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_13irf")
+texture_pressed = ExtResource("8_xvmgg")
+texture_hover = ExtResource("8_xvmgg")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Exit" type="TextureButton" parent="." unique_id=1664785619]
+layout_mode = 0
+offset_left = 1085.0
+offset_top = 25.0
+offset_right = 1128.0
+offset_bottom = 66.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_jeylh")
+texture_pressed = ExtResource("10_c2jsc")
+texture_hover = ExtResource("10_c2jsc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1024566254]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=167262390]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="Menu Config" type="TextureRect" parent="CanvasLayer/ColorRect" unique_id=81304035]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -250.0
+offset_right = 350.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_nnast")
+
+[node name="Slider musica" type="HSlider" parent="CanvasLayer/ColorRect/Menu Config" unique_id=1501235259]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 191.0
+offset_right = 583.0
+offset_bottom = 207.0
+mouse_default_cursor_shape = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_t6qnv")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_7p2ec")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_fv4n1")
+min_value = -80.0
+max_value = 0.0
+
+[node name="Slider som" type="HSlider" parent="CanvasLayer/ColorRect/Menu Config" unique_id=635075835]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 279.0
+offset_right = 583.0
+offset_bottom = 295.0
+mouse_default_cursor_shape = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_t6qnv")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_7p2ec")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_fv4n1")
+min_value = -80.0
+max_value = 0.0
+
+[node name="Botao_creditos" type="TextureButton" parent="CanvasLayer/ColorRect/Menu Config" unique_id=1942553230]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 341.0
+offset_right = 466.0
+offset_bottom = 385.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("13_fnw8w")
+texture_pressed = ExtResource("14_68770")
+texture_hover = ExtResource("14_68770")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="X" type="TextureButton" parent="CanvasLayer/ColorRect/Menu Config" unique_id=1352707505]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 67.0
+offset_bottom = 66.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_7p2ec")
+texture_pressed = ExtResource("12_fv4n1")
+texture_hover = ExtResource("12_fv4n1")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Creditos" type="TextureRect" parent="CanvasLayer/ColorRect" unique_id=831626367]
+visible = false
+layout_mode = 0
+offset_left = 226.0
+offset_top = 77.0
+offset_right = 926.0
+offset_bottom = 577.0
+texture = ExtResource("17_68770")
+
+[node name="Voltar_creditos" type="TextureButton" parent="CanvasLayer/ColorRect/Creditos" unique_id=807027233]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 26.0
+offset_right = 67.0
+offset_bottom = 68.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("18_uhxpd")
+texture_pressed = ExtResource("19_rm1gh")
+texture_hover = ExtResource("19_rm1gh")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
+[connection signal="ready" from="Jogar" to="." method="_on_texture_button_ready"]
+[connection signal="pressed" from="Config" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="value_changed" from="CanvasLayer/ColorRect/Menu Config/Slider musica" to="." method="_on_slider_musica_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/ColorRect/Menu Config/Slider som" to="." method="_on_slider_som_value_changed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/Menu Config/Botao_creditos" to="." method="_on_botao_creditos_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/Menu Config/X" to="." method="_on_x_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/Creditos/Voltar_creditos" to="." method="_on_voltar_creditos_pressed"]
