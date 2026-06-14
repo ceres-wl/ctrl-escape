@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://bibrmh67cqkhm"]
 
-[ext_resource type="PackedScene" uid="uid://2ac0nxi7oaqc" path="res://Navegaçao/Walls/Wall.tscn" id="1_xj4uo"]
-[ext_resource type="Texture2D" uid="uid://cdun88q457rys" path="res://Artes/cela.png" id="2_hms82"]
-[ext_resource type="Texture2D" uid="uid://qlwmseky48hv" path="res://Artes/barras_cela.png" id="3_urxdl"]
-[ext_resource type="Texture2D" uid="uid://dpicov6jgo0da" path="res://Artes/Tux.png" id="4_urxdl"]
-[ext_resource type="Texture2D" uid="uid://c166iohy5pcc2" path="res://Artes/ventilação.png" id="5_i8p2k"]
-[ext_resource type="Texture2D" uid="uid://uuq4l8vamkib" path="res://Artes/escrivaninha.png" id="6_4dgww"]
-[ext_resource type="Texture2D" uid="uid://h2exp171883k" path="res://Artes/tomada.png" id="7_creu3"]
-[ext_resource type="Texture2D" uid="uid://bt5ppgpxt4lvr" path="res://Artes/computador_com_dois_pen_drives.png" id="8_075l2"]
-[ext_resource type="Texture2D" uid="uid://db8s2mogj61iv" path="res://Artes/cabo_plugado.png" id="9_84f8v"]
-[ext_resource type="Texture2D" uid="uid://bjjaa661d4ve0" path="res://Artes/cadeira.png" id="10_pemy7"]
+[ext_resource type="PackedScene" uid="uid://2ac0nxi7oaqc" path="res://Navigation/Walls/Wall.tscn" id="1_xj4uo"]
+[ext_resource type="Texture2D" uid="uid://cdun88q457rys" path="res://Arts/cela.png" id="2_hms82"]
+[ext_resource type="Texture2D" uid="uid://qlwmseky48hv" path="res://Arts/barras_cela.png" id="3_urxdl"]
+[ext_resource type="Texture2D" uid="uid://dpicov6jgo0da" path="res://Arts/Tux.png" id="4_urxdl"]
+[ext_resource type="Texture2D" uid="uid://c166iohy5pcc2" path="res://Arts/ventilação.png" id="5_i8p2k"]
+[ext_resource type="Texture2D" uid="uid://uuq4l8vamkib" path="res://Arts/escrivaninha.png" id="6_4dgww"]
+[ext_resource type="Texture2D" uid="uid://h2exp171883k" path="res://Arts/tomada.png" id="7_creu3"]
+[ext_resource type="Texture2D" uid="uid://bt5ppgpxt4lvr" path="res://Arts/computador_com_dois_pen_drives.png" id="8_075l2"]
+[ext_resource type="Texture2D" uid="uid://db8s2mogj61iv" path="res://Arts/cabo_plugado.png" id="9_84f8v"]
+[ext_resource type="Texture2D" uid="uid://bjjaa661d4ve0" path="res://Arts/cadeira.png" id="10_pemy7"]
+[ext_resource type="Script" uid="uid://bdwonr0q60b88" path="res://Navigation/Rooms/room_1/interative_tux.gd" id="11_5ik0t"]
+[ext_resource type="PackedScene" uid="uid://crsbn5p4f3nj8" path="res://Dialogue/DialoguePopup.tscn" id="12_px4p8"]
 
 [node name="Wall_North" unique_id=1256029917 instance=ExtResource("1_xj4uo")]
 
@@ -77,3 +79,12 @@ offset_top = 406.0
 offset_right = 283.0
 offset_bottom = 585.0206
 texture = ExtResource("10_pemy7")
+
+[node name="Tux_Fala" type="TextureButton" parent="." index="10" unique_id=1400393762]
+offset_left = 749.0
+offset_top = 304.0
+offset_right = 862.0
+offset_bottom = 538.0
+script = ExtResource("11_5ik0t")
+
+[node name="DialoguePopup" parent="." index="11" unique_id=36251990 instance=ExtResource("12_px4p8")]
