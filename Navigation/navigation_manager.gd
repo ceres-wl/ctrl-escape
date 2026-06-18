@@ -1,6 +1,7 @@
 extends Node
 
 var current_room : Node = null
+var terminais
 
 func _ready() -> void:
 	$right_arrow.pressed.connect(_on_right_arrow_pressed)
@@ -17,6 +18,7 @@ func start_game() -> void:
 	
 	add_child(instancia_sala) 
 	current_room = instancia_sala
+	terminais = get_tree().get_nodes_in_group("")
 	
 func show_arrows() -> void:
 	$right_arrow.visible = true

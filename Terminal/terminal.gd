@@ -201,3 +201,6 @@ func parse_command(input: String) -> Dictionary:
 func _on_input_text_submitted(_new_text):
 	parse(%Input.text);
 	%Input.text = "";
+
+func _on_botao_voltar_button_up() -> void:
+	visible = false

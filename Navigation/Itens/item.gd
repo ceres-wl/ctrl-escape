@@ -1,10 +1,11 @@
 extends Node
+class_name item
 
 # TODO: Terminar a parte para permitir instancias generalizadas
 @export var id = ""
 @export var item_name = ""
 @export var is_interactable = false
-enum type_item {COLLECTIBLE, CONTAINER, ZOOM}
+enum type_item {COLLECTIBLE, CONTAINER, ZOOM, TERMINAL}
 var type_atual
 
 # TODO: Terminar a parte do input_event
@@ -18,11 +19,14 @@ func interact() -> void:
 		open()
 	elif type_atual == type_item.ZOOM:
 		open_zoom()
+	elif type_atual == type_atual.TERMINAL:
+		open_terminal()
 
 func change_frame(idx: int):
 	$Sprite.frame = idx
 	
-# vao ser implementado pelas classes filhas
+func open_terminal() -> void:
+	pass
 func collect() -> void:
 	pass
 func open() -> void:
