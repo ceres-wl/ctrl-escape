@@ -1,25 +1,26 @@
-extends Node
+extends Node2D
 class_name item
 
 # TODO: Terminar a parte para permitir instancias generalizadas
 @export var id = ""
 @export var item_name = ""
-@export var is_interactable = false
+@export var is_interactable = true
+@export var item_texture : Texture2D
+
 enum type_item {COLLECTIBLE, CONTAINER, ZOOM, TERMINAL}
 var type_atual
 
-# TODO: Terminar a parte do input_event
-func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int):
-	pass
-	
-func interact() -> void:
+func _ready():
+	$Button.icon = item_texture
+
+func interact():
 	if type_atual == type_item.COLLECTIBLE:
 		collect()
 	elif type_atual == type_item.CONTAINER:
 		open()
 	elif type_atual == type_item.ZOOM:
 		open_zoom()
-	elif type_atual == type_atual.TERMINAL:
+	elif type_atual == type_item.TERMINAL:
 		open_terminal()
 
 func change_frame(idx: int):
@@ -33,3 +34,7 @@ func open() -> void:
 	pass
 func open_zoom() -> void:
 	pass
+
+
+func _on_button_pressed() -> void:
+	interact()

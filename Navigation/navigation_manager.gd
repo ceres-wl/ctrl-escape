@@ -1,7 +1,7 @@
 extends Node
 
 var current_room : Node = null
-var terminais
+var terminal
 
 func _ready() -> void:
 	$right_arrow.pressed.connect(_on_right_arrow_pressed)
@@ -18,7 +18,6 @@ func start_game() -> void:
 	
 	add_child(instancia_sala) 
 	current_room = instancia_sala
-	terminais = get_tree().get_nodes_in_group("")
 	
 func show_arrows() -> void:
 	$right_arrow.visible = true
@@ -39,3 +38,15 @@ func _on_left_arrow_pressed():
 		current_room.mudar_parede(-1)
 	else:
 		print("Erro: Nenhuma sala atual definida!")
+
+func finish_terminal():
+	show_arrows()
+	if terminal != null:
+		terminal.queue_free()
+		terminal = null
+
+func start_terminal():
+	hide_arrows()
+	terminal = load("res://Terminal/terminal.tscn").instantiate()
+	add_child(terminal)
+	

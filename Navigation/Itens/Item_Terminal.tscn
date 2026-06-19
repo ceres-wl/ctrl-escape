@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b8wuvm5gho78w"]
+
+[ext_resource type="Script" uid="uid://dtwqahrjnpgo5" path="res://Navigation/Itens/item_terminal.gd" id="1_cggr4"]
+[ext_resource type="PackedScene" uid="uid://blrh5y8xksa24" path="res://Navigation/Itens/Item.tscn" id="1_jues0"]
+[ext_resource type="Texture2D" uid="uid://yfvrxo8xfm1n" path="res://Arts/computador.png" id="3_3ryb3"]
+
+[node name="Item_Terminal" unique_id=107717112 instance=ExtResource("1_jues0")]
+script = ExtResource("1_cggr4")
+item_texture = ExtResource("3_3ryb3")

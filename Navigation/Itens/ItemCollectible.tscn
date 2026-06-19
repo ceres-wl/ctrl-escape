@@ -4,7 +4,3 @@
 
 [node name="Area2D" type="Area2D" unique_id=1517403871]
 script = ExtResource("1_stpn5")
-
-[node name="Collision" type="CollisionShape2D" parent="." unique_id=1256755050]
-
-[node name="Sprite" type="Sprite2D" parent="." unique_id=319149319]

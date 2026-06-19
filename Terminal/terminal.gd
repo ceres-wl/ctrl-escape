@@ -203,4 +203,5 @@ func _on_input_text_submitted(_new_text):
 	%Input.text = "";
 
 func _on_botao_voltar_button_up() -> void:
+	NavegationManager.finish_terminal()
 	visible = false
