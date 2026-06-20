@@ -8,16 +8,14 @@ func _ready() -> void:
 	$left_arrow.pressed.connect(_on_left_arrow_pressed)
 	hide_arrows()
 	
-	# temporario, devem chamar de acordo com a necessidade
-	show_arrows()
-	start_game()
-	
 func start_game() -> void:
 	var sala_1_tscn = preload("res://Navigation/Rooms/room_1/Room_1.tscn")
 	var instancia_sala = sala_1_tscn.instantiate()
 	
 	add_child(instancia_sala) 
 	current_room = instancia_sala
+	# temporario, depende da sala que vai ser chamada
+	show_arrows()
 	
 func show_arrows() -> void:
 	$right_arrow.visible = true

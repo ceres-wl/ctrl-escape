@@ -195,6 +195,7 @@ ignore_texture_size = true
 stretch_mode = 5
 flip_h = true
 
+[connection signal="pressed" from="Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="ready" from="Jogar" to="." method="_on_texture_button_ready"]
 [connection signal="pressed" from="Config" to="." method="_on_config_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

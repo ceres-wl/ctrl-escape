@@ -31,3 +31,8 @@ func _on_botao_creditos_pressed() -> void:
 func _on_voltar_creditos_pressed() -> void:
 	$"CanvasLayer/ColorRect/Menu Config".visible = true
 	$"CanvasLayer/ColorRect/Creditos".visible = false
+
+
+func _on_jogar_pressed() -> void:
+	NavegationManager.start_game()
+	queue_free()

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ctrl-escape"
-run/main_scene="uid://cm1nfskboxif8"
+run/main_scene="uid://p2r1wjffui68"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [autoload]
