@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://djo1q3ihdfkw0"]
 
-[ext_resource type="Script" uid="uid://b6uqys2xdax3u" path="res://Inventario/inventory.gd" id="1_u5a7d"]
-[ext_resource type="Texture2D" uid="uid://baibjdh35y3dj" path="res://Artes/botoes/barra_recolhimento_inventario.png" id="2_n8px4"]
-[ext_resource type="Texture2D" uid="uid://h3w35jpart7h" path="res://Artes/inventário.png" id="3_l2rwc"]
-[ext_resource type="Script" uid="uid://duv6j0oelk6cq" path="res://Inventario/hotbar.gd" id="4_mu001"]
-[ext_resource type="PackedScene" uid="uid://p7o6q6o5fspc" path="res://Inventario/inventory_slot.tscn" id="5_n8px4"]
-[ext_resource type="Texture2D" uid="uid://dnu4qb381rpeh" path="res://Artes/botoes/botão x.png" id="5_u434w"]
-[ext_resource type="Texture2D" uid="uid://dmdxjh6rq4hw3" path="res://Artes/botoes/botão x claro.png" id="6_hu6fx"]
+[ext_resource type="Script" uid="uid://b6uqys2xdax3u" path="res://Inventory/inventory.gd" id="1_u5a7d"]
+[ext_resource type="Texture2D" uid="uid://baibjdh35y3dj" path="res://Arts/botoes/barra_recolhimento_inventario.png" id="2_n8px4"]
+[ext_resource type="Texture2D" uid="uid://h3w35jpart7h" path="res://Arts/inventário.png" id="3_l2rwc"]
+[ext_resource type="Script" uid="uid://duv6j0oelk6cq" path="res://Inventory/hotbar.gd" id="4_mu001"]
+[ext_resource type="PackedScene" uid="uid://p7o6q6o5fspc" path="res://Inventory/inventory_slot.tscn" id="5_n8px4"]
+[ext_resource type="Texture2D" uid="uid://dnu4qb381rpeh" path="res://Arts/botoes/botão x.png" id="5_u434w"]
+[ext_resource type="Texture2D" uid="uid://dmdxjh6rq4hw3" path="res://Arts/botoes/botão x claro.png" id="6_hu6fx"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_l2rwc"]
 device = -1

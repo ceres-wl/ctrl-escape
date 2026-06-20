@@ -15,10 +15,10 @@ offset_bottom = 406.0
 texture = ExtResource("2_k6ekx")
 
 [node name="quadro_bash" type="TextureRect" parent="." index="2" unique_id=462172863]
-offset_left = 874.0
-offset_top = 200.0
-offset_right = 974.0
-offset_bottom = 300.0
+offset_left = 885.0
+offset_top = 141.0
+offset_right = 985.0
+offset_bottom = 241.0
 texture = ExtResource("3_spbat")
 
 [node name="cofre" type="TextureRect" parent="." index="3" unique_id=1554570326]

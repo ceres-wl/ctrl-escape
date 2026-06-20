@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ojxks5n2fxmk"]
+
+[ext_resource type="PackedScene" uid="uid://blrh5y8xksa24" path="res://Navigation/Itens/Item.tscn" id="1_0eb6n"]
+[ext_resource type="Script" uid="uid://cjegyb2iiwmr" path="res://item_zoom.gd" id="1_6y0b8"]
+
+[node name="Item_Zoom" unique_id=107717112 instance=ExtResource("1_0eb6n")]
+script = ExtResource("1_6y0b8")

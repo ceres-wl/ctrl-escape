@@ -7,4 +7,4 @@ func _ready():
 
 func collect() -> void:
 	if(Inventory.add_item(self)):
-		queue_free()
+		self.visible = false

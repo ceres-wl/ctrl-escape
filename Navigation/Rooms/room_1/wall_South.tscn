@@ -15,15 +15,15 @@ offset_bottom = 516.0
 texture = ExtResource("2_lda0m")
 
 [node name="Planta" type="TextureRect" parent="." index="2" unique_id=1982599994]
-offset_left = 165.0
-offset_top = 181.5
-offset_right = 422.0
-offset_bottom = 567.0
+offset_left = 143.0
+offset_top = 163.0
+offset_right = 400.0
+offset_bottom = 548.5
 texture = ExtResource("3_j2jj1")
 
 [node name="Relogio" type="TextureRect" parent="." index="3" unique_id=1798486804]
-offset_left = 316.0
-offset_top = 76.0
-offset_right = 416.0
-offset_bottom = 176.0
+offset_left = 452.0
+offset_top = 91.0
+offset_right = 552.0
+offset_bottom = 191.0
 texture = ExtResource("3_lda0m")
