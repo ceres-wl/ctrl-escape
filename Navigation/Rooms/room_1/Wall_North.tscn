@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bjjaa661d4ve0" path="res://Arts/cadeira.png" id="6_2ic7n"]
 [ext_resource type="Texture2D" uid="uid://qlwmseky48hv" path="res://Arts/barras_cela.png" id="7_7ey5d"]
 [ext_resource type="Texture2D" uid="uid://c166iohy5pcc2" path="res://Arts/ventilação.png" id="8_dlxfm"]
+[ext_resource type="Script" uid="uid://bdwonr0q60b88" path="res://Navigation/Rooms/room_1/interative_tux.gd" id="11_5ik0t"]
+[ext_resource type="PackedScene" uid="uid://crsbn5p4f3nj8" path="res://Dialogue/DialoguePopup.tscn" id="12_px4p8"]
 
 [node name="Wall" unique_id=1256029917 instance=ExtResource("1_hv52b")]
 
@@ -57,3 +59,12 @@ offset_top = 57.0
 offset_right = 354.0
 offset_bottom = 171.0
 texture = ExtResource("8_dlxfm")
+
+[node name="Tux_Fala" type="TextureButton" parent="." index="10" unique_id=1400393762]
+offset_left = 749.0
+offset_top = 304.0
+offset_right = 862.0
+offset_bottom = 538.0
+script = ExtResource("11_5ik0t")
+
+[node name="DialoguePopup" parent="." index="11" unique_id=36251990 instance=ExtResource("12_px4p8")]
