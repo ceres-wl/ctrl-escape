@@ -69,7 +69,6 @@ func cd(operands: PackedStringArray, flags: Dictionary):
 # TODO -a = Mostrar arquivos escondidos
 func ls(operands: PackedStringArray, flags: Dictionary):
 	var tokens = PackedStringArray();
-	
 	var i = 0
 	# Emulando do while
 	while true:
@@ -80,9 +79,15 @@ func ls(operands: PackedStringArray, flags: Dictionary):
 		var files = %FileSystem.list_files(path);
 		
 		for folder: Folder in folders:
-			tokens.push_back("[color=#A0A0FF]%s[/color]" % folder.folder_name);
+			if folder.folder_name.find(" ") != -1:
+				tokens.push_back("'[color=#A0A0FF]%s[/color]'" % folder.folder_name);
+			else:
+				tokens.push_back("[color=#A0A0FF]%s[/color]" % folder.folder_name);
 		for file: File in files:
-			tokens.push_back("[color=#FFA0A0]%s[/color]" % file.file_name);
+			if file.file_name.find(" ") != -1:
+				tokens.push_back("'[color=#FFA0A0]%s[/color]'" % file.file_name);
+			else:
+				tokens.push_back("[color=#FFA0A0]%s[/color]" % file.file_name);
 		i+=1
 		if (i >= operands.size()): break;
 	
