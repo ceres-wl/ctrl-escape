@@ -116,8 +116,6 @@ func get_full_path(folder: Folder) -> String:
 	return "/" if path == "" else path;
 	
 func format_path(path: String):
-	path = path.strip_edges();
-	
 	var absolute = false;
 	
 	if(path.begins_with("./")): path = path.replace("./", "");
