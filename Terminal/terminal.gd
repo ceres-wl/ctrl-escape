@@ -27,6 +27,21 @@ var ACTIONS = {
 	"grep": grep
 }
 
+var FLAGS_DESC = {
+	"clear": {}, # clear não possui flags (no nosso jogo)
+	"echo": {"n" : false}, # echo possui uma única flag, -n, que não recebe argumento
+	"cd" : {},
+	"ls": {"a" : false},
+	"mkdir": {"p" : false},
+	"touch": {},
+	"rm": {"r" : false},
+	"cp": {"r" : false},
+	"mv": {},
+	"cat": {},
+	"pwd": {},
+	"grep": {"e" : true, "v" : false} # grep possui duas flags, uma recebe argumento e a outra não
+}
+
 var lastOutput = "";
 
 func _ready():
@@ -38,25 +53,21 @@ func t_print(text_: String, sanitize = false, newline = true):
 	%Output.append_text(text_);
 	if(newline): %Output.newline();
 
-func clear(_args: PackedStringArray, _flags: Dictionary):
+func clear(_operands: PackedStringArray, _flags: Dictionary):
 	%Output.clear();
 
 # TODO -m = não adicionar quebra de linha
-func echo(args: PackedStringArray, flags: Dictionary):
-	var text = " ".join(args);
+func echo(operands: PackedStringArray, flags: Dictionary):
+	var text = " ".join(operands);
 	text = text.replace("[", "[lb]");
 	return text;
 
-func cd(args: PackedStringArray, _flags: Dictionary):
-	%FileSystem.navigate("".join(args));
+func cd(operands: PackedStringArray, flags: Dictionary):
+	%FileSystem.navigate("".join(operands));
 	%DisplayPath.text = %FileSystem.cur_path;
 
 # TODO -a = Mostrar arquivos escondidos
-func ls(args: PackedStringArray, flags: Dictionary):
-	var path = "".join(args);
-	var folders = %FileSystem.list_folders(path);
-	var files = %FileSystem.list_files(path);
-	
+func ls(operands: PackedStringArray, flags: Dictionary):
 	var tokens = PackedStringArray();
 	for folder: Folder in folders:
 		tokens.push_back("[color=#A0A0FF]%s[/color]" % folder.folder_name);
@@ -66,47 +77,48 @@ func ls(args: PackedStringArray, flags: Dictionary):
 	return " ".join(tokens);
 
 # TODO -p = Criar diretórios pais inexistentes
-func mkdir(args: PackedStringArray, flags: Dictionary):
+func mkdir(operands: PackedStringArray, flags: Dictionary):
 	# FIXME sanitizar nome da pasta
 	# FIXME não deixar recriar uma pasta que já existe
-	for arg in args:
-		if (arg != ""): %FileSystem.create_folder(arg);
+	for operand in operands:
+		if (operand != ""): %FileSystem.create_folder(operand);
 
-func touch(args: PackedStringArray, _flags: Dictionary):
+func touch(operands: PackedStringArray, flags: Dictionary):
 	# FIXME sanitizar nome do arquivo
 	# FIXME não deixar recriar um arquivo que já existe
-	for arg in args:
-		%FileSystem.create_file(arg);
+	for operand in operands:
+		%FileSystem.create_file(operand);
 
 # TODO -r = Apagar pastas
-func rm(args: PackedStringArray, flags: Dictionary):
+func rm(operands: PackedStringArray, flags: Dictionary):
+	#for arg in args:
+		#%FileSystem.remove_file()
 	pass
 
 # TODO -r = Copiar pastas
-func cp(args: PackedStringArray, flags: Dictionary):
+func cp(operands: PackedStringArray, flags: Dictionary):
 	pass
 
-func mv(args: PackedStringArray, _flags: Dictionary):
+func mv(operands: PackedStringArray, flags: Dictionary):
 	pass
 
-func cat(args: PackedStringArray, _flags: Dictionary):
+func cat(operands: PackedStringArray, flags: Dictionary):
 	pass
 
-func pwd(_args: PackedStringArray, _flags: Dictionary):
+func pwd(_operands: PackedStringArray, _flags: Dictionary):
 	return %FileSystem.cur_path.replace("[", "[lb]");
 
 # TODO -r = recursivo
-func grep(args: PackedStringArray, flags: Dictionary):
+func grep(operands: PackedStringArray, flags: Dictionary):
 	pass
 
 # Nome provisório, comando que prepara arquivo do projetor
-func zip(args: PackedStringArray, _flags: Dictionary):
+func zip(operands: PackedStringArray, flags: Dictionary):
 	pass
 
 # === Funções auxiliares === #
 
 # TODO echo hdausd/ads/*.txt <-- expansão, dificil, baixa prioridade
-# TODO adicionar "a b" ou a\ b como um argumento só
 # TODO substituir quebra de linha por [br]
 # TODO atualizar lastOutput
 # TODO mudar o nome dessa função, não me faz mt sentido esse
@@ -138,7 +150,8 @@ func parse(input: String):
 		var cmd = parse_command(cmds[i].get_string().strip_edges());
 		var op = ops[i] if i+1 != len(cmds) else null;
 		if(ACTIONS.get(cmd.command)):
-			var output = ACTIONS[cmd.command].call(cmd.args, cmd.flags);
+			var output = ACTIONS[cmd.command].call(cmd.operands, cmd.flags);
+			if output == null: break; # Se algum comando falhar, os outros são cancelados
 			match op:
 				">>": # Append
 					i+=1;
@@ -157,17 +170,17 @@ func parse(input: String):
 			break; # Se algum comando falhar, os outros são cancelados
 		i+=1;
 # Supõe que a entrada é um comando unico, sem redirecionamento
-# Argumentos para flags não foram implementados
-func parse_command(input: String) -> Dictionary:
+func parse_command(input: String):
 	var args_start = input.find(" ") # Identifica final do nome do comando
 	var cmd = input.substr(0, args_start) # Nome do comando executado
 	var args = PackedStringArray() # Lista com os argumentos recebidos
-	var flags = {} # Flags são um set mas poderiam ser uma lista sem problemas
 	
 	var quotes = ["\"", "\'"]
 	var insideQuotes = false
 	var currentParsedArg = ""
 	
+	# Separa os argumentos (incluindo operandos e flags) levando em consideração
+	# as aspas, mas não as barras invertidas
 	if args_start != -1:
 		var i = args_start + 1
 		while i < len(input):
@@ -186,15 +199,33 @@ func parse_command(input: String) -> Dictionary:
 			args.append(currentParsedArg)
 			currentParsedArg = ""
 	
-	for arg: String in args:
-		if(len(arg) > 0 and arg[0] == "-"):
-			# Como tou supondo que nenhuma flag tem argumento,
-			# O argumento da flag é sempre null
-			flags.set(arg.substr(1), null)
+	# Na lista de argumentos, separa as flags dos operandos, definindo os estados
+	# de cada flag que não recebe argumentos como true ou false e os das que recebem
+	# argumentos como uma string com o respectivo argumento
+	var possibleFlags = FLAGS_DESC.get(cmd)
+	var operands = PackedStringArray()
+	var flags = Dictionary()
+	var i = 0
+	while i < args.size():
+		if len(args[i]) == 2 and args[i][0] == "-" and possibleFlags.get(args[i][1]) != null:
+			if possibleFlags.get(args[i][1]):
+				if i + 1 < args.size():
+					flags.set(args[i][1], args[i+1])
+					i+=1
+				else:
+					t_print("%s: a opção requer um argumento -- \"%s\"" % [cmd, args[i][1]])
+					return null
+		else:
+			operands.push_back(args[i])
+		i+=1
+	if possibleFlags != null:
+		for flag in possibleFlags:
+			if flags.get(flag) == null:
+				flags.set(flag, false)
 	
 	return {
 		"command": cmd,
-		"args": args,
+		"operands": operands,
 		"flags": flags
 	}
 
