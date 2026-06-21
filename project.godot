@@ -21,6 +21,7 @@ SoundManager="*uid://cws43rysw8u1n"
 Inventory="*uid://b6uqys2xdax3u"
 NavegationManager="*uid://cokq8wbeqkjdy"
 DialogueManager="*uid://csl71u3j5reeq"
+ProgressionManager="*uid://cnq16gxkkljlg"
 
 [dotnet]
 
