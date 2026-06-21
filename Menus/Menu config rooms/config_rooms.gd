@@ -19,4 +19,4 @@ func _on_slider_som_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(bus_index, value)
 
 func _on_salvar_e_sair_pressed() -> void:
-	pass # Replace with function body.
+	PersistanceManager.save_game();

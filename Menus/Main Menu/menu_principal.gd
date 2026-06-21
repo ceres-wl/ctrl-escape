@@ -6,6 +6,8 @@ var config = ConfigFile.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$"CanvasLayer/ColorRect/Menu Config/Slider musica".value = MusicManager.obter_volume_salvo()
+	PersistanceManager.load_game();
+
 #TODO: Colocar para aparecer mensagem de confirmaçao
 
 func _on_exit_pressed():

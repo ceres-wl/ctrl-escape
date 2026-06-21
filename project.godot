@@ -22,10 +22,15 @@ Inventory="*uid://b6uqys2xdax3u"
 NavegationManager="*uid://cokq8wbeqkjdy"
 DialogueManager="*uid://csl71u3j5reeq"
 ProgressionManager="*uid://cnq16gxkkljlg"
+PersistanceManager="*uid://bren6v515r2in"
 
 [dotnet]
 
 project/assembly_name="ctrl-escape"
+
+[global_group]
+
+persist=""
 
 [input]
 

@@ -17,6 +17,9 @@ var cur_path: String = "/"; # Caminho atual
 var lastModifiedFolder = null;
 var lastModifiedFile = null;
 
+func _ready():
+	add_to_group("persist");
+
 func navigate(path: String):
 	var folder = resolve_path(path, true);
 	if(folder):
@@ -148,3 +151,9 @@ func resolve_path_tokens(tokens: PackedStringArray, cur: Folder, absolute: bool 
 		cur = cur.get_folder(token);
 		if(cur == null): break;
 	return cur;
+
+func save():
+	return { "dir": "oi" }
+
+func load_self(data: Dictionary):
+	create_folder(data.get("dir"));
