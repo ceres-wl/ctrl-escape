@@ -1,10 +1,12 @@
 extends item
+class_name item_zoom
+
+@export var cena_zoom : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass 
+	super()
+	type_atual = type_item.ZOOM
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func open_zoom() -> void:
+	NavegationManager.start_zoom(cena_zoom)

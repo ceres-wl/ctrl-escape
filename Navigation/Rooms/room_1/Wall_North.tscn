@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dimudlqprosbk"]
 
 [ext_resource type="PackedScene" uid="uid://2ac0nxi7oaqc" path="res://Navigation/Walls/Wall.tscn" id="1_hv52b"]
-[ext_resource type="PackedScene" uid="uid://b8wuvm5gho78w" path="res://Navigation/Itens/Item_Terminal.tscn" id="2_2r53r"]
+[ext_resource type="PackedScene" uid="uid://ojxks5n2fxmk" path="res://Navigation/Itens/item_zoom.tscn" id="2_u6nm6"]
 [ext_resource type="Texture2D" uid="uid://cdun88q457rys" path="res://Arts/cela.png" id="3_2wbvc"]
+[ext_resource type="PackedScene" uid="uid://cm1nfskboxif8" path="res://Terminal/terminal.tscn" id="3_ilubv"]
 [ext_resource type="Texture2D" uid="uid://dpicov6jgo0da" path="res://Arts/Tux.png" id="4_7ey5d"]
+[ext_resource type="Texture2D" uid="uid://csjo5vrc7sti0" path="res://Arts/computador_com_pen_drive_branco.png" id="4_pdbst"]
 [ext_resource type="Texture2D" uid="uid://uuq4l8vamkib" path="res://Arts/escrivaninha.png" id="5_dlxfm"]
 [ext_resource type="Texture2D" uid="uid://bjjaa661d4ve0" path="res://Arts/cadeira.png" id="6_2ic7n"]
 [ext_resource type="Texture2D" uid="uid://qlwmseky48hv" path="res://Arts/barras_cela.png" id="7_7ey5d"]
@@ -15,8 +17,10 @@
 
 [node name="Wall" unique_id=1256029917 instance=ExtResource("1_hv52b")]
 
-[node name="Item_Terminal" parent="." index="1" unique_id=107717112 instance=ExtResource("2_2r53r")]
+[node name="Item_Zoom" parent="." index="1" unique_id=107717112 instance=ExtResource("2_u6nm6")]
 position = Vector2(170, 345)
+cena_zoom = ExtResource("3_ilubv")
+item_texture = ExtResource("4_pdbst")
 
 [node name="Cela" type="TextureRect" parent="." index="2" unique_id=1205583534]
 offset_left = 535.0

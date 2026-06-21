@@ -1,7 +1,7 @@
 extends Node
 
 var current_room : Node = null
-var terminal
+var scene
 
 func _ready() -> void:
 	$right_arrow.pressed.connect(_on_right_arrow_pressed)
@@ -25,6 +25,12 @@ func hide_arrows() -> void:
 	$right_arrow.visible = false
 	$left_arrow.visible = false
 	
+func show_back_zoom() -> void:
+	$CanvasLayer.visible = true
+	
+func hide_back_zoom() -> void:
+	$CanvasLayer.visible = false
+	
 func _on_right_arrow_pressed():
 	if current_room != null:
 		current_room.mudar_parede(1)
@@ -37,14 +43,19 @@ func _on_left_arrow_pressed():
 	else:
 		print("Erro: Nenhuma sala atual definida!")
 
-func finish_terminal():
-	show_arrows()
-	if terminal != null:
-		terminal.queue_free()
-		terminal = null
+func _on_back_zoom_pressed() -> void:
+	finish_zoom()
 
-func start_terminal():
+func finish_zoom():
+	show_arrows()
+	hide_back_zoom()
+	if scene != null:
+		scene.queue_free()
+		scene = null
+
+func start_zoom(cena_zoom:PackedScene):
 	hide_arrows()
-	terminal = load("res://Terminal/terminal.tscn").instantiate()
-	add_child(terminal)
+	show_back_zoom()
+	scene = cena_zoom.instantiate()
+	add_child(scene)
 	

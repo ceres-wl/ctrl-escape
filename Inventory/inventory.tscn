@@ -72,7 +72,7 @@ unicode = 56
 [sub_resource type="Shortcut" id="Shortcut_cnamu"]
 events = [SubResource("InputEventKey_a7xpp")]
 
-[node name="Inventory" type="Node" unique_id=1803062912]
+[node name="Inventory" type="Node" unique_id=1011375304]
 script = ExtResource("1_u5a7d")
 
 [node name="barra_expandir" type="TextureButton" parent="." unique_id=954160796]

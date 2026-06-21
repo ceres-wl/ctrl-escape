@@ -5,8 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://b0cvfvkocwww3" path="res://Arts/Computador terminal.png" id="2_osw5p"]
 [ext_resource type="Texture2D" uid="uid://bobtgwwcc5wt5" path="res://Arts/botoes/enviar_terminal.png" id="3_aig0n"]
 [ext_resource type="Texture2D" uid="uid://25tnkdy7tsrk" path="res://Arts/botoes/enviar_terminal_claro.png" id="4_ccini"]
-[ext_resource type="Texture2D" uid="uid://l6pftu5y7o2t" path="res://Arts/botoes/seta navegação.png" id="4_sd0vt"]
-[ext_resource type="Texture2D" uid="uid://b76augd2k5axi" path="res://Arts/botoes/seta navegação clara.png" id="5_rke4j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rke4j"]
 bg_color = Color(0.08235294, 0.08235294, 0.08235294, 1)
@@ -102,20 +100,5 @@ offset_top = -94.0
 offset_right = 598.0
 offset_bottom = -71.0
 
-[node name="Botao_voltar" type="TextureButton" parent="." unique_id=777871600]
-layout_mode = 0
-offset_left = 593.0
-offset_top = 601.0
-offset_right = 634.0
-offset_bottom = 642.0
-rotation = 1.5707964
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_sd0vt")
-texture_pressed = ExtResource("5_rke4j")
-texture_hover = ExtResource("5_rke4j")
-ignore_texture_size = true
-stretch_mode = 0
-
 [connection signal="text_submitted" from="Container_de_digitacao/Input" to="." method="_on_input_text_submitted"]
 [connection signal="pressed" from="Submit" to="." method="_on_submit_pressed"]
-[connection signal="button_up" from="Botao_voltar" to="." method="_on_botao_voltar_button_up"]
