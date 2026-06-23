@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://k2gjprqnfsp2" path="res://Navigation/Rooms/room_1/zoom_keypad_safe.tscn" id="6_bxvjf"]
 
 [node name="Zoom_Safe" type="Node2D" unique_id=1370803449]
+texture_filter = 1
 
 [node name="Background" type="Sprite2D" parent="." unique_id=2138914807]
 position = Vector2(-571, -235)
@@ -32,7 +33,10 @@ scale = Vector2(1.82, 1.82)
 texture = ExtResource("3_4ega6")
 
 [node name="Keypad" parent="." unique_id=107717112 instance=ExtResource("5_8dtgm")]
-position = Vector2(514, 208)
+offset_left = 514.0
+offset_top = 208.0
+offset_right = 514.0
+offset_bottom = 208.0
 scale = Vector2(0.51, 0.51)
 cena_zoom = ExtResource("6_bxvjf")
 item_name = "Keypad_cofre"
