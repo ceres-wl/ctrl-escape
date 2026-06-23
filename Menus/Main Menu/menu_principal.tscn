@@ -174,19 +174,26 @@ stretch_mode = 5
 
 [node name="Creditos" type="TextureRect" parent="CanvasLayer/ColorRect" unique_id=831626367]
 visible = false
-layout_mode = 0
-offset_left = 226.0
-offset_top = 77.0
-offset_right = 926.0
-offset_bottom = 577.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -250.0
+offset_right = 350.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("17_68770")
 
 [node name="Voltar_creditos" type="TextureButton" parent="CanvasLayer/ColorRect/Creditos" unique_id=807027233]
 layout_mode = 0
 offset_left = 24.0
-offset_top = 26.0
+offset_top = 24.0
 offset_right = 67.0
-offset_bottom = 68.0
+offset_bottom = 66.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("18_uhxpd")
 texture_pressed = ExtResource("19_rm1gh")

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://k2gjprqnfsp2"]
+
+[ext_resource type="Texture2D" uid="uid://d1oeuoq32c1mn" path="res://Arts/cofre.png" id="1_o7wcb"]
+[ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/keypad.png" id="2_g2ee0"]
+
+[node name="Zoom_keypad_safe" type="Node2D" unique_id=689376110]
+
+[node name="Cofre" type="TextureRect" parent="." unique_id=1224773036]
+offset_left = -197.0
+offset_top = -444.00003
+offset_right = 103.0
+offset_bottom = -130.00003
+scale = Vector2(5, 5)
+texture = ExtResource("1_o7wcb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=314864308]
+offset_left = 364.0
+offset_top = 47.0
+offset_right = 660.0
+offset_bottom = 439.0
+scale = Vector2(1.41, 1.41)
+texture = ExtResource("2_g2ee0")

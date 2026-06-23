@@ -1,7 +1,7 @@
 extends Node
 
 var current_room : Node = null
-var scene
+var zoom_stack : Array[Node] = []
 
 func _ready() -> void:
 	$right_arrow.pressed.connect(_on_right_arrow_pressed)
@@ -47,15 +47,17 @@ func _on_back_zoom_pressed() -> void:
 	finish_zoom()
 
 func finish_zoom():
-	show_arrows()
-	hide_back_zoom()
-	if scene != null:
-		scene.queue_free()
-		scene = null
-
-func start_zoom(cena_zoom:PackedScene):
+	if zoom_stack.is_empty():
+		return
+	var ultimo_zoom = zoom_stack.pop_back()
+	ultimo_zoom.queue_free()
+	if zoom_stack.is_empty():
+		show_arrows()
+		hide_back_zoom()
+func start_zoom(cena_zoom: PackedScene):
 	hide_arrows()
 	show_back_zoom()
-	scene = cena_zoom.instantiate()
-	add_child(scene)
+	var novo_zoom = cena_zoom.instantiate()
+	add_child(novo_zoom)
+	zoom_stack.push_back(novo_zoom)
 	

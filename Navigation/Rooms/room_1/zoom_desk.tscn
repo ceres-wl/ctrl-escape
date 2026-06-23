@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dv12fjeha8myt"]
+
+[ext_resource type="Texture2D" uid="uid://bj4a2t5cx7oo3" path="res://Arts/jogo background vazio.png" id="1_vdlrr"]
+[ext_resource type="Texture2D" uid="uid://uuq4l8vamkib" path="res://Arts/escrivaninha.png" id="2_7nufj"]
+[ext_resource type="Texture2D" uid="uid://b2qxlb3miiy7i" path="res://Arts/gaveta_aberta.png" id="3_lrfk7"]
+[ext_resource type="Texture2D" uid="uid://bjjaa661d4ve0" path="res://Arts/cadeira.png" id="3_xpnlv"]
+[ext_resource type="Texture2D" uid="uid://c7snmcf23gj3t" path="res://Arts/gaveta_aberta grande.png" id="4_o4e1f"]
+[ext_resource type="Texture2D" uid="uid://yfvrxo8xfm1n" path="res://Arts/computador.png" id="6_g761v"]
+
+[node name="Zoom_desk" type="Node2D" unique_id=1883266136]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=2113216562]
+position = Vector2(1623, -140)
+scale = Vector2(3, 3)
+texture = ExtResource("1_vdlrr")
+
+[node name="Mesa" type="TextureRect" parent="." unique_id=1142256359]
+offset_left = 100.0
+offset_top = 77.0
+offset_right = 1007.0
+offset_bottom = 473.0
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("2_7nufj")
+
+[node name="Gaveta_Fina_Esquerda" type="TextureRect" parent="Mesa" unique_id=1092592351]
+visible = false
+layout_mode = 0
+offset_left = 42.727272
+offset_top = 48.181816
+offset_right = 335.72726
+offset_bottom = 163.18182
+texture = ExtResource("3_lrfk7")
+
+[node name="Gaveta_Fina_Direita" type="TextureRect" parent="Mesa" unique_id=1609826503]
+visible = false
+layout_mode = 0
+offset_left = 335.45453
+offset_top = 48.181816
+offset_right = 628.4545
+offset_bottom = 163.18182
+texture = ExtResource("3_lrfk7")
+
+[node name="Gaveta_Grande_Baixo" type="TextureRect" parent="Mesa" unique_id=158290610]
+visible = false
+layout_mode = 0
+offset_left = 660.90906
+offset_top = 229.0909
+offset_right = 856.90906
+offset_bottom = 409.09088
+texture = ExtResource("4_o4e1f")
+
+[node name="Gaveta_Grande_Cima" type="TextureRect" parent="Mesa" unique_id=71512554]
+visible = false
+layout_mode = 0
+offset_left = 660.90906
+offset_top = 93.63636
+offset_right = 856.90906
+offset_bottom = 273.63638
+texture = ExtResource("4_o4e1f")
+
+[node name="Cadeira" type="TextureRect" parent="." unique_id=803235234]
+offset_left = 28.000002
+offset_top = 119.0
+offset_right = 125.0
+offset_bottom = 270.0
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("3_xpnlv")
+
+[node name="Computador" type="TextureRect" parent="." unique_id=1548860985]
+offset_left = 196.99998
+offset_top = -181.0
+offset_right = 365.0
+offset_bottom = -106.0
+scale = Vector2(3.45, 3.45)
+texture = ExtResource("6_g761v")

@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bjjaa661d4ve0" path="res://Arts/cadeira.png" id="6_2ic7n"]
 [ext_resource type="Texture2D" uid="uid://qlwmseky48hv" path="res://Arts/barras_cela.png" id="7_7ey5d"]
 [ext_resource type="Texture2D" uid="uid://c166iohy5pcc2" path="res://Arts/ventilação.png" id="8_dlxfm"]
+[ext_resource type="PackedScene" uid="uid://dv12fjeha8myt" path="res://Navigation/Rooms/room_1/zoom_desk.tscn" id="9_pdbst"]
 [ext_resource type="Script" uid="uid://bdwonr0q60b88" path="res://Navigation/Rooms/room_1/interative_tux.gd" id="11_5ik0t"]
 [ext_resource type="PackedScene" uid="uid://cqcllps8341ny" path="res://Navigation/Itens/Item_Collectible.tscn" id="11_px4p8"]
 [ext_resource type="Texture2D" uid="uid://cpjn73cfknjsf" path="res://Arts/cabo_enrolado_inclinado.png" id="12_b2q53"]
@@ -17,8 +18,9 @@
 
 [node name="Wall" unique_id=1256029917 instance=ExtResource("1_hv52b")]
 
-[node name="Item_Zoom" parent="." index="1" unique_id=107717112 instance=ExtResource("2_u6nm6")]
-position = Vector2(171, 323)
+[node name="Computador" parent="." index="1" unique_id=107717112 instance=ExtResource("2_u6nm6")]
+position = Vector2(155, 309)
+scale = Vector2(1.2, 1.2)
 cena_zoom = ExtResource("3_ilubv")
 item_texture = ExtResource("4_pntbb")
 
@@ -36,20 +38,18 @@ offset_right = 957.0
 offset_bottom = 569.0
 texture = ExtResource("4_7ey5d")
 
-[node name="Mesa" type="TextureRect" parent="." index="4" unique_id=842376985]
-offset_left = 126.00001
-offset_top = 402.0
-offset_right = 1033.0
-offset_bottom = 798.0
+[node name="Mesa" parent="." index="4" unique_id=1091249534 instance=ExtResource("2_u6nm6")]
+position = Vector2(126, 402)
 scale = Vector2(0.4, 0.4)
-mouse_filter = 2
-texture = ExtResource("5_dlxfm")
+cena_zoom = ExtResource("9_pdbst")
+item_name = "Mesa"
+item_texture = ExtResource("5_dlxfm")
 
 [node name="Cadeira" type="TextureRect" parent="." index="5" unique_id=1165250576]
-offset_left = 135.0
-offset_top = 404.0
-offset_right = 255.0
-offset_bottom = 590.80414
+offset_left = 100.0
+offset_top = 418.0
+offset_right = 220.0
+offset_bottom = 604.80414
 mouse_filter = 2
 texture = ExtResource("6_2ic7n")
 
