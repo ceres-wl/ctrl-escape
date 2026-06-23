@@ -232,6 +232,8 @@ func parse_command(input: String):
 				else:
 					t_print("%s: a opção requer um argumento -- \"%s\"" % [cmd, args[i][1]])
 					return null
+			else:
+				flags.set(args[i][1], true)
 		else:
 			operands.push_back(args[i])
 		i+=1
