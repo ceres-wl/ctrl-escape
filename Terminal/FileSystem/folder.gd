@@ -14,10 +14,16 @@ func _init(name_: String, parent_: Folder):
 	parent = parent_;
 
 func create_folder(name_: String):
-	folders.set(name_, Folder.new(name_, self));
+	# Não é permitido haver uma pasta e um arquivo com o mesmo nome
+	# em um mesmo diretório
+	if (not folders.get(name_) and not files.get(name_)):
+		folders.set(name_, Folder.new(name_, self));
 
 func create_file(name_: String):
-	files.set(name_, File.new(name_));
+	# Não é permitido haver uma pasta e um arquivo com o mesmo nome
+	# em um mesmo diretório
+	if (not folders.get(name_) and not files.get(name_)):
+		files.set(name_, File.new(name_));
 
 # TODO remover recursivamente
 func remove_folder(name_: String):
