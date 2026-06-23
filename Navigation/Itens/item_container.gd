@@ -1,10 +1,11 @@
 extends item
 
 @export var other_texture : Texture2D
+var original_texture = icon
+
 var open = false
 
 func _ready():
-	super()
 	type_atual = type_item.CONTAINER
 	for filho in get_children():
 		if filho is item:
@@ -14,9 +15,9 @@ func change_container():
 	open = !open
 	
 	if(open):
-		$Button.icon = other_texture
+		icon = other_texture
 	else:
-		$Button.icon = item_texture
+		icon = original_texture
 
 	for filho in get_children():
 		if filho is item:
