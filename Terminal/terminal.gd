@@ -56,10 +56,10 @@ func t_print(text_: String, sanitize = false, newline = true):
 func clear(_operands: PackedStringArray, _flags: Dictionary):
 	%Output.clear();
 
-# TODO -m = não adicionar quebra de linha
 func echo(operands: PackedStringArray, flags: Dictionary):
 	var text = " ".join(operands);
-	text = text.replace("[", "[lb]");
+	if not flags.get("n"):
+		text = text + "\n"
 	return text;
 
 func cd(operands: PackedStringArray, flags: Dictionary):
