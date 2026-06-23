@@ -1,11 +1,25 @@
-extends Node
+extends item
 
+@export var other_texture : Texture2D
+var open = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _ready():
+	super()
+	type_atual = type_item.CONTAINER
+	for filho in get_children():
+		if filho is item:
+			filho.visible = false
 
+func change_container():
+	open = !open
+	
+	if(open):
+		$Button.icon = other_texture
+	else:
+		$Button.icon = item_texture
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	for filho in get_children():
+		if filho is item:
+			if(filho.type_atual != type_item.COLLECTIBLE || !filho.coletado):
+				filho.visible = open
+	

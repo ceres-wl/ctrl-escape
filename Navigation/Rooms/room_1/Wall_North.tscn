@@ -12,8 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://c166iohy5pcc2" path="res://Arts/ventilação.png" id="8_dlxfm"]
 [ext_resource type="PackedScene" uid="uid://dv12fjeha8myt" path="res://Navigation/Rooms/room_1/zoom_desk.tscn" id="9_pdbst"]
 [ext_resource type="Script" uid="uid://bdwonr0q60b88" path="res://Navigation/Rooms/room_1/interative_tux.gd" id="11_5ik0t"]
-[ext_resource type="PackedScene" uid="uid://cqcllps8341ny" path="res://Navigation/Itens/Item_Collectible.tscn" id="11_px4p8"]
-[ext_resource type="Texture2D" uid="uid://cpjn73cfknjsf" path="res://Arts/cabo_enrolado_inclinado.png" id="12_b2q53"]
 [ext_resource type="PackedScene" uid="uid://crsbn5p4f3nj8" path="res://Dialogue/DialoguePopup.tscn" id="12_px4p8"]
 
 [node name="Wall" unique_id=1256029917 instance=ExtResource("1_hv52b")]
@@ -75,8 +73,3 @@ offset_bottom = 538.0
 script = ExtResource("11_5ik0t")
 
 [node name="DialoguePopup" parent="." index="9" unique_id=36251990 instance=ExtResource("12_px4p8")]
-
-[node name="Item_coletavel" parent="." index="10" unique_id=803150324 instance=ExtResource("11_px4p8")]
-position = Vector2(503, 559)
-item_name = "cabo"
-item_texture = ExtResource("12_b2q53")

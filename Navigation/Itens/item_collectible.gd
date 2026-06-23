@@ -1,5 +1,6 @@
 extends item
 class_name item_coletavel
+var coletado = false
 
 func _ready():
 	super()
@@ -8,3 +9,4 @@ func _ready():
 func collect() -> void:
 	if(Inventory.add_item(self)):
 		self.visible = false
+		coletado = true
