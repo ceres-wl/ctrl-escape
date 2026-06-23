@@ -66,7 +66,6 @@ func cd(operands: PackedStringArray, flags: Dictionary):
 	%FileSystem.navigate("".join(operands));
 	%DisplayPath.text = %FileSystem.cur_path;
 
-# TODO -a = Mostrar arquivos escondidos
 func ls(operands: PackedStringArray, flags: Dictionary):
 	var tokens = PackedStringArray();
 	var i = 0
@@ -77,17 +76,33 @@ func ls(operands: PackedStringArray, flags: Dictionary):
 		
 		var folders = %FileSystem.list_folders(path);
 		var files = %FileSystem.list_files(path);
+		var folder_tokens = PackedStringArray()
+		var file_tokens = PackedStringArray()
 		
 		for folder: Folder in folders:
-			if folder.folder_name.find(" ") != -1:
-				tokens.push_back("'[color=#A0A0FF]%s[/color]'" % folder.folder_name);
-			else:
-				tokens.push_back("[color=#A0A0FF]%s[/color]" % folder.folder_name);
+			if not flags.get("a") and folder.folder_name[0] == ".": continue
+			folder_tokens.push_back(folder.folder_name)
 		for file: File in files:
-			if file.file_name.find(" ") != -1:
-				tokens.push_back("'[color=#FFA0A0]%s[/color]'" % file.file_name);
-			else:
-				tokens.push_back("[color=#FFA0A0]%s[/color]" % file.file_name);
+			if not flags.get("a") and file.file_name[0] == ".": continue
+			file_tokens.push_back(file.file_name)
+		
+		folder_tokens.sort()
+		file_tokens.sort()
+		
+		var j = 0
+		while j < len(folder_tokens):
+			if folder_tokens[j].find(" ") != -1:
+				folder_tokens[j] = "\'%s\'" % folder_tokens[j]
+			folder_tokens[j] = "[color=#A0A0FF]%s[/color]" % folder_tokens[j]
+			j+=1
+		j = 0
+		while j < len(file_tokens):
+			if file_tokens[j].find(" ") != -1:
+				file_tokens[j] = "\'%s\'" % file_tokens[j]
+			file_tokens[j] = "[color=#FFA0A0]%s[/color]" % file_tokens[j]
+			j+=1
+		tokens = tokens + folder_tokens + file_tokens
+		
 		i+=1
 		if (i >= operands.size()): break;
 	
