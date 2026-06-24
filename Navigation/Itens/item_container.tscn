@@ -6,3 +6,4 @@
 [node name="Item" unique_id=107717112 instance=ExtResource("1_1iy82")]
 script = ExtResource("2_7qgwh")
 other_texture = null
+original_texture = null

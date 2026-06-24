@@ -14,12 +14,6 @@ var root: Folder = Folder.new("", null);
 var cur_folder: Folder = root;
 var cur_path: String = "/"; # Caminho atual
 
-var lastModifiedFolder = null;
-var lastModifiedFile = null;
-
-func _ready():
-	add_to_group("persist");
-
 func navigate(path: String):
 	var folder = resolve_path(path, true);
 	if(folder):
@@ -155,8 +149,15 @@ func resolve_path_tokens(tokens: PackedStringArray, cur: Folder, absolute: bool 
 		if(cur == null): break;
 	return cur;
 
+# TEST FIXME TODO, RETIRAR ISSO DAQUI POR FAVOR É SÓ PRA TESTAR!!!!
+func _ready():
+	PersistanceManager.load_game();
+
 func save():
-	return { "dir": "oi" }
+	return {
+		"path": get_path(),
+		"dirs": root._to_string()
+	}
 
 func load_self(data: Dictionary):
-	create_folder(data.get("dir"));
+	root.load_string(data.dirs);
