@@ -37,7 +37,7 @@ offset_bottom = 41.739
 mouse_default_cursor_shape = 0
 icon = ExtResource("5_gdwrx")
 other_texture = ExtResource("3_lrfk7")
-original_texture = null
+original_texture = ExtResource("5_gdwrx")
 
 [node name="Gaveta_Fina_Esquerda" parent="Mesa" unique_id=706236174 instance=ExtResource("7_o4e1f")]
 layout_mode = 0
@@ -48,7 +48,7 @@ offset_bottom = 41.73913
 mouse_default_cursor_shape = 0
 icon = ExtResource("5_gdwrx")
 other_texture = ExtResource("3_lrfk7")
-original_texture = null
+original_texture = ExtResource("5_gdwrx")
 
 [node name="Gaveta_Grande_Baixo" parent="Mesa" unique_id=576642734 instance=ExtResource("7_o4e1f")]
 layout_mode = 0
@@ -60,7 +60,7 @@ scale = Vector2(0.87, 0.87)
 mouse_default_cursor_shape = 0
 icon = ExtResource("8_g761v")
 other_texture = ExtResource("4_o4e1f")
-original_texture = null
+original_texture = ExtResource("8_g761v")
 
 [node name="Cabo" parent="Mesa/Gaveta_Grande_Baixo" unique_id=291184137 instance=ExtResource("7_3m4gn")]
 layout_mode = 0
@@ -82,7 +82,7 @@ scale = Vector2(0.86956525, 0.86956525)
 mouse_default_cursor_shape = 0
 icon = ExtResource("8_g761v")
 other_texture = ExtResource("4_o4e1f")
-original_texture = null
+original_texture = ExtResource("8_g761v")
 
 [node name="Cadeira" type="TextureRect" parent="." unique_id=803235234]
 offset_left = 28.000002

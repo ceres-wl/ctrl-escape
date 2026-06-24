@@ -18,7 +18,7 @@ func get_slots():
 func _update_hotbar():
 	for slot:TextureButton in slots:
 		var novo_item = Inventory.hotbar[slot.get_index()]
-		slot.texture_normal = novo_item.item_texture if novo_item else null
+		slot.texture_normal = novo_item.icon if novo_item else null
 
 func _highlight_slot(slot_index:int):
 	for i in range(8):
@@ -30,7 +30,7 @@ func _highlight_slot(slot_index:int):
 	selected_label.visible = true
 
 func show_item(item_zoom: item_coletavel):
-	icon.texture = item_zoom.item_texture
+	icon.texture = item_zoom.icon
 	title.text = item_zoom.item_name
 	$"../../Zoom_item".visible = true
 

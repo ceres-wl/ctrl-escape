@@ -13,11 +13,12 @@ func _ready():
 
 func change_container():
 	open = !open
-	
 	if(open):
 		icon = other_texture
+		size = other_texture.get_size()
 	else:
 		icon = original_texture
+		size = original_texture.get_size()
 
 	for filho in get_children():
 		if filho is item:

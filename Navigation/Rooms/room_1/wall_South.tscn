@@ -32,8 +32,11 @@ offset_bottom = 191.0
 texture = ExtResource("3_lda0m")
 
 [node name="Keypad" parent="." index="4" unique_id=107717112 instance=ExtResource("6_tsycu")]
-position = Vector2(943, 278)
+offset_left = 943.0
+offset_top = 278.0
+offset_right = 943.0
+offset_bottom = 278.0
 scale = Vector2(0.15, 0.15)
+icon = ExtResource("5_2n2lb")
 cena_zoom = ExtResource("7_q2fxt")
 item_name = "Keypad_elevador"
-item_texture = ExtResource("5_2n2lb")

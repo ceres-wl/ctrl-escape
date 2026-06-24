@@ -24,8 +24,11 @@ offset_bottom = 241.0
 texture = ExtResource("3_spbat")
 
 [node name="Cofre" parent="." index="3" unique_id=107717112 instance=ExtResource("4_unegd")]
-position = Vector2(770, 395)
+offset_left = 770.0
+offset_top = 395.0
+offset_right = 770.0
+offset_bottom = 395.0
 scale = Vector2(0.45, 0.45)
+icon = ExtResource("4_van3n")
 cena_zoom = ExtResource("5_usd2d")
 item_name = "Cofre"
-item_texture = ExtResource("4_van3n")
