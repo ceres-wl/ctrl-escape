@@ -83,8 +83,9 @@ func set_content(path: String, content: String):
 	file.set_content(content);
 	return true;
 
-# Cria arquivo no path se ele não existe e o folder pai existe
-func resolve_file(path):
+# Caso create_if_missing seja verdadeiro, cria arquivo no path se ele
+# não existe e o folder pai existe
+func resolve_file(path, create_if_missing = true):
 	var formatted = format_path(path);
 	var file_name = formatted.tokens[formatted.tokens.size()-1]
 	formatted.tokens.remove_at(formatted.tokens.size()-1);
@@ -92,12 +93,12 @@ func resolve_file(path):
 	var folder = resolve_path_tokens(formatted.tokens, formatted.cur);
 	if(!folder):
 		return null;
-	if(!folder.get_file(file_name)):
+	if(!folder.get_file(file_name) and create_if_missing):
 		create_file(path);
 	return folder.get_file(file_name);
 
 func get_content(path: String):
-	var file = resolve_file(path)
+	var file = resolve_file(path, false)
 	if(!file):
 		return null
 	return file.content
