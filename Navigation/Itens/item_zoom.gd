@@ -3,7 +3,6 @@ class_name item_zoom
 
 @export var cena_zoom : PackedScene
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	type_atual = type_item.ZOOM
 

@@ -17,10 +17,13 @@
 [node name="Wall" unique_id=1256029917 instance=ExtResource("1_hv52b")]
 
 [node name="Computador" parent="." index="1" unique_id=107717112 instance=ExtResource("2_u6nm6")]
-position = Vector2(155, 309)
+offset_left = 155.0
+offset_top = 309.0
+offset_right = 155.0
+offset_bottom = 309.0
 scale = Vector2(1.2, 1.2)
+icon = ExtResource("4_pntbb")
 cena_zoom = ExtResource("3_ilubv")
-item_texture = ExtResource("4_pntbb")
 
 [node name="Cela" type="TextureRect" parent="." index="2" unique_id=1205583534]
 offset_left = 535.0
@@ -37,11 +40,14 @@ offset_bottom = 569.0
 texture = ExtResource("4_7ey5d")
 
 [node name="Mesa" parent="." index="4" unique_id=1091249534 instance=ExtResource("2_u6nm6")]
-position = Vector2(126, 402)
+offset_left = 126.0
+offset_top = 402.0
+offset_right = 126.0
+offset_bottom = 402.0
 scale = Vector2(0.4, 0.4)
+icon = ExtResource("5_dlxfm")
 cena_zoom = ExtResource("9_pdbst")
 item_name = "Mesa"
-item_texture = ExtResource("5_dlxfm")
 
 [node name="Cadeira" type="TextureRect" parent="." index="5" unique_id=1165250576]
 offset_left = 100.0

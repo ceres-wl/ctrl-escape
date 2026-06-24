@@ -5,12 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://b2qxlb3miiy7i" path="res://Arts/gaveta_aberta.png" id="3_lrfk7"]
 [ext_resource type="Texture2D" uid="uid://bjjaa661d4ve0" path="res://Arts/cadeira.png" id="3_xpnlv"]
 [ext_resource type="Texture2D" uid="uid://c7snmcf23gj3t" path="res://Arts/gaveta_aberta grande.png" id="4_o4e1f"]
-[ext_resource type="Texture2D" uid="uid://d4s58esofu55" path="res://Arts/gaveta_fechada.png" id="5_gdwrx"]
 [ext_resource type="Texture2D" uid="uid://yfvrxo8xfm1n" path="res://Arts/computador.png" id="6_g761v"]
 [ext_resource type="PackedScene" uid="uid://cqcllps8341ny" path="res://Navigation/Itens/Item_Collectible.tscn" id="7_3m4gn"]
 [ext_resource type="PackedScene" uid="uid://tb142t3p2d75" path="res://Navigation/Itens/item_container.tscn" id="7_o4e1f"]
 [ext_resource type="Texture2D" uid="uid://3cy7i0dtlwwl" path="res://Arts/gaveta_grande_fechada.png" id="8_g761v"]
-[ext_resource type="Texture2D" uid="uid://cpjn73cfknjsf" path="res://Arts/cabo_enrolado_inclinado.png" id="8_gdwrx"]
 
 [node name="Zoom_desk" type="Node2D" unique_id=1883266136]
 texture_filter = 1
@@ -34,7 +32,9 @@ offset_left = 328.9565
 offset_top = 41.739
 offset_right = 328.9565
 offset_bottom = 41.739
-item_texture = ExtResource("5_gdwrx")
+mouse_default_cursor_shape = 0
+icon = ExtResource("3_lrfk7")
+flat = false
 other_texture = ExtResource("3_lrfk7")
 
 [node name="Gaveta_Fina_Esquerda" parent="Mesa" unique_id=706236174 instance=ExtResource("7_o4e1f")]
@@ -43,7 +43,9 @@ offset_left = 38.260864
 offset_top = 41.73913
 offset_right = 38.260864
 offset_bottom = 41.73913
-item_texture = ExtResource("5_gdwrx")
+mouse_default_cursor_shape = 0
+icon = ExtResource("3_lrfk7")
+flat = false
 other_texture = ExtResource("3_lrfk7")
 
 [node name="Gaveta_Grande_Baixo" parent="Mesa" unique_id=576642734 instance=ExtResource("7_o4e1f")]
@@ -53,7 +55,9 @@ offset_top = 223.47826
 offset_right = 657.3913
 offset_bottom = 223.47826
 scale = Vector2(0.87, 0.87)
-item_texture = ExtResource("8_g761v")
+mouse_default_cursor_shape = 0
+icon = ExtResource("8_g761v")
+flat = false
 other_texture = ExtResource("4_o4e1f")
 
 [node name="Cabo" parent="Mesa/Gaveta_Grande_Baixo" unique_id=291184137 instance=ExtResource("7_3m4gn")]
@@ -63,7 +67,8 @@ offset_top = 38.98044
 offset_right = 39.97998
 offset_bottom = 38.98044
 scale = Vector2(1.1494254, 1.1494254)
-item_texture = ExtResource("8_gdwrx")
+mouse_default_cursor_shape = 0
+flat = false
 
 [node name="Gaveta_Grande_Cima" parent="Mesa" unique_id=1005308859 instance=ExtResource("7_o4e1f")]
 layout_mode = 0
@@ -72,7 +77,9 @@ offset_top = 87.82608
 offset_right = 657.3913
 offset_bottom = 87.82608
 scale = Vector2(0.86956525, 0.86956525)
-item_texture = ExtResource("8_g761v")
+mouse_default_cursor_shape = 0
+icon = ExtResource("8_g761v")
+flat = false
 other_texture = ExtResource("4_o4e1f")
 
 [node name="Cadeira" type="TextureRect" parent="." unique_id=803235234]
