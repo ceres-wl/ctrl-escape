@@ -58,6 +58,9 @@ func clear(_operands: PackedStringArray, _flags: Dictionary):
 
 func echo(operands: PackedStringArray, flags: Dictionary):
 	var text = " ".join(operands);
+	# Trata caractere de escape para quebra de linha (já que a barra invertida
+	# vem duplicada do input)
+	text = text.replace("\\n", "\n")
 	if not flags.get("n"):
 		text = text + "\n"
 	return text;
