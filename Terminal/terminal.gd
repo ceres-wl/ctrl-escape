@@ -142,6 +142,7 @@ func cat(operands: PackedStringArray, flags: Dictionary):
 	for operand in operands:
 		var content = %FileSystem.get_content(operand)
 		if (!content):
+			# TODO: Melhorar essa mensagem de erro
 			return "cat: %s: Arquivo ou diretório inexistente" % operand
 		output += content
 	return output
@@ -151,7 +152,21 @@ func pwd(_operands: PackedStringArray, _flags: Dictionary):
 
 # TODO -r = recursivo
 func grep(operands: PackedStringArray, flags: Dictionary):
-	pass
+	if (operands.size() < 2): return "grep: Passe pelo menos dois argumentos (o grep recebendo do stdin não está implementado neste jogo)"
+	var pattern = operands[0]
+	var concatenation = ""
+	var output = ""
+	for operand in operands.slice(1):
+		var content = %FileSystem.get_content(operand)
+		if (!content):
+			# TODO: Melhorar essa mensagem de erro
+			return "grep: %s: Arquivo ou diretório inexistente" % operand
+		concatenation += content + "\n"
+	var lines = concatenation.split("\n")
+	for line in lines:
+		if line.find(pattern) != -1:
+			output += line + "\n"
+	return output
 
 # Nome provisório, comando que prepara arquivo do projetor
 func zip(operands: PackedStringArray, flags: Dictionary):
