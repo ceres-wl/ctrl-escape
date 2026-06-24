@@ -65,17 +65,21 @@ func finish_zoom():
 	else:
 		show_arrows()
 		hide_back_zoom()
-	
-func start_zoom(cena_zoom: PackedScene):
+
+func setup_zoom(cena_zoom: PackedScene):
 	var path = cena_zoom.resource_path
 	if !zooms.has(path):
 		var instancia = cena_zoom.instantiate()
 		instancia.visible = false
 		add_child(instancia)
 		zooms[path] = instancia
+
+# Recebe o nó já instânciado
+func start_zoom(cena_zoom: PackedScene):
+	var cena = zooms[cena_zoom.resource_path]
 	if zoom_stack.size() > 0:
 		zoom_stack.back().visible = false
-	zooms[path].visible = true
-	zoom_stack.append(zooms[path])
+	cena.visible = true
+	zoom_stack.append(cena)
 	hide_arrows()
 	show_back_zoom()

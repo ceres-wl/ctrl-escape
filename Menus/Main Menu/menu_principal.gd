@@ -35,7 +35,7 @@ func _on_voltar_creditos_pressed() -> void:
 
 
 func _on_jogar_pressed() -> void:
-	NavegationManager.start_game()
+	NavigationManager.start_game()
 	# Fixme terminal tem que ser instanciado antes de poder rodar isso aqui
 	# PersistanceManager.load_game();
 	queue_free()

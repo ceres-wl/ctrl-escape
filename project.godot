@@ -14,12 +14,16 @@ config/name="ctrl-escape"
 run/main_scene="uid://p2r1wjffui68"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
+[audio]
+
+buses/default_bus_layout="uid://c7qyf58hrcvx5"
+
 [autoload]
 
 MusicManager="*uid://bmoo1io16ak65"
 SoundManager="*uid://cws43rysw8u1n"
 Inventory="*uid://b6uqys2xdax3u"
-NavegationManager="*uid://cokq8wbeqkjdy"
+NavigationManager="*uid://cokq8wbeqkjdy"
 DialogueManager="*uid://csl71u3j5reeq"
 ProgressionManager="*uid://cnq16gxkkljlg"
 PersistanceManager="*uid://bren6v515r2in"
