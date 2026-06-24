@@ -18,8 +18,6 @@ func strip_bbcode(text):
 
 func append_content(content_: String):
 	content+=strip_bbcode(content_);
-	print(content);
 
 func set_content(content_: String):
 	content=strip_bbcode(content_);
-	print(content);

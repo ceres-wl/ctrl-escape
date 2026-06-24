@@ -150,10 +150,6 @@ func resolve_path_tokens(tokens: PackedStringArray, cur: Folder, absolute: bool 
 		if(cur == null): break;
 	return cur;
 
-# TEST FIXME TODO, RETIRAR ISSO DAQUI POR FAVOR É SÓ PRA TESTAR!!!!
-func _ready():
-	PersistanceManager.load_game();
-
 func save():
 	return {
 		"path": get_path(),
