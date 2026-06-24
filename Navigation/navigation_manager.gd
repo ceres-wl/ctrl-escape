@@ -2,6 +2,7 @@ extends Node
 
 var current_room : Node = null
 var zoom_stack : Array[Node] = []
+var zooms = {}
 
 func _ready() -> void:
 	$right_arrow.pressed.connect(_on_right_arrow_pressed)
@@ -50,14 +51,21 @@ func finish_zoom():
 	if zoom_stack.is_empty():
 		return
 	var ultimo_zoom = zoom_stack.pop_back()
-	ultimo_zoom.queue_free()
+	ultimo_zoom.visible = false
 	if zoom_stack.is_empty():
 		show_arrows()
 		hide_back_zoom()
+
 func start_zoom(cena_zoom: PackedScene):
+	var path = cena_zoom.resource_path
+	if !zooms.has(path):
+		var instancia = cena_zoom.instantiate()
+		instancia.visible = false
+		add_child(instancia)
+		zooms[path] = instancia
+	if zoom_stack.size() > 0:
+		zoom_stack.back().visible = false
+	zooms[path].visible = true
+	zoom_stack.append(zooms[path])
 	hide_arrows()
 	show_back_zoom()
-	var novo_zoom = cena_zoom.instantiate()
-	add_child(novo_zoom)
-	zoom_stack.push_back(novo_zoom)
-	

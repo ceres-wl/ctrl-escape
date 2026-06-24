@@ -14,7 +14,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Inventory" parent="." unique_id=1803062912 instance=ExtResource("2_r4jcj")]
-layout_mode = 0
 
 [node name="Config_Rooms" parent="." unique_id=724168216 instance=ExtResource("1_5ncum")]
 

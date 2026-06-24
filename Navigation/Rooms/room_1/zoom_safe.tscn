@@ -33,11 +33,9 @@ scale = Vector2(1.82, 1.82)
 texture = ExtResource("3_4ega6")
 
 [node name="Keypad" parent="." unique_id=107717112 instance=ExtResource("5_8dtgm")]
-offset_left = 514.0
-offset_top = 208.0
-offset_right = 514.0
-offset_bottom = 208.0
+position = Vector2(515, 208)
 scale = Vector2(0.51, 0.51)
 icon = ExtResource("4_nnqrk")
 cena_zoom = ExtResource("6_bxvjf")
+id = null
 item_name = "Keypad_cofre"
