@@ -6,7 +6,6 @@ extends Node
 func save_game():
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("persist")
-	print(save_nodes)
 	for node in save_nodes:
 		if !node.has_method("save"):
 			push_warning("persistent node '%s' is missing a save() function, skipped" % node.name)

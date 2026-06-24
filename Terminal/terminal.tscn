@@ -88,7 +88,7 @@ scroll_following = true
 autowrap_mode = 1
 vertical_alignment = 2
 
-[node name="FileSystem" type="Node" parent="." unique_id=494663331]
+[node name="FileSystem" type="Node" parent="." unique_id=494663331 groups=["persist"]]
 unique_name_in_owner = true
 script = ExtResource("2_cgvah")
 

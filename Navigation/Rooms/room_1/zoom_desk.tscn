@@ -30,44 +30,53 @@ texture = ExtResource("2_7nufj")
 
 [node name="Gaveta_Fina_Direita" parent="Mesa" unique_id=107717112 instance=ExtResource("7_o4e1f")]
 layout_mode = 0
-offset_left = 328.9565
-offset_top = 41.739
-offset_right = 328.9565
-offset_bottom = 41.739
-mouse_default_cursor_shape = 0
+offset_left = 329.5652
+offset_top = 40.869564
+offset_right = 630.5652
+offset_bottom = 93.86957
+scale = Vector2(0.99, 0.99)
 icon = ExtResource("5_gdwrx")
 other_texture = ExtResource("3_lrfk7")
 original_texture = ExtResource("5_gdwrx")
 
 [node name="Gaveta_Fina_Esquerda" parent="Mesa" unique_id=706236174 instance=ExtResource("7_o4e1f")]
 layout_mode = 0
-offset_left = 38.260864
-offset_top = 41.73913
-offset_right = 38.260864
-offset_bottom = 41.73913
-mouse_default_cursor_shape = 0
+offset_left = 40.86956
+offset_top = 40.869564
+offset_right = 341.86957
+offset_bottom = 93.86957
+scale = Vector2(0.99, 0.99)
 icon = ExtResource("5_gdwrx")
 other_texture = ExtResource("3_lrfk7")
 original_texture = ExtResource("5_gdwrx")
 
 [node name="Gaveta_Grande_Baixo" parent="Mesa" unique_id=576642734 instance=ExtResource("7_o4e1f")]
-position = Vector2(656.52167, 224.34782)
-scale = Vector2(0.87, 0.87)
-mouse_default_cursor_shape = 0
+layout_mode = 0
+offset_left = 659.1304
+offset_top = 225.21739
+offset_right = 893.1304
+offset_bottom = 336.2174
+scale = Vector2(0.85, 0.85)
 icon = ExtResource("8_g761v")
 other_texture = ExtResource("4_o4e1f")
 original_texture = ExtResource("8_g761v")
 
 [node name="Cabo" parent="Mesa/Gaveta_Grande_Baixo" unique_id=291184137 instance=ExtResource("7_3m4gn")]
-position = Vector2(63.96814, 42.97851)
+layout_mode = 0
+offset_left = 63.96814
+offset_top = 42.97851
+offset_right = 63.96814
+offset_bottom = 42.97851
 scale = Vector2(1.1494254, 1.1494254)
-mouse_default_cursor_shape = 0
 icon = ExtResource("8_gdwrx")
 
 [node name="Gaveta_Grande_Cima" parent="Mesa" unique_id=1005308859 instance=ExtResource("7_o4e1f")]
-position = Vector2(656.5217, 89.56522)
-scale = Vector2(0.86956525, 0.86956525)
-mouse_default_cursor_shape = 0
+layout_mode = 0
+offset_left = 659.1304
+offset_top = 90.43478
+offset_right = 893.1304
+offset_bottom = 201.43478
+scale = Vector2(0.85, 0.85)
 icon = ExtResource("8_g761v")
 other_texture = ExtResource("4_o4e1f")
 original_texture = ExtResource("8_g761v")
