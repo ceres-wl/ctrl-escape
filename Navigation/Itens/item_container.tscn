@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://tb142t3p2d75"]
+
+[ext_resource type="PackedScene" uid="uid://blrh5y8xksa24" path="res://Navigation/Itens/Item.tscn" id="1_1iy82"]
+[ext_resource type="Script" uid="uid://dr0nc7bhy7mam" path="res://Navigation/Itens/item_container.gd" id="2_7qgwh"]
+
+[node name="Item" unique_id=107717112 instance=ExtResource("1_1iy82")]
+script = ExtResource("2_7qgwh")
+other_texture = null

@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://2ac0nxi7oaqc"]
 
-[ext_resource type="Script" uid="uid://cavnlcbk87e3d" path="res://Navigation/Walls/wall.gd" id="1_yh3gk"]
 [ext_resource type="Texture2D" uid="uid://bj4a2t5cx7oo3" path="res://Arts/jogo background vazio.png" id="2_jlsgc"]
 
 [node name="Wall" type="Node2D" unique_id=1256029917]
-script = ExtResource("1_yh3gk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=144042286]
 position = Vector2(577, 325)

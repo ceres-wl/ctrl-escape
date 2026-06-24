@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/keypad.png" id="2_g2ee0"]
 
 [node name="Zoom_keypad_safe" type="Node2D" unique_id=689376110]
+texture_filter = 1
 
 [node name="Cofre" type="TextureRect" parent="." unique_id=1224773036]
 offset_left = -197.0

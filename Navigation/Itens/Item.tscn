@@ -2,13 +2,9 @@
 
 [ext_resource type="Script" uid="uid://djprsnlfeklco" path="res://Navigation/Itens/item.gd" id="1_5dbf6"]
 
-[node name="Item" type="Node2D" unique_id=107717112]
-script = ExtResource("1_5dbf6")
-
-[node name="Button" type="Button" parent="." unique_id=1338491570]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Item" type="Button" unique_id=1039591916]
 mouse_default_cursor_shape = 2
 flat = true
+script = ExtResource("1_5dbf6")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
