@@ -135,7 +135,13 @@ func mv(operands: PackedStringArray, flags: Dictionary):
 	pass
 
 func cat(operands: PackedStringArray, flags: Dictionary):
-	pass
+	var output = ""
+	for operand in operands:
+		var content = %FileSystem.get_content(operand)
+		if (!content):
+			return "cat: %s: Arquivo ou diretório inexistente" % operand
+		output += content
+	return output
 
 func pwd(_operands: PackedStringArray, _flags: Dictionary):
 	return %FileSystem.cur_path.replace("[", "[lb]");
@@ -193,7 +199,7 @@ func parse(input: String):
 				">": # Sobrescreve
 					i+=1;
 					# Isso deveria ser um path válido, se não for é papel do sistema de arquivos testar
-					var path = cmds[i].get_string().strip_edges();;
+					var path = cmds[i].get_string().strip_edges();
 					%FileSystem.set_content(path, output);
 				_:
 					if(output): t_print(output);

@@ -97,7 +97,10 @@ func resolve_file(path):
 	return folder.get_file(file_name);
 
 func get_content(path: String):
-	pass
+	var file = resolve_file(path)
+	if(!file):
+		return null
+	return file.content
 
 func list_files(path: String) -> Array[File]:
 	var folder = resolve_path(path);
