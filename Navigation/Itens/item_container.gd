@@ -1,7 +1,7 @@
 extends item
 
 @export var other_texture : Texture2D
-var original_texture = icon
+@export var original_texture : Texture2D
 
 var open = false
 
