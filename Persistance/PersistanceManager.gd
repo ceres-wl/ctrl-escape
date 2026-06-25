@@ -49,3 +49,6 @@ func load_game():
 			push_error("persistent node '%s' is missing a load_self() function, skipped" % node.name);
 			continue;
 		node.call("load_self", node_data);
+
+func has_save() -> bool:
+	return FileAccess.file_exists("user://savegame.save")
