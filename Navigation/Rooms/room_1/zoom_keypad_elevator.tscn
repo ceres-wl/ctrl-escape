@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://ccx3wt6sk8uwn"]
 
+[ext_resource type="Script" uid="uid://btkskkyv01a6l" path="res://Navigation/Itens/itens senha/cena_senha.gd" id="1_cttfe"]
 [ext_resource type="Texture2D" uid="uid://bj4a2t5cx7oo3" path="res://Arts/jogo background vazio.png" id="1_gvv0d"]
 [ext_resource type="Texture2D" uid="uid://bsytm5y55kaul" path="res://Arts/porta.png" id="2_cttfe"]
-[ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/keypad.png" id="3_x87u4"]
+[ext_resource type="PackedScene" uid="uid://gbdvc7gedua2" path="res://Navigation/Itens/itens senha/Keypad.tscn" id="4_cttfe"]
 
 [node name="zoom_keypad_elevator" type="Node2D" unique_id=272690175]
 texture_filter = 1
+script = ExtResource("1_cttfe")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1126238681]
 position = Vector2(-3821, 469.99997)
@@ -20,10 +22,6 @@ offset_bottom = -1518.0
 scale = Vector2(14.9, 14.9)
 texture = ExtResource("2_cttfe")
 
-[node name="Keypad" type="TextureRect" parent="." unique_id=1669858238]
-offset_left = 348.0
-offset_top = 27.0
-offset_right = 644.0
-offset_bottom = 419.0
+[node name="Keypad" parent="." unique_id=126821551 instance=ExtResource("4_cttfe")]
+position = Vector2(570, 320)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("3_x87u4")

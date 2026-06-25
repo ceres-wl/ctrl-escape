@@ -74,7 +74,7 @@ func setup_zoom(cena_zoom: PackedScene):
 		add_child(instancia)
 		zooms[path] = instancia
 
-# Recebe o nó já instânciado
+# Recebe o nó já instânciado, retorna a referencia
 func start_zoom(cena_zoom: PackedScene):
 	var cena = zooms[cena_zoom.resource_path]
 	if zoom_stack.size() > 0:
@@ -83,3 +83,5 @@ func start_zoom(cena_zoom: PackedScene):
 	zoom_stack.append(cena)
 	hide_arrows()
 	show_back_zoom()
+	return cena
+	

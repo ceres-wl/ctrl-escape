@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctq0lm5emsx3h"
-path="res://.godot/imported/keypad.png-97f040289c5233ffe493ca279d16aa68.ctex"
+path="res://.godot/imported/keypad.png-459855faea6fd2c2c9ef32d6d4823ed9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arts/keypad.png"
-dest_files=["res://.godot/imported/keypad.png-97f040289c5233ffe493ca279d16aa68.ctex"]
+source_file="res://Arts/objetos senha/keypad.png"
+dest_files=["res://.godot/imported/keypad.png-459855faea6fd2c2c9ef32d6d4823ed9.ctex"]
 
 [params]
 

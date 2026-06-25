@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://gbdvc7gedua2"]
+
+[ext_resource type="Script" uid="uid://bnwja4eyucoet" path="res://Navigation/Itens/itens senha/keypad.gd" id="1_phfuo"]
+[ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/objetos senha/keypad.png" id="2_ffh18"]
+
+[node name="Keypad" type="Node2D" unique_id=126821551 groups=["gerenciador_senhas"]]
+script = ExtResource("1_phfuo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1993586985]
+texture = ExtResource("2_ffh18")

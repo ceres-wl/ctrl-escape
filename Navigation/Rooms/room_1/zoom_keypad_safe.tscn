@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://k2gjprqnfsp2"]
 
 [ext_resource type="Texture2D" uid="uid://d1oeuoq32c1mn" path="res://Arts/cofre.png" id="1_o7wcb"]
-[ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/keypad.png" id="2_g2ee0"]
+[ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/objetos senha/keypad.png" id="2_g2ee0"]
 
 [node name="Zoom_keypad_safe" type="Node2D" unique_id=689376110]
 texture_filter = 1

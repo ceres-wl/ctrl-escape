@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bj4a2t5cx7oo3" path="res://Arts/jogo background vazio.png" id="1_4pyhb"]
 [ext_resource type="Texture2D" uid="uid://d1oeuoq32c1mn" path="res://Arts/cofre.png" id="2_nnqrk"]
 [ext_resource type="Texture2D" uid="uid://ekffwx4or35a" path="res://Arts/cofre_aberto.png" id="3_4ega6"]
-[ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/keypad.png" id="4_nnqrk"]
+[ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/objetos senha/keypad.png" id="4_nnqrk"]
 [ext_resource type="PackedScene" uid="uid://ojxks5n2fxmk" path="res://Navigation/Itens/item_zoom.tscn" id="5_8dtgm"]
 [ext_resource type="PackedScene" uid="uid://k2gjprqnfsp2" path="res://Navigation/Rooms/room_1/zoom_keypad_safe.tscn" id="6_bxvjf"]
 

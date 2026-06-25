@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bsytm5y55kaul" path="res://Arts/porta.png" id="2_lda0m"]
 [ext_resource type="Texture2D" uid="uid://cy01f6d0bsc6f" path="res://Arts/Planta-sala.png" id="3_j2jj1"]
 [ext_resource type="Texture2D" uid="uid://dw8gvagae2qrp" path="res://Arts/relogio.png" id="3_lda0m"]
-[ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/keypad.png" id="5_2n2lb"]
+[ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/objetos senha/keypad.png" id="5_2n2lb"]
 [ext_resource type="PackedScene" uid="uid://ojxks5n2fxmk" path="res://Navigation/Itens/item_zoom.tscn" id="6_tsycu"]
 [ext_resource type="PackedScene" uid="uid://ccx3wt6sk8uwn" path="res://Navigation/Rooms/room_1/zoom_keypad_elevator.tscn" id="7_q2fxt"]
 

@@ -35,6 +35,7 @@ project/assembly_name="ctrl-escape"
 [global_group]
 
 persist=""
+gerenciador_senhas=""
 
 [input]
 
