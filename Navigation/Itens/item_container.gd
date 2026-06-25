@@ -1,4 +1,5 @@
 extends item
+class_name item_container
 
 @export var other_texture : Texture2D
 @export var original_texture : Texture2D
@@ -13,7 +14,7 @@ func _ready():
 
 func change_container():
 	open = !open
-	if(open):
+	if open:
 		icon = other_texture
 		size = other_texture.get_size()
 	else:

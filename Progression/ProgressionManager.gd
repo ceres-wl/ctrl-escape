@@ -2,6 +2,22 @@ extends Node
 
 var events = ["inicio"];
 
+# dicionario usado para as senhas (PODE SER EXCLUIDO, PENSE DUAS VEZES
+# ANTES DE USAR, VOCE FOI AVISADO)
+
+var status_senha = {}
+
+func set_senha(id_senha: String):
+	status_senha[id_senha] = false
+	
+func change_senha(id_senha: String):
+	status_senha[id_senha] = true
+	
+func get_status_senha(id_senha: String):
+	if status_senha.has(id_senha):
+		return status_senha[id_senha]
+	return false
+
 # id é um identificador único do objeto 
 # e action é um identificador único da ação sofrida
 func submit_object_action(id: String, action: String):

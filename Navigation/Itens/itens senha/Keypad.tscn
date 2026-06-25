@@ -2,9 +2,140 @@
 
 [ext_resource type="Script" uid="uid://bnwja4eyucoet" path="res://Navigation/Itens/itens senha/keypad.gd" id="1_phfuo"]
 [ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/objetos senha/keypad.png" id="2_ffh18"]
+[ext_resource type="Texture2D" uid="uid://b8qgus4765xb7" path="res://Arts/objetos senha/key_1.png" id="3_k2tuo"]
+[ext_resource type="Texture2D" uid="uid://n2e0tjp02ola" path="res://Arts/objetos senha/key_2.png" id="4_1b7ug"]
+[ext_resource type="Texture2D" uid="uid://bg8ywpo6yvw4n" path="res://Arts/objetos senha/key_3.png" id="5_xbp36"]
+[ext_resource type="Texture2D" uid="uid://cwy2fkw0fp643" path="res://Arts/objetos senha/key_4.png" id="6_u4vie"]
+[ext_resource type="Texture2D" uid="uid://d1uon8dxbm26m" path="res://Arts/objetos senha/key_5.png" id="7_2ehw5"]
+[ext_resource type="Texture2D" uid="uid://ciwltovtfom7a" path="res://Arts/objetos senha/key_6.png" id="8_c1clt"]
+[ext_resource type="Texture2D" uid="uid://crxef08m8t4s5" path="res://Arts/objetos senha/key_7.png" id="9_jp3t4"]
+[ext_resource type="Texture2D" uid="uid://34jiyeti1w2e" path="res://Arts/objetos senha/key_8.png" id="10_tsysm"]
+[ext_resource type="Texture2D" uid="uid://digia7kkx1d4a" path="res://Arts/objetos senha/key_9.png" id="11_3v8ft"]
+[ext_resource type="Texture2D" uid="uid://db13snsd5b85o" path="res://Arts/objetos senha/key_0.png" id="12_bgfxf"]
+[ext_resource type="Texture2D" uid="uid://o60bntqlkstu" path="res://Arts/objetos senha/key_del.png" id="13_c8i6w"]
+[ext_resource type="Texture2D" uid="uid://b0lfma6stgf43" path="res://Arts/objetos senha/key_submit.png" id="14_xbp36"]
 
 [node name="Keypad" type="Node2D" unique_id=126821551 groups=["gerenciador_senhas"]]
 script = ExtResource("1_phfuo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1993586985]
 texture = ExtResource("2_ffh18")
+
+[node name="key_1" type="Button" parent="." unique_id=255794356]
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -32.0
+offset_bottom = -32.0
+icon = ExtResource("3_k2tuo")
+flat = true
+
+[node name="key_2" type="Button" parent="." unique_id=1311601377]
+offset_left = -31.0
+offset_top = -96.0
+offset_right = 33.0
+offset_bottom = -32.0
+icon = ExtResource("4_1b7ug")
+flat = true
+
+[node name="key_3" type="Button" parent="." unique_id=1246773000]
+offset_left = 32.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -32.0
+icon = ExtResource("5_xbp36")
+flat = true
+
+[node name="key_4" type="Button" parent="." unique_id=1077451965]
+offset_left = -97.0
+offset_top = -32.0
+offset_right = -33.0
+offset_bottom = 32.0
+icon = ExtResource("6_u4vie")
+flat = true
+
+[node name="key_5" type="Button" parent="." unique_id=1981847660]
+offset_left = -31.0
+offset_top = -32.0
+offset_right = 33.0
+offset_bottom = 32.0
+icon = ExtResource("7_2ehw5")
+flat = true
+
+[node name="key_6" type="Button" parent="." unique_id=1292335558]
+offset_left = 33.0
+offset_top = -32.0
+offset_right = 97.0
+offset_bottom = 32.0
+icon = ExtResource("8_c1clt")
+flat = true
+
+[node name="key_7" type="Button" parent="." unique_id=1557755938]
+offset_left = -95.0
+offset_top = 32.0
+offset_right = -31.0
+offset_bottom = 96.0
+icon = ExtResource("9_jp3t4")
+flat = true
+
+[node name="key_8" type="Button" parent="." unique_id=127325561]
+offset_left = -33.0
+offset_top = 32.0
+offset_right = 31.0
+offset_bottom = 96.0
+icon = ExtResource("10_tsysm")
+flat = true
+
+[node name="key_9" type="Button" parent="." unique_id=1784290755]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 96.0
+icon = ExtResource("11_3v8ft")
+flat = true
+
+[node name="key_0" type="Button" parent="." unique_id=1185947080]
+offset_left = -31.0
+offset_top = 96.0
+offset_right = 33.0
+offset_bottom = 160.0
+icon = ExtResource("12_bgfxf")
+flat = true
+
+[node name="key_del" type="Button" parent="." unique_id=1772504879]
+offset_left = -95.0
+offset_top = 96.0
+offset_right = -31.0
+offset_bottom = 160.0
+icon = ExtResource("13_c8i6w")
+flat = true
+
+[node name="key_submit" type="Button" parent="." unique_id=1869907558]
+offset_left = 32.0
+offset_top = 95.0
+offset_right = 96.0
+offset_bottom = 159.0
+icon = ExtResource("14_xbp36")
+flat = true
+
+[node name="senha_atual" type="RichTextLabel" parent="." unique_id=1084281783]
+offset_left = -86.0
+offset_top = -164.0
+offset_right = 85.0
+offset_bottom = -118.0
+theme_override_font_sizes/normal_font_size = 32
+text = "4 2 3 4"
+scroll_active = false
+horizontal_alignment = 3
+
+[connection signal="pressed" from="key_1" to="." method="_on_key_1_pressed"]
+[connection signal="pressed" from="key_2" to="." method="_on_key_2_pressed"]
+[connection signal="pressed" from="key_3" to="." method="_on_key_3_pressed"]
+[connection signal="pressed" from="key_4" to="." method="_on_key_4_pressed"]
+[connection signal="pressed" from="key_5" to="." method="_on_key_5_pressed"]
+[connection signal="pressed" from="key_6" to="." method="_on_key_6_pressed"]
+[connection signal="pressed" from="key_7" to="." method="_on_key_7_pressed"]
+[connection signal="pressed" from="key_8" to="." method="_on_key_8_pressed"]
+[connection signal="pressed" from="key_9" to="." method="_on_key_9_pressed"]
+[connection signal="pressed" from="key_0" to="." method="_on_key_0_pressed"]
+[connection signal="pressed" from="key_del" to="." method="_on_key_del_pressed"]
+[connection signal="pressed" from="key_submit" to="." method="_on_key_submit_pressed"]

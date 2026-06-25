@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://cck52wi52xfqe"]
-
-[ext_resource type="Script" uid="uid://dtx21m4627tg4" path="res://Navigation/Itens/itens senha/item_senha.gd" id="1_myqfu"]
-
-[node name="PainelSenha" type="Node2D" unique_id=1773471393]
-script = ExtResource("1_myqfu")
