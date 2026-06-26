@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dv12fjeha8myt" path="res://Navigation/Rooms/room_1/zoom_desk.tscn" id="9_pdbst"]
 [ext_resource type="Script" uid="uid://bdwonr0q60b88" path="res://Navigation/Rooms/room_1/interative_tux.gd" id="11_5ik0t"]
 [ext_resource type="PackedScene" uid="uid://crsbn5p4f3nj8" path="res://Dialogue/DialoguePopup.tscn" id="12_px4p8"]
+[ext_resource type="Texture2D" uid="uid://djfqsomnat0qi" path="res://Arts/cadeado_codigo_letras.png" id="14_pntbb"]
 
 [node name="Wall" unique_id=1256029917 instance=ExtResource("1_hv52b")]
 
@@ -79,3 +80,11 @@ offset_bottom = 538.0
 script = ExtResource("11_5ik0t")
 
 [node name="DialoguePopup" parent="." index="9" unique_id=36251990 instance=ExtResource("12_px4p8")]
+
+[node name="cadeado_senha" type="TextureRect" parent="." index="10" unique_id=1718525907]
+offset_left = 274.0
+offset_top = 425.0
+offset_right = 524.0
+offset_bottom = 495.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("14_pntbb")

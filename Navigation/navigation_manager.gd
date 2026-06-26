@@ -46,15 +46,7 @@ func _on_left_arrow_pressed():
 
 func _on_back_zoom_pressed() -> void:
 	finish_zoom()
-'''
-func finish_zoom():
-	if zoom_stack.is_empty():
-		return
-	var ultimo_zoom = zoom_stack.pop_back()
-	ultimo_zoom.visible = false
-	if zoom_stack.is_empty():
-		show_arrows()
-		hide_back_zoom()'''
+
 func finish_zoom():
 	if zoom_stack.is_empty():
 		return

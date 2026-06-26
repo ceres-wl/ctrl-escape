@@ -7,11 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://c7snmcf23gj3t" path="res://Arts/gaveta_aberta grande.png" id="4_o4e1f"]
 [ext_resource type="Script" uid="uid://dp8cpuhsls0j" path="res://Navigation/Itens/itens senha/item_container_locked.gd" id="5_cstrl"]
 [ext_resource type="Texture2D" uid="uid://d4s58esofu55" path="res://Arts/gaveta_fechada.png" id="5_gdwrx"]
+[ext_resource type="Texture2D" uid="uid://ml478sqqqclv" path="res://Arts/gaveta_cadeado.png" id="6_6xb3r"]
 [ext_resource type="Texture2D" uid="uid://yfvrxo8xfm1n" path="res://Arts/computador.png" id="6_g761v"]
 [ext_resource type="PackedScene" uid="uid://cqcllps8341ny" path="res://Navigation/Itens/Item_Collectible.tscn" id="7_3m4gn"]
+[ext_resource type="PackedScene" uid="uid://ojxks5n2fxmk" path="res://Navigation/Itens/item_zoom.tscn" id="7_ami0f"]
 [ext_resource type="PackedScene" uid="uid://tb142t3p2d75" path="res://Navigation/Itens/item_container.tscn" id="7_o4e1f"]
+[ext_resource type="Texture2D" uid="uid://djfqsomnat0qi" path="res://Arts/cadeado_codigo_letras.png" id="8_73lgs"]
 [ext_resource type="Texture2D" uid="uid://3cy7i0dtlwwl" path="res://Arts/gaveta_grande_fechada.png" id="8_g761v"]
 [ext_resource type="Texture2D" uid="uid://cpjn73cfknjsf" path="res://Arts/cabo_enrolado_inclinado.png" id="8_gdwrx"]
+[ext_resource type="PackedScene" uid="uid://cergumpcxe7ry" path="res://Navigation/Rooms/room_1/zoom_cadeado_senha.tscn" id="9_73lgs"]
 
 [node name="Zoom_desk" type="Node2D" unique_id=1883266136]
 texture_filter = 1
@@ -39,7 +43,7 @@ scale = Vector2(0.99, 0.99)
 icon = ExtResource("5_gdwrx")
 script = ExtResource("5_cstrl")
 id_senha = "1"
-other_texture = ExtResource("3_lrfk7")
+other_texture = ExtResource("6_6xb3r")
 original_texture = ExtResource("5_gdwrx")
 
 [node name="Gaveta_Fina_Esquerda" parent="Mesa" unique_id=706236174 instance=ExtResource("7_o4e1f")]
@@ -52,6 +56,17 @@ scale = Vector2(0.99, 0.99)
 icon = ExtResource("5_gdwrx")
 other_texture = ExtResource("3_lrfk7")
 original_texture = ExtResource("5_gdwrx")
+
+[node name="cadeado_senha" parent="Mesa" unique_id=290118097 instance=ExtResource("7_ami0f")]
+layout_mode = 0
+offset_left = 373.04346
+offset_top = 53.91305
+offset_right = 631.0436
+offset_bottom = 131.91307
+scale = Vector2(0.12, 0.12)
+icon = ExtResource("8_73lgs")
+cena_zoom = ExtResource("9_73lgs")
+item_name = "cadeado_senha"
 
 [node name="Gaveta_Grande_Baixo" parent="Mesa" unique_id=576642734 instance=ExtResource("7_o4e1f")]
 layout_mode = 0
@@ -72,6 +87,7 @@ offset_right = 63.96814
 offset_bottom = 42.97851
 scale = Vector2(1.1494254, 1.1494254)
 icon = ExtResource("8_gdwrx")
+item_name = "Cabo"
 
 [node name="Gaveta_Grande_Cima" parent="Mesa" unique_id=1005308859 instance=ExtResource("7_o4e1f")]
 layout_mode = 0
@@ -84,13 +100,22 @@ icon = ExtResource("8_g761v")
 other_texture = ExtResource("4_o4e1f")
 original_texture = ExtResource("8_g761v")
 
-[node name="Cadeira" type="TextureRect" parent="." unique_id=803235234]
+[node name="TextureRect" type="TextureRect" parent="Mesa" unique_id=1721793824]
 visible = false
+layout_mode = 0
+offset_left = 333.0435
+offset_top = 46.956524
+offset_right = 626.0435
+offset_bottom = 161.95653
+texture = ExtResource("6_6xb3r")
+
+[node name="Cadeira" type="TextureRect" parent="." unique_id=803235234]
 offset_left = 28.000002
 offset_top = 119.0
 offset_right = 125.0
 offset_bottom = 270.0
 scale = Vector2(3.6, 3.6)
+mouse_filter = 2
 texture = ExtResource("3_xpnlv")
 
 [node name="Computador" type="TextureRect" parent="." unique_id=1548860985]
