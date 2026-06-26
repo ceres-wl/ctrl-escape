@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cbhbbbmxy1a1a"]
+
+[ext_resource type="Texture2D" uid="uid://cx831fere2j77" path="res://Arts/menu background.png" id="1_n2dn3"]
+[ext_resource type="PackedScene" uid="uid://gbdvc7gedua2" path="res://Navigation/Itens/itens senha/Keypad.tscn" id="2_1x622"]
+
+[node name="ZoomKeypadParede" type="Node2D" unique_id=169691801]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1917537665]
+texture_filter = 1
+position = Vector2(-333, -1164)
+scale = Vector2(10.907787, 10.479968)
+texture = ExtResource("1_n2dn3")
+
+[node name="Keypad" parent="." unique_id=126821551 instance=ExtResource("2_1x622")]
+position = Vector2(586, 354)

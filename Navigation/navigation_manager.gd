@@ -19,7 +19,7 @@ func start_game() -> void:
 	show_arrows()
 
 func start_tutorial() -> void:
-	var tutorial_tscn = preload("res://Tutorial/TutorialRoom.tscn")
+	var tutorial_tscn = preload("res://Navigation/Rooms/Tutorial/TutorialRoom.tscn")
 	var instancia_sala = tutorial_tscn.instantiate()
 	add_child(instancia_sala) 
 	current_room = instancia_sala
@@ -71,7 +71,8 @@ func finish_zoom():
 	if not zoom_stack.is_empty():
 		zoom_stack.back().visible = true
 	else:
-		show_arrows()
+		if current_room.need_arrow:
+			show_arrows()
 		hide_back_zoom()
 
 func finish_zoom_tutorial():

@@ -1,11 +1,11 @@
 extends Control
 
+var need_arrow = false
 @onready var porta = $Door
 var porta_trancada = true
 
 func _ready() -> void:
 	porta_trancada = true
-	
 	add_to_group("sala_tutorial")
 	
 	if porta.is_connected("pressed", _on_porta_pressed):

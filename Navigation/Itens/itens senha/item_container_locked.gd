@@ -12,6 +12,7 @@ func change_container():
 		else:
 			alertar_tranca()
 	
+	
 # TODO: mecanismo para alertar que esta trancado
 func alertar_tranca():
 	pass

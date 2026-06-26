@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cs4m5fic2435q"]
 
-[ext_resource type="Script" uid="uid://bg2rl7lcqkf4u" path="res://Tutorial/tutorial_room.gd" id="1_e0sa4"]
+[ext_resource type="Script" uid="uid://bg2rl7lcqkf4u" path="res://Navigation/Rooms/Tutorial/tutorial_room.gd" id="1_e0sa4"]
 [ext_resource type="Texture2D" uid="uid://cx831fere2j77" path="res://Arts/menu background.png" id="1_t52mh"]
 [ext_resource type="PackedScene" uid="uid://ojxks5n2fxmk" path="res://Navigation/Itens/item_zoom.tscn" id="2_fp6hx"]
 [ext_resource type="Texture2D" uid="uid://3br7gcplhdkm" path="res://Arts/quadro_bash.png" id="2_ucknx"]
@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bq1dyng7okc2e" path="res://Navigation/Itens/item_collectible.gd" id="3_t52mh"]
 [ext_resource type="PackedScene" uid="uid://djo1q3ihdfkw0" path="res://Inventory/inventory.tscn" id="4_fp6hx"]
 [ext_resource type="PackedScene" uid="uid://ckowb7fsl5gx3" path="res://Menus/Menu config rooms/config_rooms.tscn" id="5_84iyn"]
-[ext_resource type="PackedScene" uid="uid://dri3rm8co2sjo" path="res://Tutorial/KeypadZoomTutorial.tscn" id="8_rtjeg"]
+[ext_resource type="PackedScene" uid="uid://dri3rm8co2sjo" path="res://Navigation/Rooms/Tutorial/KeypadZoomTutorial.tscn" id="8_rtjeg"]
 
 [node name="TutorialRoom" type="Control" unique_id=212492870]
 layout_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dri3rm8co2sjo"]
 
-[ext_resource type="Script" uid="uid://df2k3vyopiyh3" path="res://Tutorial/keypad_tutorial.gd" id="1_pwy35"]
+[ext_resource type="Script" uid="uid://df2k3vyopiyh3" path="res://Navigation/Rooms/Tutorial/keypad_tutorial.gd" id="1_pwy35"]
 [ext_resource type="Texture2D" uid="uid://bj4a2t5cx7oo3" path="res://Arts/jogo background vazio.png" id="2_135gi"]
 [ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/objetos senha/keypad.png" id="2_buvns"]
 
