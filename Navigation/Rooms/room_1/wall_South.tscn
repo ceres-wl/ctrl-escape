@@ -1,21 +1,28 @@
 [gd_scene format=3 uid="uid://csb0qanrg683h"]
 
 [ext_resource type="PackedScene" uid="uid://2ac0nxi7oaqc" path="res://Navigation/Walls/Wall.tscn" id="1_mnd3a"]
-[ext_resource type="Texture2D" uid="uid://bsytm5y55kaul" path="res://Arts/porta.png" id="2_lda0m"]
+[ext_resource type="Script" uid="uid://ribit4x16nla" path="res://Navigation/Itens/itens senha/item_passage_locked.gd" id="2_q2fxt"]
 [ext_resource type="Texture2D" uid="uid://cy01f6d0bsc6f" path="res://Arts/Planta-sala.png" id="3_j2jj1"]
 [ext_resource type="Texture2D" uid="uid://dw8gvagae2qrp" path="res://Arts/relogio.png" id="3_lda0m"]
+[ext_resource type="PackedScene" uid="uid://ddkjho574tdb8" path="res://Navigation/Itens/Item_Passage.tscn" id="3_tu4td"]
 [ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/objetos senha/keypad.png" id="5_2n2lb"]
 [ext_resource type="PackedScene" uid="uid://ojxks5n2fxmk" path="res://Navigation/Itens/item_zoom.tscn" id="6_tsycu"]
 [ext_resource type="PackedScene" uid="uid://ccx3wt6sk8uwn" path="res://Navigation/Rooms/room_1/zoom_keypad_elevator.tscn" id="7_q2fxt"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3ubpw"]
+load_path = "res://.godot/imported/porta.png-176422a9cd84abc11087627d94c264e5.ctex"
+
 [node name="Wall_South" unique_id=1256029917 instance=ExtResource("1_mnd3a")]
 
-[node name="Porta" type="TextureRect" parent="." index="1" unique_id=697470888]
-offset_left = 652.0
-offset_top = 91.0
-offset_right = 926.0
-offset_bottom = 517.2222
-texture = ExtResource("2_lda0m")
+[node name="Porta" parent="." index="1" unique_id=1039591916 instance=ExtResource("3_tu4td")]
+offset_left = 650.0
+offset_top = 93.0
+offset_right = 838.0
+offset_bottom = 381.0
+scale = Vector2(1.5, 1.5)
+icon = SubResource("CompressedTexture2D_3ubpw")
+script = ExtResource("2_q2fxt")
+id_senha = "1"
 
 [node name="Planta" type="TextureRect" parent="." index="2" unique_id=1982599994]
 offset_left = 143.0

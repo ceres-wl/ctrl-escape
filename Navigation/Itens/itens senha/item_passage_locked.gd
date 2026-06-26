@@ -1,12 +1,8 @@
-extends item_container
+extends item_passage
 
-# conferir se e o mesmo da tranca
 @export var id_senha = ""
 
-func change_container():
-	if open:
-		super()
-	else:
+func change_room() -> void:
 		if ProgressionManager.get_status_senha(id_senha):
 			super()
 		else:

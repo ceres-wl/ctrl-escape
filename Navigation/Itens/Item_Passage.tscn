@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ddkjho574tdb8"]
+
+[ext_resource type="PackedScene" uid="uid://blrh5y8xksa24" path="res://Navigation/Itens/Item.tscn" id="1_x6obp"]
+[ext_resource type="Script" uid="uid://dbu68bldsplws" path="res://Navigation/Itens/item_passage.gd" id="2_p6rer"]
+
+[node name="Item" unique_id=1039591916 instance=ExtResource("1_x6obp")]
+script = ExtResource("2_p6rer")
+destiny_room = null
