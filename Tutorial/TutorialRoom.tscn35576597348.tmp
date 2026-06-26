@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cs4m5fic2435q"]
+
+[ext_resource type="Script" uid="uid://bg2rl7lcqkf4u" path="res://Tutorial/tutorial_room.gd" id="1_e0sa4"]
+[ext_resource type="Texture2D" uid="uid://cx831fere2j77" path="res://Arts/menu background.png" id="1_t52mh"]
+[ext_resource type="PackedScene" uid="uid://ojxks5n2fxmk" path="res://Navigation/Itens/item_zoom.tscn" id="2_fp6hx"]
+[ext_resource type="Texture2D" uid="uid://3br7gcplhdkm" path="res://Arts/quadro_bash.png" id="2_ucknx"]
+[ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/objetos senha/keypad.png" id="3_84iyn"]
+[ext_resource type="Script" uid="uid://bq1dyng7okc2e" path="res://Navigation/Itens/item_collectible.gd" id="3_t52mh"]
+[ext_resource type="PackedScene" uid="uid://djo1q3ihdfkw0" path="res://Inventory/inventory.tscn" id="4_fp6hx"]
+[ext_resource type="PackedScene" uid="uid://ckowb7fsl5gx3" path="res://Menus/Menu config rooms/config_rooms.tscn" id="5_84iyn"]
+[ext_resource type="PackedScene" uid="uid://dri3rm8co2sjo" path="res://Tutorial/KeypadZoomTutorial.tscn" id="8_rtjeg"]
+
+[node name="TutorialRoom" type="Control" unique_id=212492870]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_e0sa4")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=775173970]
+position = Vector2(576.50006, 323.75003)
+scale = Vector2(0.8853846, 0.8506578)
+texture = ExtResource("1_t52mh")
+
+[node name="Door" type="TextureButton" parent="." unique_id=602717531]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 376.0
+offset_right = 633.0
+offset_bottom = 519.0
+mouse_default_cursor_shape = 2
+
+[node name="Letter" type="Button" parent="." unique_id=934303783]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 365.0
+offset_right = 474.0
+offset_bottom = 432.0
+mouse_default_cursor_shape = 2
+icon = ExtResource("2_ucknx")
+flat = true
+expand_icon = true
+script = ExtResource("3_t52mh")
+metadata/_custom_type_script = "uid://bq1dyng7okc2e"
+
+[node name="Inventory" parent="." unique_id=1011375304 instance=ExtResource("4_fp6hx")]
+
+[node name="Config_Rooms" parent="." unique_id=724168216 instance=ExtResource("5_84iyn")]
+
+[node name="Keypad" parent="." unique_id=107717112 instance=ExtResource("2_fp6hx")]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 278.0
+offset_right = 943.0
+offset_bottom = 278.0
+scale = Vector2(0.15, 0.15)
+icon = ExtResource("3_84iyn")
+cena_zoom = ExtResource("8_rtjeg")
+item_name = "Keypad_tutorial"
+
+[node name="KeypadZoomTutorial" parent="." unique_id=2116253213 instance=ExtResource("8_rtjeg")]
+layout_mode = 0
+
+[connection signal="pressed" from="Door" to="." method="_on_porta_pressed"]
+[connection signal="pressed" from="Letter" to="Letter" method="collect"]
