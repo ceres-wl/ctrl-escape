@@ -80,6 +80,7 @@ other_texture = ExtResource("4_o4e1f")
 original_texture = ExtResource("8_g761v")
 
 [node name="Cabo" parent="Mesa/Gaveta_Grande_Baixo" unique_id=291184137 instance=ExtResource("7_3m4gn")]
+texture_filter = 1
 layout_mode = 0
 offset_left = 63.96814
 offset_top = 42.97851
