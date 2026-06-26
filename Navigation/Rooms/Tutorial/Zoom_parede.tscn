@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dgh5p6h1fvqd1"]
+
+[ext_resource type="Texture2D" uid="uid://cx831fere2j77" path="res://Arts/menu background.png" id="1_dcdy2"]
+
+[node name="ZoomParede" type="Node2D" unique_id=2048277119]
+texture_filter = 1
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1945299851]
+position = Vector2(570.00006, 148)
+scale = Vector2(1.9601029, 1.8832237)
+texture = ExtResource("1_dcdy2")

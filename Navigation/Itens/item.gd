@@ -8,7 +8,7 @@ class_name item
 
 var type_atual
 
-enum type_item {COLLECTIBLE, CONTAINER, ZOOM}
+enum type_item {COLLECTIBLE, CONTAINER, ZOOM, PASSAGE}
 
 func interact():
 	if type_atual == type_item.COLLECTIBLE:
@@ -17,12 +17,16 @@ func interact():
 		change_container()
 	elif type_atual == type_item.ZOOM:
 		open_zoom()
+	elif type_atual == type_item.PASSAGE:
+		change_room()
 	
 func collect() -> void:
 	pass
 func change_container() -> void:
 	pass
 func open_zoom() -> void:
+	pass
+func change_room() -> void:
 	pass
 
 func _on_pressed() -> void:

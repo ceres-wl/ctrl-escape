@@ -1,23 +1,21 @@
 [gd_scene format=3 uid="uid://k2gjprqnfsp2"]
 
 [ext_resource type="Texture2D" uid="uid://d1oeuoq32c1mn" path="res://Arts/cofre.png" id="1_o7wcb"]
-[ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/objetos senha/keypad.png" id="2_g2ee0"]
+[ext_resource type="PackedScene" uid="uid://gbdvc7gedua2" path="res://Navigation/Itens/itens senha/Keypad.tscn" id="2_o7wcb"]
 
 [node name="Zoom_keypad_safe" type="Node2D" unique_id=689376110]
 texture_filter = 1
 
 [node name="Cofre" type="TextureRect" parent="." unique_id=1224773036]
-offset_left = -197.0
+offset_left = -631.99994
 offset_top = -444.00003
-offset_right = 103.0
+offset_right = -244.99994
 offset_bottom = -130.00003
 scale = Vector2(5, 5)
 texture = ExtResource("1_o7wcb")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=314864308]
-offset_left = 364.0
-offset_top = 47.0
-offset_right = 660.0
-offset_bottom = 439.0
-scale = Vector2(1.41, 1.41)
-texture = ExtResource("2_g2ee0")
+[node name="Keypad" parent="." unique_id=126821551 instance=ExtResource("2_o7wcb")]
+position = Vector2(571, 328)
+scale = Vector2(1.4, 1.4)
+senha_correta = "1 2 3 4"
+id_senha = "3"

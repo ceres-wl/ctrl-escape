@@ -207,13 +207,7 @@ flip_h = true
 [node name="TutorialPopup" type="CanvasLayer" parent="." unique_id=185930900]
 script = ExtResource("18_gg0qu")
 
-[node name="FundoComoJogar" type="ColorRect" parent="TutorialPopup" unique_id=595458733]
-offset_left = -1.0
-offset_right = 1150.0
-offset_bottom = 647.0
-color = Color(0, 0, 0, 0.39607844)
-
-[node name="ComoJogar2" type="TextureRect" parent="TutorialPopup" unique_id=603241505]
+[node name="ComoJogar" type="TextureRect" parent="TutorialPopup" unique_id=603241505]
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 1152.0
@@ -227,6 +221,7 @@ offset_top = 543.0
 offset_right = 676.0
 offset_bottom = 608.0
 mouse_default_cursor_shape = 2
+flat = true
 
 [connection signal="pressed" from="Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="ready" from="Jogar" to="." method="_on_texture_button_ready"]

@@ -8,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://csb0qanrg683h" path="res://Navigation/Rooms/room_1/wall_South.tscn" id="5_coigd"]
 [ext_resource type="PackedScene" uid="uid://76djvsxgwyp6" path="res://Navigation/Rooms/room_1/Wall_East.tscn" id="7_f5mvn"]
 
-[node name="Room1" unique_id=599518434 instance=ExtResource("1_ous0n")]
+[node name="Room" unique_id=599518434 instance=ExtResource("1_ous0n")]
 texture_filter = 1
 script = ExtResource("2_dw0ot")
+need_arrow = true
 
 [node name="Walls" parent="." index="2" unique_id=2098237260]
 script = ExtResource("3_50c7m")

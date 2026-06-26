@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://dri3rm8co2sjo"]
+
+[ext_resource type="Script" uid="uid://df2k3vyopiyh3" path="res://Navigation/Rooms/Tutorial/keypad_tutorial.gd" id="1_pwy35"]
+[ext_resource type="Texture2D" uid="uid://bj4a2t5cx7oo3" path="res://Arts/jogo background vazio.png" id="2_135gi"]
+[ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/objetos senha/keypad.png" id="2_buvns"]
+
+[node name="KeypadZoomTutorial" type="Control" unique_id=2116253213]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pwy35")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=971308479]
+position = Vector2(577, 326)
+scale = Vector2(1, 1.0408804)
+texture = ExtResource("2_135gi")
+
+[node name="Keypad" type="Node2D" parent="." unique_id=1780076015]
+position = Vector2(770, 314)
+
+[node name="Sprite2D" type="Sprite2D" parent="Keypad" unique_id=734966577]
+position = Vector2(-235.99998, -1.5258789e-05)
+scale = Vector2(1.7094595, 1.3839287)
+texture = ExtResource("2_buvns")
+
+[node name="key_0" type="Button" parent="Keypad" unique_id=1220093519]
+offset_left = -279.0
+offset_top = 141.0
+offset_right = -191.0
+offset_bottom = 212.0
+flat = true
+
+[node name="key_1" type="Button" parent="Keypad" unique_id=651610644]
+offset_left = -392.0
+offset_top = -125.0
+offset_right = -299.0
+offset_bottom = -52.0
+flat = true
+
+[node name="key_2" type="Button" parent="Keypad" unique_id=790981156]
+offset_left = -284.0
+offset_top = -126.0
+offset_right = -190.0
+offset_bottom = -52.0
+flat = true
+
+[node name="key_3" type="Button" parent="Keypad" unique_id=358466626]
+offset_left = -172.0
+offset_top = -127.0
+offset_right = -83.0
+offset_bottom = -47.0
+flat = true
+
+[node name="key_4" type="Button" parent="Keypad" unique_id=1737286761]
+offset_left = -391.0
+offset_top = -37.0
+offset_right = -298.0
+offset_bottom = 36.0
+flat = true
+
+[node name="key_5" type="Button" parent="Keypad" unique_id=1378292413]
+offset_left = -282.0
+offset_top = -39.0
+offset_right = -189.0
+offset_bottom = 38.0
+flat = true
+
+[node name="key_6" type="Button" parent="Keypad" unique_id=1911630118]
+offset_left = -177.0
+offset_top = -36.0
+offset_right = -79.0
+offset_bottom = 37.0
+flat = true
+
+[node name="key_7" type="Button" parent="Keypad" unique_id=241935164]
+offset_left = -392.0
+offset_top = 51.0
+offset_right = -298.0
+offset_bottom = 125.0
+flat = true
+
+[node name="key_8" type="Button" parent="Keypad" unique_id=1706591518]
+offset_left = -283.0
+offset_top = 50.0
+offset_right = -184.0
+offset_bottom = 126.0
+flat = true
+
+[node name="key_9" type="Button" parent="Keypad" unique_id=1165190409]
+offset_left = -175.0
+offset_top = 51.0
+offset_right = -79.0
+offset_bottom = 125.0
+flat = true
+
+[node name="key_del" type="Button" parent="Keypad" unique_id=204586960]
+offset_left = -394.0
+offset_top = 138.0
+offset_right = -300.0
+offset_bottom = 218.0
+flat = true
+
+[node name="key_submit" type="Button" parent="Keypad" unique_id=1865489129]
+offset_left = -173.0
+offset_top = 140.0
+offset_right = -79.0
+offset_bottom = 213.0
+flat = true
+
+[node name="display" type="RichTextLabel" parent="Keypad" unique_id=1118603132]
+offset_left = -391.0
+offset_top = -216.0
+offset_right = -80.0
+offset_bottom = -174.0
+theme_override_font_sizes/normal_font_size = 30
+horizontal_alignment = 3
+
+[connection signal="pressed" from="Keypad/key_del" to="." method="limpar_visor"]
+[connection signal="pressed" from="Keypad/key_submit" to="." method="_on_botao_submit_pressed"]

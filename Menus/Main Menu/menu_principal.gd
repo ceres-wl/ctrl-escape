@@ -8,7 +8,7 @@ var config = ConfigFile.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$"CanvasLayer/ColorRect/Menu Config/Slider musica".value = MusicManager.obter_volume_salvo()
-	tutorial_popup.tutorial_closed.connect(iniciar_jogo)
+	tutorial_popup.tutorial_closed.connect(iniciar_tutorial)
 	
 #TODO: Colocar para aparecer mensagem de confirmaçao
 
@@ -41,6 +41,10 @@ func _on_jogar_pressed() -> void:
 		tutorial_popup.visible = true
 	else:
 		iniciar_jogo()
+
+func iniciar_tutorial():
+	NavigationManager.start_tutorial()
+	queue_free()
 
 func iniciar_jogo():
 	NavigationManager.start_game()

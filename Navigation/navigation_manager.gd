@@ -17,6 +17,22 @@ func start_game() -> void:
 	current_room = instancia_sala
 	# temporario, depende da sala que vai ser chamada
 	show_arrows()
+
+func start_tutorial() -> void:
+	var tutorial_tscn = preload("res://Navigation/Rooms/Tutorial/TutorialRoom.tscn")
+	var instancia_sala = tutorial_tscn.instantiate()
+	add_child(instancia_sala) 
+	current_room = instancia_sala
+
+func change_room(new_room: PackedScene):
+	hide_arrows()
+	remove_child(current_room)
+	var instancia_sala = new_room.instantiate()
+	
+	add_child(instancia_sala)
+	current_room = instancia_sala
+	if current_room.need_arrow:
+		show_arrows()
 	
 func show_arrows() -> void:
 	$right_arrow.visible = true
@@ -55,7 +71,18 @@ func finish_zoom():
 	if not zoom_stack.is_empty():
 		zoom_stack.back().visible = true
 	else:
-		show_arrows()
+		if current_room.need_arrow:
+			show_arrows()
+		hide_back_zoom()
+
+func finish_zoom_tutorial():
+	if zoom_stack.is_empty():
+		return
+	var ultimo_zoom = zoom_stack.pop_back()
+	ultimo_zoom.visible = false
+	if not zoom_stack.is_empty():
+		zoom_stack.back().visible = true
+	else:
 		hide_back_zoom()
 
 func setup_zoom(cena_zoom: PackedScene):
@@ -76,4 +103,3 @@ func start_zoom(cena_zoom: PackedScene):
 	hide_arrows()
 	show_back_zoom()
 	return cena
-	

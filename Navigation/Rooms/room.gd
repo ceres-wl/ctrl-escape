@@ -1,5 +1,6 @@
 extends Node
 
+@export var need_arrow = false
 @onready var wall_content = $Walls
 var walls  = []
 var idx_atual = 0
