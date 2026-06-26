@@ -37,14 +37,19 @@ func load_game():
 
 		# Get the data from the JSON object.
 		var node_data = json.data;
+		var path = node_data.get("path")
 		
 		# Se o dado salvo não conter um "path, pular
 		# O caso de não ter nada salvo sempre vai cair aqui tbm, acho
-		if(!node_data.get("path")):
+		if(!path):
 			push_error("unknown persistent node doesn't have the necessary 'path' property, skipping...")
 			continue;
 		
-		var node = get_node(node_data.get("path"));
+		var node = get_node(path);
+		if(!node):
+			# Não precisa dessa linha pq o get_node já printa o erro
+			#push_error("node in path '%s' was not found" % path);
+			continue;
 		if(!node.has_method("load_self")):
 			push_error("persistent node '%s' is missing a load_self() function, skipped" % node.name);
 			continue;

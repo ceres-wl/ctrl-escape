@@ -1,6 +1,6 @@
 extends Node
 
-var events = ["inicio"];
+var events = ["inicio_tutorial"];
 
 # dicionario usado para as senhas (PODE SER EXCLUIDO, PENSE DUAS VEZES
 # ANTES DE USAR, VOCE FOI AVISADO)
@@ -21,65 +21,83 @@ func get_status_senha(id_senha: String):
 # id é um identificador único do objeto 
 # e action é um identificador único da ação sofrida
 func submit_object_action(id: String, action: String):
-	# TODO Definir os eventos
+	# NOTA: a ordem desse match não é exatamente a ordem
+	# que os eventos vão ocorrer
+	match id:
+		"painel_tutorial":
+			events.append("senha_correta_tutorial");
+		"elevador_tutorial":
+			events.append("inicio_sala01");
+		"computador_sala01":
+			events.append("cabo_conectado_sala01");
+		"terminal_sala01" when action == "abrir":
+			events.append("terminal_aberto1_sala01");
+		"terminal_sala01" when action == "inserir_pendrive_branco":
+			events.append("pendrive_branco_inserido_sala01");
+		"terminal_sala01" when action == "inserir_pendrive_vermelho":
+			events.append("pendrive_vermelho_inserido_sala01")
+		"cofre_sala01":
+			events.append("cofre_aberto_sala01");
+		"gaveta_senha_sala01":
+			events.append("gaveta_senha_aberta_sala01");
+		"elevador_sala01":
+			events.append("fim_sala01")
 	on_event.emit(events.get(events.size()-1));
 
 func submit_terminal_action(fs: FileSystem, cmd: String, stdout: String):
-	# TODO Definir os eventos
-	
-	# Essa função vai ter que modificar o fs de vez em qnd,
-	# tipo quando um pendrive for inserido,
-	# ela já é meio gigante então vale passar isso pra outra classe ou outro método dps
+	# TODO implementar lógica que checa se o evento aconteceu ou nn
+	# "cd1_sala01" - submit_terminal_action(fs, "cd ?", "")
+	# "cat_senha1_sala01" - submit_terminal_action(fs, "cat ?", "?senha?")
+	# "pendrive_branco_montado_sala01" - submit_terminal_action(fs, "?", "?")
+	# "grep1_sala01" - submit_terminal_action(fs, "?", "?")
+	# "grepr1_sala01" - submit_terminal_action(fs, "?", "?")
+	# "grepc1_sala01" - submit_terminal_action(fs, "?", "?")
+	# "pendrive_vermelho_montado_sala01" - submit_terminal_action(fs, "?", "?")
+	# "pptx_enviado_sala01" - submit_terminal_action(fs, "cat enigma.pptx > /dev/projetor", "")
 	
 	on_event.emit(events.get(events.size()-1));
 
 signal on_event(name: String);
 
-# Tudo aí embaixo é temporário, a não ser que não seja :)
-# Documentação dos eventos, algumas convenções:
-#	- Cada linha separada é um evento, no formato "NomeDoEvento" - ChamadaQueDáTriggerNoEvento(parâmetros):
-#	- ? é um comentário (comentário dentro do comentário) ?
-#	- Isso aqui seria muito melhor como uma planilha, mas eu tou com preguiça
-# ---------------
-# inicio - Nenhuma chamada, estado inicial
-# ---------------
-# ? Tem um ou mais eventos faltando aqui, que seria aquela ideia do elevador ?
-# ---------------
-# caboConectado - ? A chamada que aconteceria ao clicar no elevador, provavelmente submit_object_action("elevador", "usar") ?
-# ---------------
-# ? Não sei se tá faltando um ou dois desafios aqui com o terminal, esqueci o que a gente decidiu ?
-# ---------------
-# cofreAberto - submit_object_action("cofre", "abrir")
-# ---------------
-# pendriveBrancoColetado - submit_object_action("pendriveBranco", "coletar")
-# ---------------
-# pendriveBrancoInserido - submit_object_action("pendriveBranco", "inserir")
-# ? Talvez essa ação seja originada no terminal, não sei dizer, chutei ?
-# ---------------
-# diretorioDevListado - submit_terminal_action(fs, "ls ...", "? a definir ?")
-# ---------------
-# pendriveBrancoMontado - submit_terminal_action(fs, "? Não sei que comando monta o sistema ?", "? ñ sei ?")
-# ---------------
-# ? Nota sobre essa sequencia de eventos abaixo: Ela é bem baseada no jogador acessar as três pastas em sequência,
-# coisa que não tem como garantir de acontecer, tem que pensar os dialogos em volta disso ou repensar essa parte um pouco. ?
-# historiaVilaoLida - submit_terminal_action(fs, "ls ...", "? história do vilao ?")
-# ---------------
-# grepPrimeiraMetadeSenha - submit_terminal_action(fs, "grep ...", "? ñsei ?")
-# ---------------
-# grepRecSegundaMetadeSenha - submit_terminal_action(fs, "grep -r ...", "? ñsei ?")
-# ---------------
-# fundoGavetaRemovido - submit_object_action("gaveta", "removerFundo")
-# ---------------
-# pendriveCinzaColetado - submit_object_action("pendriveCinza", "coletar")
-# ---------------
-# pendriveCinzaInserido - submit_object_action("pendriveCinza", "inserir")
-# ---------------
-# pendriveCinzaMontado - submit_terminal_action(fs, "? Não sei que comando monta o sistema ?", "? ñ sei ?")
-# ---------------
-# ? Esse próximo desafio é meio complexo, envolve vários comandos, tem que ver como a gente vai apresentar ele,
-# ? Então não vou colocar os eventos de terminal dele ?
-# ---------------
-# pacoteProjetorEnviado - submit_terminal_action(fs, "pacoteDoJogador.zip > /projetor", "")
-# ---------------
-# senhaSalaInserida - submit_object_action("entradaSenha", "senhaCorreta")
-# ---------------
+# "inicio_tutorial" - Nenhuma chamada, estado inicial
+# ---------------------------
+#1. Dar zoom no papel com a senha e digitar a senha no painel do elevador, abrindo a porta dele
+
+# "senha_correta_tutorial" - submit_object_action("painel_tutorial", "senha_correta")
+# ---------------------------
+#2. Entrando no elevador e saindo dentro da sala principal, o jogador deve abrir a gaveta, pegar o cabo de força e conectar no computador
+
+# "inicio_sala01" - submit_object_action("elevador_tutorial", "entrar")
+# "cabo_conectado_sala01" - submit_object_action("computador_sala01", "conectar_cabo")
+# ---------------------------
+#3. Abrindo o terminal, deve-se navegar pelos diretórios como o Tux diz pra fazer e dar cat em um arquivo com a senha que deve ser inserida no cofre com o pendrive branco
+# "terminal_aberto1_sala01" - submit_object_action("terminal_sala01", "abrir")
+# "cd1_sala01" - submit_terminal_action(fs, "cd ?", "")
+# "cat_senha1_sala01" - submit_terminal_action(fs, "cat ?", "?senha?")
+# "cofre_aberto_sala01" - submit_object_action("cofre_sala01", "abrir")
+# "pendrive_branco_inserido_sala01" - submit_object_action("terminal_sala01", "inserir_pendrive_branco")
+# ---------------------------
+#4. Montar o pendrive pela primeira vez com as pastas contendo os textos com a história do vilão
+# "pendrive_branco_montado_sala01" - submit_terminal_action(fs, "?", "?")
+# ---------------------------
+#5. Tux te ensina a usar o grep, mostra as flags -r (recursive) e -c (count)
+# "grep1_sala01" - submit_terminal_action(fs, "?", "?")
+# "grepr1_sala01" - submit_terminal_action(fs, "?", "?")
+# "grepc1_sala01" - submit_terminal_action(fs, "?", "?")
+# ---------------------------
+#6. Tux pede pra você contar o número de ocorrências da palavra "eu" nos textos
+# ---------------------------
+#7. O número de ocorrências é a senha da gaveta que contém o pendrive vermelho
+# "gaveta_senha_aberta_sala01" - submit_object_action("gaveta_senha_sala01", "abrir")
+# ---------------------------
+#8. Montando o sistema do segundo do pendrive, vai ter um arquivo que deve ser enviado para o projetor usando redirecionamento de saída junto com o comando cat (tipo cat enigma.pptx > /dev/projetor)
+# "pendrive_vermelho_inserido_sala01" - submit_object_action("terminal_sala01", "inserir_pendrive_vermelho")
+# "pendrive_vermelho_montado_sala01" - submit_terminal_action(fs, "?", "?")
+# "pptx_enviado_sala01" - submit_terminal_action(fs, "cat enigma.pptx > /dev/projetor", "")
+# ---------------------------
+#9. Agora o projetor começa a exibir o enigma "As árvores em nosso tempo são cheias de zeros à esquerda"
+# ---------------------------
+#10. Contando a quantidade de galhos à esquerda e à direita da árvore, obtém-se o número binário 01110010, que na base decimal é 114
+# ---------------------------
+#11. Ao inserir essa no elevador, o jogador é levado à tela de despedida
+# "fim_sala01" - submit_object_action("elevador_sala01", "entrar")
