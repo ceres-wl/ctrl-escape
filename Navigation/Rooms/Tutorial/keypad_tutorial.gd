@@ -55,6 +55,8 @@ func _on_botao_submit_pressed():
 		#espera 1 segundo antes de fechar
 		await get_tree().create_timer(1.0).timeout
 		NavigationManager.finish_zoom_tutorial()
+		
+		ProgressionManager.submit_object_action("painel_tutorial", "senha_correta")
 	else:
 		display.modulate = Color.RED
 		await get_tree().create_timer(1.0).timeout

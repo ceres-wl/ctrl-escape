@@ -22,3 +22,4 @@ func _on_porta_pressed():
 		NavigationManager.start_game()
 		PersistanceManager.load_game()
 		queue_free()
+		ProgressionManager.submit_object_action("elevador_tutorial", "adentrado")
