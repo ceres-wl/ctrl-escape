@@ -11,4 +11,4 @@ func _ready() -> void:
 	pressed.connect(_on_pressed)
 
 func _on_pressed():
-	DialogueManager.start_dialogue("tux_clique_1")
+	DialogueManager.start_dialogue()
