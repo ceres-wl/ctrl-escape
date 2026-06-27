@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cm1nfskboxif8" path="res://Terminal/terminal.tscn" id="3_ilubv"]
 [ext_resource type="Texture2D" uid="uid://dpicov6jgo0da" path="res://Arts/Tux.png" id="4_7ey5d"]
 [ext_resource type="Texture2D" uid="uid://yfvrxo8xfm1n" path="res://Arts/computador.png" id="4_pntbb"]
+[ext_resource type="Script" uid="uid://cbakxqbpp3evu" path="res://Navigation/Itens/item_zoom_terminal.gd" id="4_u6nm6"]
 [ext_resource type="Texture2D" uid="uid://uuq4l8vamkib" path="res://Arts/escrivaninha.png" id="5_dlxfm"]
 [ext_resource type="Texture2D" uid="uid://bjjaa661d4ve0" path="res://Arts/cadeira.png" id="6_2ic7n"]
 [ext_resource type="Texture2D" uid="uid://qlwmseky48hv" path="res://Arts/barras_cela.png" id="7_7ey5d"]
@@ -24,6 +25,7 @@ offset_right = 155.0
 offset_bottom = 309.0
 scale = Vector2(1.2, 1.2)
 icon = ExtResource("4_pntbb")
+script = ExtResource("4_u6nm6")
 cena_zoom = ExtResource("3_ilubv")
 
 [node name="Cela" type="TextureRect" parent="." index="2" unique_id=1205583534]
