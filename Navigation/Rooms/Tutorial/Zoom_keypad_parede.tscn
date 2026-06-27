@@ -7,9 +7,10 @@
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1917537665]
 texture_filter = 1
-position = Vector2(-333, -1164)
-scale = Vector2(10.907787, 10.479968)
+position = Vector2(-894, -2280)
+scale = Vector2(18, 18)
 texture = ExtResource("1_n2dn3")
 
 [node name="Keypad" parent="." unique_id=126821551 instance=ExtResource("2_1x622")]
-position = Vector2(586, 354)
+position = Vector2(621, 348)
+scale = Vector2(1.2, 1.2)
