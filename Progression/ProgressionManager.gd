@@ -1,6 +1,7 @@
 extends Node
 
-var events = ["inicio_tutorial"];
+var events = { "inicio_tutorial": true }
+var lastEvent = "inicio_tutorial"
 
 # HACK pra dar a volta no sistema de inserir pendrive no terminal
 # o ideal seria fazer um sistema que permita que o terminal receba dados
@@ -25,6 +26,11 @@ func get_status_senha(id_senha: String):
 func _ready():
 	add_to_group("persist")
 
+func set_event(event: String):
+	if not events.get(event):
+		events.set(event, true)
+		lastEvent = event
+
 # id é um identificador único do objeto 
 # e action é um identificador único da ação sofrida
 func submit_object_action(id: String, action: String):
@@ -32,26 +38,26 @@ func submit_object_action(id: String, action: String):
 	# que os eventos vão ocorrer
 	match id:
 		"painel_tutorial":
-			events.append("senha_correta_tutorial");
+			set_event("senha_correta_tutorial");
 		"elevador_tutorial":
-			events.append("inicio_sala01");
+			set_event("inicio_sala01");
 		"computador_sala01":
-			events.append("cabo_conectado_sala01");
+			set_event("cabo_conectado_sala01");
 			# TODO permitir que o terminal seja acessado
 		"terminal_sala01" when action == "abrir":
 			events.append("terminal_aberto1_sala01");
 		"terminal_sala01" when action == "inserir_pendrive_branco":
 			# TODO inserir dados do pendrive no fs
-			events.append("pendrive_branco_inserido_sala01");
+			set_event("pendrive_branco_inserido_sala01");
 		"terminal_sala01" when action == "inserir_pendrive_vermelho":
 			# TODO inserir dados do pendrive no fs
-			events.append("pendrive_vermelho_inserido_sala01")
+			set_event("pendrive_vermelho_inserido_sala01")
 		"cofre_sala01":
-			events.append("cofre_aberto_sala01");
+			set_event("cofre_aberto_sala01");
 		"gaveta_senha_sala01":
-			events.append("gaveta_senha_aberta_sala01");
+			set_event("gaveta_senha_aberta_sala01");
 		"elevador_sala01":
-			events.append("fim_sala01")
+			set_event("fim_sala01")
 	on_event.emit(events.get(events.size()-1));
 
 func submit_terminal_action(fs: FileSystem, cmd: String, stdout: String):

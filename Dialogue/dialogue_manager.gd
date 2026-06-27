@@ -29,7 +29,7 @@ signal show_text(text: String)
 signal close_dialogue()
 
 func start_dialogue():
-	current_dialogue_label = ProgressionManager.events[ProgressionManager.events.size()-1]
+	current_dialogue_label = ProgressionManager.lastEvent
 	current_dialogue = dialogues[current_dialogue_label]
 	dialogue_idx = 0
 	show_text.emit(current_dialogue[dialogue_idx])
