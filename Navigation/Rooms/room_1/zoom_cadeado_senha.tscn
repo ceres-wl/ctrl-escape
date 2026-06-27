@@ -2,8 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://uuq4l8vamkib" path="res://Arts/escrivaninha.png" id="1_fhc6n"]
 [ext_resource type="Texture2D" uid="uid://djfqsomnat0qi" path="res://Arts/objetos senha/cadeado_codigo_letras.png" id="2_mj688"]
+[ext_resource type="PackedScene" uid="uid://dgwpdi23kiy68" path="res://Navigation/Itens/itens senha/Letterlock.tscn" id="3_mj688"]
 
 [node name="zoom_cadeado_senha" type="Node2D" unique_id=169170612]
+texture_filter = 1
 
 [node name="mesa" type="TextureRect" parent="." unique_id=1113528022]
 texture_filter = 1
@@ -23,3 +25,8 @@ offset_bottom = 292.0
 scale = Vector2(3, 3)
 size_flags_horizontal = 4
 texture = ExtResource("2_mj688")
+
+[node name="Letterlock" parent="." unique_id=317964065 instance=ExtResource("3_mj688")]
+position = Vector2(148, 158)
+scale = Vector2(3, 3)
+id_senha = "Cadeado_1"

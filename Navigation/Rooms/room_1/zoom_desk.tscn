@@ -42,9 +42,22 @@ offset_bottom = 93.86957
 scale = Vector2(0.99, 0.99)
 icon = ExtResource("5_gdwrx")
 script = ExtResource("5_cstrl")
-id_senha = "1"
+id_senha = "Cadeado_1"
+id_lock = "cadeado_zoom_1"
 other_texture = ExtResource("6_6xb3r")
 original_texture = ExtResource("5_gdwrx")
+
+[node name="cadeado_senha" parent="Mesa/Gaveta_Fina_Direita" unique_id=290118097 instance=ExtResource("7_ami0f")]
+layout_mode = 0
+offset_left = 43.91745
+offset_top = 13.175232
+offset_right = 301.91757
+offset_bottom = 91.17525
+scale = Vector2(0.12, 0.12)
+icon = ExtResource("8_73lgs")
+cena_zoom = ExtResource("9_73lgs")
+id = "cadeado_zoom_1"
+item_name = "cadeado_senha"
 
 [node name="Gaveta_Fina_Esquerda" parent="Mesa" unique_id=706236174 instance=ExtResource("7_o4e1f")]
 layout_mode = 0
@@ -56,17 +69,6 @@ scale = Vector2(0.99, 0.99)
 icon = ExtResource("5_gdwrx")
 other_texture = ExtResource("3_lrfk7")
 original_texture = ExtResource("5_gdwrx")
-
-[node name="cadeado_senha" parent="Mesa" unique_id=290118097 instance=ExtResource("7_ami0f")]
-layout_mode = 0
-offset_left = 373.04346
-offset_top = 53.91305
-offset_right = 631.0436
-offset_bottom = 131.91307
-scale = Vector2(0.12, 0.12)
-icon = ExtResource("8_73lgs")
-cena_zoom = ExtResource("9_73lgs")
-item_name = "cadeado_senha"
 
 [node name="Gaveta_Grande_Baixo" parent="Mesa" unique_id=576642734 instance=ExtResource("7_o4e1f")]
 layout_mode = 0

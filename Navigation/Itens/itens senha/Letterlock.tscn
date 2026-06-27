@@ -2,20 +2,67 @@
 
 [ext_resource type="Script" uid="uid://bn0qbtff676yy" path="res://Navigation/Itens/itens senha/letterlock.gd" id="1_x5j48"]
 [ext_resource type="Texture2D" uid="uid://djfqsomnat0qi" path="res://Arts/objetos senha/cadeado_codigo_letras.png" id="2_fgcqo"]
+[ext_resource type="Texture2D" uid="uid://cgje0hbyiju4" path="res://Arts/objetos senha/tecla_escura.png" id="3_fpkmf"]
+[ext_resource type="Texture2D" uid="uid://5vvsbwhddjy" path="res://Arts/objetos senha/tecla_clara.png" id="4_cv1j7"]
 
 [node name="Letterlock" type="Node2D" unique_id=317964065]
 script = ExtResource("1_x5j48")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=779381063]
-position = Vector2(149, 197)
+position = Vector2(144, 57)
 texture = ExtResource("2_fgcqo")
 
-[node name="senha_atual" type="RichTextLabel" parent="." unique_id=597064191]
-offset_left = -86.0
-offset_top = -164.0
-offset_right = 85.0
-offset_bottom = -118.0
+[node name="first" type="Button" parent="." unique_id=17417903]
+offset_left = 23.000002
+offset_top = 22.0
+offset_right = 89.0
+offset_bottom = 100.0
+scale = Vector2(0.9, 0.9)
+mouse_default_cursor_shape = 2
+icon = ExtResource("3_fpkmf")
+flat = true
+
+[node name="third" type="Button" parent="." unique_id=717855254]
+offset_left = 143.0
+offset_top = 21.0
+offset_right = 209.0
+offset_bottom = 99.0
+scale = Vector2(0.9, 0.9)
+mouse_default_cursor_shape = 2
+icon = ExtResource("3_fpkmf")
+flat = true
+
+[node name="second" type="Button" parent="." unique_id=1911075602]
+offset_left = 84.00001
+offset_top = 23.0
+offset_right = 150.0
+offset_bottom = 101.0
+scale = Vector2(0.9, 0.9)
+mouse_default_cursor_shape = 2
+icon = ExtResource("4_cv1j7")
+flat = true
+
+[node name="forth" type="Button" parent="." unique_id=904130781]
+offset_left = 205.0
+offset_top = 22.0
+offset_right = 271.0
+offset_bottom = 100.0
+scale = Vector2(0.9, 0.9)
+mouse_default_cursor_shape = 2
+icon = ExtResource("4_cv1j7")
+flat = true
+
+[node name="Senha_atual" type="RichTextLabel" parent="." unique_id=1476668957]
+offset_left = 41.0
+offset_top = 33.0
+offset_right = 249.0
+offset_bottom = 92.0
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 32
-text = "4 2 3 4"
-scroll_active = false
+text = "A B C D"
 horizontal_alignment = 3
+
+[connection signal="pressed" from="first" to="." method="_on_first_pressed"]
+[connection signal="pressed" from="third" to="." method="_on_third_pressed"]
+[connection signal="pressed" from="second" to="." method="_on_second_pressed"]
+[connection signal="pressed" from="forth" to="." method="_on_forth_pressed"]
