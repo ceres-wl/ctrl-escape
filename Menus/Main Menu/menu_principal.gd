@@ -12,9 +12,6 @@ func _ready() -> void:
 	
 #TODO: Colocar para aparecer mensagem de confirmaçao
 
-func _on_exit_pressed():
-	get_tree().quit();
-
 func _on_config_pressed():
 	$CanvasLayer.visible = true
 

@@ -1,5 +1,7 @@
 extends Node
 
+var menu_inicial = preload("res://Menus/Main Menu/menu_principal.tscn");
+
 var current_room : Node = null
 var zoom_stack : Array[Node] = []
 var zooms = {}
@@ -17,6 +19,17 @@ func start_game() -> void:
 	current_room = instancia_sala
 	# temporario, depende da sala que vai ser chamada
 	show_arrows()
+
+func end_game():
+	# FIXME tá bugado
+	#current_room.visible = false;
+	#var menu_inst = menu_inicial.instantiate();
+	#get_tree().change_scene_to_node(menu_inst);
+	#
+	#hide_arrows();
+	#
+	#current_room.queue_free();
+	pass
 
 func start_tutorial() -> void:
 	var tutorial_tscn = preload("res://Navigation/Rooms/Tutorial/TutorialRoom.tscn")

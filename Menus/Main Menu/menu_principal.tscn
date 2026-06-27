@@ -3,12 +3,10 @@
 [ext_resource type="Script" uid="uid://c56kf4bkfcfb1" path="res://Menus/Main Menu/menu_principal.gd" id="1_0vqsy"]
 [ext_resource type="Texture2D" uid="uid://nblgcowxdrfk" path="res://Arts/botoes/botão configuração.png" id="2_13irf"]
 [ext_resource type="Texture2D" uid="uid://cx831fere2j77" path="res://Arts/menu background.png" id="2_jeylh"]
-[ext_resource type="Texture2D" uid="uid://27qf65avg6g0" path="res://Arts/botoes/botão saída.png" id="3_jeylh"]
 [ext_resource type="Texture2D" uid="uid://sgoufgilhi18" path="res://Arts/botoes/botao jogar.png" id="4_c2jsc"]
 [ext_resource type="Texture2D" uid="uid://c1nqvseyx6du7" path="res://Arts/logo.png" id="4_rg02c"]
 [ext_resource type="Texture2D" uid="uid://b7mjy65eu4xd1" path="res://Arts/botoes/botão jogar claro.png" id="5_rr5ew"]
 [ext_resource type="Texture2D" uid="uid://bsxkyjggqgq3u" path="res://Arts/botoes/botao configuração claro.png" id="8_xvmgg"]
-[ext_resource type="Texture2D" uid="uid://cmutq4ecnkfup" path="res://Arts/botoes/botão saída claro.png" id="10_c2jsc"]
 [ext_resource type="Texture2D" uid="uid://6e0matlgvite" path="res://Arts/config_principal.png" id="10_nnast"]
 [ext_resource type="Texture2D" uid="uid://dnu4qb381rpeh" path="res://Arts/botoes/botão x.png" id="11_7p2ec"]
 [ext_resource type="Texture2D" uid="uid://dmdxjh6rq4hw3" path="res://Arts/botoes/botão x claro.png" id="12_fv4n1"]
@@ -75,27 +73,14 @@ stretch_mode = 5
 
 [node name="Config" type="TextureButton" parent="." unique_id=67207902]
 layout_mode = 0
-offset_left = 1030.0
+offset_left = 1086.0
 offset_top = 25.0
-offset_right = 1071.0
+offset_right = 1127.0
 offset_bottom = 66.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_13irf")
 texture_pressed = ExtResource("8_xvmgg")
 texture_hover = ExtResource("8_xvmgg")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Exit" type="TextureButton" parent="." unique_id=1664785619]
-layout_mode = 0
-offset_left = 1085.0
-offset_top = 25.0
-offset_right = 1128.0
-offset_bottom = 66.0
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("3_jeylh")
-texture_pressed = ExtResource("10_c2jsc")
-texture_hover = ExtResource("10_c2jsc")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -205,6 +190,7 @@ stretch_mode = 5
 flip_h = true
 
 [node name="TutorialPopup" type="CanvasLayer" parent="." unique_id=185930900]
+visible = false
 script = ExtResource("18_gg0qu")
 
 [node name="ComoJogar" type="TextureRect" parent="TutorialPopup" unique_id=603241505]
@@ -226,7 +212,6 @@ flat = true
 [connection signal="pressed" from="Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="ready" from="Jogar" to="." method="_on_texture_button_ready"]
 [connection signal="pressed" from="Config" to="." method="_on_config_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="value_changed" from="CanvasLayer/ColorRect/Menu Config/Slider musica" to="." method="_on_slider_musica_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/ColorRect/Menu Config/Slider som" to="." method="_on_slider_som_value_changed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/Menu Config/Botao_creditos" to="." method="_on_botao_creditos_pressed"]

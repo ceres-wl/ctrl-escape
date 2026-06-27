@@ -4,6 +4,24 @@
 [ext_resource type="Texture2D" uid="uid://l6pftu5y7o2t" path="res://Arts/botoes/seta navegação.png" id="1_hq208"]
 [ext_resource type="Texture2D" uid="uid://b76augd2k5axi" path="res://Arts/botoes/seta navegação clara.png" id="2_hcw78"]
 
+[sub_resource type="InputEventKey" id="InputEventKey_w48si"]
+keycode = 4194321
+
+[sub_resource type="Shortcut" id="Shortcut_suukw"]
+events = [SubResource("InputEventKey_w48si")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_dyw58"]
+keycode = 4194319
+
+[sub_resource type="Shortcut" id="Shortcut_m63hy"]
+events = [SubResource("InputEventKey_dyw58")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_irxsb"]
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_w48si"]
+events = [SubResource("InputEventKey_irxsb")]
+
 [node name="GerenciadorNav" type="Control" unique_id=1341496162]
 layout_mode = 3
 anchors_preset = 15
@@ -22,6 +40,7 @@ offset_right = 1131.0
 offset_bottom = 350.0
 mouse_default_cursor_shape = 2
 action_mode = 0
+shortcut = SubResource("Shortcut_suukw")
 texture_normal = ExtResource("1_hq208")
 texture_pressed = ExtResource("2_hcw78")
 
@@ -34,6 +53,7 @@ offset_right = 76.0
 offset_bottom = 350.0
 mouse_default_cursor_shape = 2
 action_mode = 0
+shortcut = SubResource("Shortcut_m63hy")
 texture_normal = ExtResource("1_hq208")
 texture_pressed = ExtResource("2_hcw78")
 flip_h = true
@@ -48,6 +68,7 @@ offset_right = 106.0
 offset_bottom = 106.0
 rotation = 3.1415927
 mouse_default_cursor_shape = 2
+shortcut = SubResource("Shortcut_w48si")
 texture_normal = ExtResource("1_hq208")
 texture_pressed = ExtResource("2_hcw78")
 texture_hover = ExtResource("2_hcw78")
