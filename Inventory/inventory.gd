@@ -1,11 +1,14 @@
 extends Node
 
+signal terminal_aberto
+signal terminal_fechado
 signal inventory_changed
 signal slot_selected(slot_index:int)
 
 const HOTBAR_SIZE := 8
 var hotbar:Array[item_coletavel]
 var selected_slot:int=0
+var inventory_enabled := true
 
 func _init():
 	for i in HOTBAR_SIZE:
@@ -35,14 +38,3 @@ func remove_item(item_usado: item_coletavel):
 
 func get_selected_item():
 	return hotbar[selected_slot]
-
-func _on_barra_recolher_pressed() -> void:
-	$inventary_hotbar.visible = false
-	$barra_expandir.visible = true
-
-func _on_barra_expandir_pressed() -> void:
-	$inventary_hotbar.visible = true
-	$barra_expandir.visible = false
-
-func _on_x_pressed() -> void:
-	$"Zoom_item".visible = false

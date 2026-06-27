@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://djo1q3ihdfkw0"]
 
-[ext_resource type="Script" uid="uid://b6uqys2xdax3u" path="res://Inventory/inventory.gd" id="1_u5a7d"]
+[ext_resource type="Script" uid="uid://dul3ndmfte2g8" path="res://Inventory/inventory_ui.gd" id="1_g4pjs"]
 [ext_resource type="Texture2D" uid="uid://baibjdh35y3dj" path="res://Arts/botoes/barra_recolhimento_inventario.png" id="2_n8px4"]
 [ext_resource type="Texture2D" uid="uid://h3w35jpart7h" path="res://Arts/inventário.png" id="3_l2rwc"]
 [ext_resource type="Script" uid="uid://duv6j0oelk6cq" path="res://Inventory/hotbar.gd" id="4_mu001"]
@@ -73,7 +73,7 @@ unicode = 56
 events = [SubResource("InputEventKey_a7xpp")]
 
 [node name="Inventory" type="Node" unique_id=1011375304]
-script = ExtResource("1_u5a7d")
+script = ExtResource("1_g4pjs")
 
 [node name="barra_expandir" type="TextureButton" parent="." unique_id=954160796]
 anchors_preset = 7
@@ -90,9 +90,9 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_n8px4")
 stretch_mode = 5
 
-[node name="inventary_hotbar" type="CanvasLayer" parent="." unique_id=1328213647]
+[node name="inventory_hotbar" type="CanvasLayer" parent="." unique_id=1328213647]
 
-[node name="inventory_image" type="TextureRect" parent="inventary_hotbar" unique_id=1810146108]
+[node name="inventory_image" type="TextureRect" parent="inventory_hotbar" unique_id=1810146108]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -105,7 +105,7 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("3_l2rwc")
 
-[node name="barra_recolher" type="TextureButton" parent="inventary_hotbar" unique_id=1462015215]
+[node name="barra_recolher" type="TextureButton" parent="inventory_hotbar" unique_id=1462015215]
 offset_left = 482.0
 offset_top = 524.0
 offset_right = 671.0
@@ -113,7 +113,7 @@ offset_bottom = 564.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("2_n8px4")
 
-[node name="Hotbar" type="HBoxContainer" parent="inventary_hotbar" unique_id=1654050827]
+[node name="Hotbar" type="HBoxContainer" parent="inventory_hotbar" unique_id=1654050827]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -128,35 +128,35 @@ grow_vertical = 0
 theme_override_constants/separation = 7
 script = ExtResource("4_mu001")
 
-[node name="Slot" parent="inventary_hotbar/Hotbar" unique_id=1977477175 instance=ExtResource("5_n8px4")]
+[node name="Slot" parent="inventory_hotbar/Hotbar" unique_id=1977477175 instance=ExtResource("5_n8px4")]
 layout_mode = 2
 shortcut = SubResource("Shortcut_mu001")
 
-[node name="Slot2" parent="inventary_hotbar/Hotbar" unique_id=1723297111 instance=ExtResource("5_n8px4")]
+[node name="Slot2" parent="inventory_hotbar/Hotbar" unique_id=1723297111 instance=ExtResource("5_n8px4")]
 layout_mode = 2
 shortcut = SubResource("Shortcut_hu6fx")
 
-[node name="Slot3" parent="inventary_hotbar/Hotbar" unique_id=2031290257 instance=ExtResource("5_n8px4")]
+[node name="Slot3" parent="inventory_hotbar/Hotbar" unique_id=2031290257 instance=ExtResource("5_n8px4")]
 layout_mode = 2
 shortcut = SubResource("Shortcut_4tjhf")
 
-[node name="Slot4" parent="inventary_hotbar/Hotbar" unique_id=1562520573 instance=ExtResource("5_n8px4")]
+[node name="Slot4" parent="inventory_hotbar/Hotbar" unique_id=1562520573 instance=ExtResource("5_n8px4")]
 layout_mode = 2
 shortcut = SubResource("Shortcut_kstle")
 
-[node name="Slot5" parent="inventary_hotbar/Hotbar" unique_id=1274400599 instance=ExtResource("5_n8px4")]
+[node name="Slot5" parent="inventory_hotbar/Hotbar" unique_id=1274400599 instance=ExtResource("5_n8px4")]
 layout_mode = 2
 shortcut = SubResource("Shortcut_vsjqv")
 
-[node name="Slot6" parent="inventary_hotbar/Hotbar" unique_id=1411553426 instance=ExtResource("5_n8px4")]
+[node name="Slot6" parent="inventory_hotbar/Hotbar" unique_id=1411553426 instance=ExtResource("5_n8px4")]
 layout_mode = 2
 shortcut = SubResource("Shortcut_5htje")
 
-[node name="Slot7" parent="inventary_hotbar/Hotbar" unique_id=1875908015 instance=ExtResource("5_n8px4")]
+[node name="Slot7" parent="inventory_hotbar/Hotbar" unique_id=1875908015 instance=ExtResource("5_n8px4")]
 layout_mode = 2
 shortcut = SubResource("Shortcut_10xiy")
 
-[node name="Slot8" parent="inventary_hotbar/Hotbar" unique_id=771370880 instance=ExtResource("5_n8px4")]
+[node name="Slot8" parent="inventory_hotbar/Hotbar" unique_id=771370880 instance=ExtResource("5_n8px4")]
 layout_mode = 2
 shortcut = SubResource("Shortcut_cnamu")
 
@@ -211,5 +211,5 @@ texture_hover = ExtResource("6_hu6fx")
 stretch_mode = 5
 
 [connection signal="pressed" from="barra_expandir" to="." method="_on_barra_expandir_pressed"]
-[connection signal="pressed" from="inventary_hotbar/barra_recolher" to="." method="_on_barra_recolher_pressed"]
+[connection signal="pressed" from="inventory_hotbar/barra_recolher" to="." method="_on_barra_recolher_pressed"]
 [connection signal="pressed" from="Zoom_item/x" to="." method="_on_x_pressed"]

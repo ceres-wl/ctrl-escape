@@ -35,6 +35,8 @@ func show_item(item_zoom: item_coletavel):
 	$"../../Zoom_item".visible = true
 
 func _input(event):
+	if !Inventory.inventory_enabled:
+		return
 	if event.is_action_pressed("usar_item"):
 		var item_selecionado = Inventory.get_selected_item()
 		if item_selecionado:

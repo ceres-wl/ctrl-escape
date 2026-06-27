@@ -81,6 +81,8 @@ func finish_zoom():
 		return
 	var ultimo_zoom = zoom_stack.pop_back()
 	ultimo_zoom.visible = false
+	if ultimo_zoom.scene_file_path == 'res://Terminal/terminal.tscn':
+		Inventory.terminal_fechado.emit()
 	if not zoom_stack.is_empty():
 		zoom_stack.back().visible = true
 	else:
@@ -115,4 +117,6 @@ func start_zoom(cena_zoom: PackedScene):
 	zoom_stack.append(cena)
 	hide_arrows()
 	show_back_zoom()
+	if cena_zoom == preload('res://Terminal/terminal.tscn'):
+		Inventory.terminal_aberto.emit()
 	return cena
