@@ -7,14 +7,14 @@
 [node name="DialoguePopup" type="CanvasLayer" unique_id=36251990]
 script = ExtResource("1_rgyuy")
 
-[node name="FloorBlack" type="Panel" parent="." unique_id=331075257]
+[node name="Background" type="Panel" parent="." unique_id=331075257]
 offset_left = 201.0
 offset_top = 7.0
 offset_right = 940.0
 offset_bottom = 86.0
 mouse_filter = 2
 
-[node name="Text" type="RichTextLabel" parent="FloorBlack" unique_id=1297520034]
+[node name="Text" type="RichTextLabel" parent="Background" unique_id=1297520034]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,7 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="NextButton" type="TextureButton" parent="FloorBlack" unique_id=1752028409]
+[node name="NextButton" type="TextureButton" parent="Background" unique_id=1752028409]
 layout_mode = 1
 anchors_preset = -1
 offset_left = 744.0
@@ -44,4 +44,4 @@ texture_hover = ExtResource("2_rgyuy")
 ignore_texture_size = true
 stretch_mode = 5
 
-[connection signal="pressed" from="FloorBlack/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Background/NextButton" to="." method="_on_next_button_pressed"]

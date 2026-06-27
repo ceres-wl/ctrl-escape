@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-@onready var painel = $FloorBlack
-@onready var texto_label = $FloorBlack/Text
-@onready var botao_avancar = $FloorBlack/NextButton
+@onready var painel = $Background
+@onready var texto_label = $Background/Text
+@onready var botao_avancar = $Background/NextButton
 
 func _ready() -> void:
 	visible = false

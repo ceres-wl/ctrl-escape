@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bwdj62q36kiwp"]
+
+[ext_resource type="Texture2D" uid="uid://bncdbu3x7ijyd" path="res://Arts/botoes/botão ajuda.png" id="1_rrbqa"]
+[ext_resource type="Script" uid="uid://dmbca76yksbfa" path="res://Dialogue/hint.gd" id="2_keexg"]
+
+[node name="Hint" type="TextureButton" unique_id=2095969743]
+anchors_preset = -1
+offset_left = 11.0
+offset_top = 8.0
+offset_right = 58.0
+offset_bottom = 55.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_rrbqa")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_keexg")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bvqe4aojog7el"]
+
+[ext_resource type="Script" uid="uid://cl58c68c2qof4" path="res://Dialogue/hint_popup.gd" id="1_2r40d"]
+[ext_resource type="Texture2D" uid="uid://dnu4qb381rpeh" path="res://Arts/botoes/botão x.png" id="1_274uv"]
+[ext_resource type="Texture2D" uid="uid://dmdxjh6rq4hw3" path="res://Arts/botoes/botão x claro.png" id="2_2r40d"]
+
+[node name="HintPopup" type="CanvasLayer" unique_id=1070386884]
+script = ExtResource("1_2r40d")
+
+[node name="Background" type="Panel" parent="." unique_id=850644867]
+offset_left = 201.0
+offset_top = 7.0
+offset_right = 940.0
+offset_bottom = 86.0
+mouse_filter = 2
+
+[node name="Text" type="RichTextLabel" parent="Background" unique_id=1924221513]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.5
+offset_top = -27.0
+offset_right = 350.5
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CloseButton" type="TextureButton" parent="Background" unique_id=379042809]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 744.0
+offset_top = 18.0
+offset_right = 796.0
+offset_bottom = 70.0
+mouse_default_cursor_shape = 2
+action_mode = 0
+texture_normal = ExtResource("1_274uv")
+texture_pressed = ExtResource("2_2r40d")
+texture_hover = ExtResource("2_2r40d")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="Background/CloseButton" to="." method="_on_close_button_pressed"]
