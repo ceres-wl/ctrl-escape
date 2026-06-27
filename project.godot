@@ -28,6 +28,10 @@ DialogueManager="*uid://csl71u3j5reeq"
 ProgressionManager="*uid://cnq16gxkkljlg"
 PersistanceManager="*uid://bren6v515r2in"
 
+[display]
+
+window/size/resizable=false
+
 [dotnet]
 
 project/assembly_name="ctrl-escape"
