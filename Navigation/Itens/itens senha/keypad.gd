@@ -9,6 +9,7 @@ var idx_atual = 0
 var concluido = false
 
 # pode ser alterado para nao usar mais o progression manager
+
 func _ready() -> void:
 	$senha_atual.text = senha_atual
 	ProgressionManager.set_senha(id_senha)

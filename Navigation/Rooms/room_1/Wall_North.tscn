@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dv12fjeha8myt" path="res://Navigation/Rooms/room_1/zoom_desk.tscn" id="9_pdbst"]
 [ext_resource type="Script" uid="uid://bdwonr0q60b88" path="res://Navigation/Rooms/room_1/interative_tux.gd" id="11_5ik0t"]
 [ext_resource type="PackedScene" uid="uid://crsbn5p4f3nj8" path="res://Dialogue/DialoguePopup.tscn" id="12_px4p8"]
-[ext_resource type="Texture2D" uid="uid://djfqsomnat0qi" path="res://Arts/cadeado_codigo_letras.png" id="14_pntbb"]
+[ext_resource type="Texture2D" uid="uid://djfqsomnat0qi" path="res://Arts/objetos senha/cadeado_codigo_letras.png" id="14_pntbb"]
 
 [node name="Wall" unique_id=1256029917 instance=ExtResource("1_hv52b")]
 

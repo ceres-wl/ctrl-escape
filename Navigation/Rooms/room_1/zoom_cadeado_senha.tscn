@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cergumpcxe7ry"]
 
 [ext_resource type="Texture2D" uid="uid://uuq4l8vamkib" path="res://Arts/escrivaninha.png" id="1_fhc6n"]
-[ext_resource type="Texture2D" uid="uid://djfqsomnat0qi" path="res://Arts/cadeado_codigo_letras.png" id="2_mj688"]
+[ext_resource type="Texture2D" uid="uid://djfqsomnat0qi" path="res://Arts/objetos senha/cadeado_codigo_letras.png" id="2_mj688"]
 
 [node name="zoom_cadeado_senha" type="Node2D" unique_id=169170612]
 

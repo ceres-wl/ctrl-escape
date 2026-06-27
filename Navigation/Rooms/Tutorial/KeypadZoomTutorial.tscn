@@ -1,21 +1,23 @@
 [gd_scene format=3 uid="uid://dri3rm8co2sjo"]
 
 [ext_resource type="Script" uid="uid://df2k3vyopiyh3" path="res://Navigation/Rooms/Tutorial/keypad_tutorial.gd" id="1_pwy35"]
-[ext_resource type="Texture2D" uid="uid://bj4a2t5cx7oo3" path="res://Arts/jogo background vazio.png" id="2_135gi"]
 [ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/objetos senha/keypad.png" id="2_buvns"]
+[ext_resource type="Texture2D" uid="uid://cx831fere2j77" path="res://Arts/menu background.png" id="2_ybn0i"]
 
 [node name="KeypadZoomTutorial" type="Control" unique_id=2116253213]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_pwy35")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=971308479]
-position = Vector2(577, 326)
-scale = Vector2(1, 1.0408804)
-texture = ExtResource("2_135gi")
+[node name="Background" type="Sprite2D" parent="." unique_id=1588254447]
+texture_filter = 1
+position = Vector2(-438, -1238)
+scale = Vector2(10.907787, 10.479968)
+texture = ExtResource("2_ybn0i")
 
 [node name="Keypad" type="Node2D" parent="." unique_id=1780076015]
 position = Vector2(770, 314)
+scale = Vector2(0.8, 0.8)
 
 [node name="Sprite2D" type="Sprite2D" parent="Keypad" unique_id=734966577]
 position = Vector2(-235.99998, -1.5258789e-05)

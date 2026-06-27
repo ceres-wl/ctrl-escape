@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cqcllps8341ny" path="res://Navigation/Itens/Item_Collectible.tscn" id="7_3m4gn"]
 [ext_resource type="PackedScene" uid="uid://ojxks5n2fxmk" path="res://Navigation/Itens/item_zoom.tscn" id="7_ami0f"]
 [ext_resource type="PackedScene" uid="uid://tb142t3p2d75" path="res://Navigation/Itens/item_container.tscn" id="7_o4e1f"]
-[ext_resource type="Texture2D" uid="uid://djfqsomnat0qi" path="res://Arts/cadeado_codigo_letras.png" id="8_73lgs"]
+[ext_resource type="Texture2D" uid="uid://djfqsomnat0qi" path="res://Arts/objetos senha/cadeado_codigo_letras.png" id="8_73lgs"]
 [ext_resource type="Texture2D" uid="uid://3cy7i0dtlwwl" path="res://Arts/gaveta_grande_fechada.png" id="8_g761v"]
 [ext_resource type="Texture2D" uid="uid://cpjn73cfknjsf" path="res://Arts/cabo_enrolado_inclinado.png" id="8_gdwrx"]
 [ext_resource type="PackedScene" uid="uid://cergumpcxe7ry" path="res://Navigation/Rooms/room_1/zoom_cadeado_senha.tscn" id="9_73lgs"]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dgwpdi23kiy68"]
+
+[ext_resource type="Script" uid="uid://bn0qbtff676yy" path="res://Navigation/Itens/itens senha/letterlock.gd" id="1_x5j48"]
+[ext_resource type="Texture2D" uid="uid://djfqsomnat0qi" path="res://Arts/objetos senha/cadeado_codigo_letras.png" id="2_fgcqo"]
+
+[node name="Letterlock" type="Node2D" unique_id=317964065]
+script = ExtResource("1_x5j48")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=779381063]
+position = Vector2(149, 197)
+texture = ExtResource("2_fgcqo")
+
+[node name="senha_atual" type="RichTextLabel" parent="." unique_id=597064191]
+offset_left = -86.0
+offset_top = -164.0
+offset_right = 85.0
+offset_bottom = -118.0
+theme_override_font_sizes/normal_font_size = 32
+text = "4 2 3 4"
+scroll_active = false
+horizontal_alignment = 3
