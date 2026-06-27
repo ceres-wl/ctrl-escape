@@ -1,6 +1,11 @@
 extends item_passage
 
 @export var id_senha = ""
+@export var openDoor : Texture2D
+
+func _process(delta: float) -> void:
+	if ProgressionManager.get_status_senha(id_senha):
+		icon = openDoor
 
 func change_room() -> void:
 		if ProgressionManager.get_status_senha(id_senha):

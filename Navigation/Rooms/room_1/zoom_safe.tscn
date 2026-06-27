@@ -26,16 +26,18 @@ scale = Vector2(1.8, 1.8)
 icon = ExtResource("2_nnqrk")
 script = ExtResource("4_f8y14")
 id_senha = "3"
+id_lock = "keypad_zoom_1"
 other_texture = ExtResource("3_4ega6")
 original_texture = ExtResource("2_nnqrk")
 
-[node name="Keypad" parent="." unique_id=1824924381 instance=ExtResource("5_8dtgm")]
-offset_left = 513.0
-offset_top = 206.0
-offset_right = 817.0
-offset_bottom = 606.0
-scale = Vector2(0.51, 0.51)
+[node name="Keypad" parent="Cofre" unique_id=1824924381 instance=ExtResource("5_8dtgm")]
+layout_mode = 0
+offset_left = 201.66666
+offset_top = 100.55556
+offset_right = 505.66666
+offset_bottom = 500.55554
+scale = Vector2(0.28, 0.28)
 icon = ExtResource("4_nnqrk")
 cena_zoom = ExtResource("6_bxvjf")
-id = null
+id = "keypad_zoom_1"
 item_name = "Keypad_cofre"
