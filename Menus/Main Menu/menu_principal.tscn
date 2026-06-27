@@ -13,10 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://r43vgpl74wx0" path="res://Arts/botoes/botão creditos.png" id="13_fnw8w"]
 [ext_resource type="Texture2D" uid="uid://djgvs4cd41thh" path="res://Arts/botoes/botão creditos claro.png" id="14_68770"]
 [ext_resource type="Texture2D" uid="uid://cg6lj3ccmv3tj" path="res://Arts/creditos.png" id="17_68770"]
+[ext_resource type="Texture2D" uid="uid://cwq803h0mw851" path="res://botao_continuar_aceso.png" id="18_cbqsc"]
 [ext_resource type="Script" uid="uid://dkpdwoccfrbcu" path="res://Menus/Main Menu/tutorial_popup.gd" id="18_gg0qu"]
 [ext_resource type="Texture2D" uid="uid://l6pftu5y7o2t" path="res://Arts/botoes/seta navegação.png" id="18_uhxpd"]
 [ext_resource type="Texture2D" uid="uid://fgrfl2l0w841" path="res://Arts/Como Jogar.png" id="19_cbqsc"]
 [ext_resource type="Texture2D" uid="uid://b76augd2k5axi" path="res://Arts/botoes/seta navegação clara.png" id="19_rm1gh"]
+[ext_resource type="Texture2D" uid="uid://cd3r83cdokjut" path="res://botao_continuar_apagado.png" id="19_sb38x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6qnv"]
 bg_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
@@ -190,7 +192,6 @@ stretch_mode = 5
 flip_h = true
 
 [node name="TutorialPopup" type="CanvasLayer" parent="." unique_id=185930900]
-visible = false
 script = ExtResource("18_gg0qu")
 
 [node name="ComoJogar" type="TextureRect" parent="TutorialPopup" unique_id=603241505]
@@ -201,13 +202,14 @@ offset_bottom = 648.0
 texture = ExtResource("19_cbqsc")
 expand_mode = 1
 
-[node name="Continuar" type="Button" parent="TutorialPopup" unique_id=1997059199]
+[node name="Continuar" type="TextureButton" parent="TutorialPopup" unique_id=1668041090]
 offset_left = 477.0
 offset_top = 543.0
 offset_right = 676.0
 offset_bottom = 608.0
 mouse_default_cursor_shape = 2
-flat = true
+texture_normal = ExtResource("18_cbqsc")
+texture_hover = ExtResource("19_sb38x")
 
 [connection signal="pressed" from="Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="ready" from="Jogar" to="." method="_on_texture_button_ready"]

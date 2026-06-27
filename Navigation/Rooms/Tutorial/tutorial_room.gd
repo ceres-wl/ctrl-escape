@@ -18,9 +18,6 @@ func abrir_porta():
 	
 func _on_porta_pressed():
 	if(porta_trancada == false):
-		print("aaaaaa")
 		NavigationManager.start_game()
 		PersistanceManager.load_game();
 		queue_free()
-	else:
-		print("bbbb")
