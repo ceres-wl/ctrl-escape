@@ -26,7 +26,8 @@ func limpar_visor():
 func _ready():
 	atualizar_visor()
 	
-	porta = get_tree().current_scene.get_node("Door") as TextureButton
+	if get_tree().current_scene.has_node("Door"):
+		porta = get_tree().current_scene.get_node("Door") as TextureButton
 	
 	#conectar cada botao numerico
 	$Keypad/key_0.pressed.connect(_on_botao_numero_pressed.bind("0"))

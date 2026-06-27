@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bg2rl7lcqkf4u" path="res://Navigation/Rooms/Tutorial/tutorial_room.gd" id="1_e0sa4"]
 [ext_resource type="Texture2D" uid="uid://cx831fere2j77" path="res://Arts/menu background.png" id="1_t52mh"]
 [ext_resource type="PackedScene" uid="uid://ojxks5n2fxmk" path="res://Navigation/Itens/item_zoom.tscn" id="2_fp6hx"]
-[ext_resource type="Texture2D" uid="uid://3br7gcplhdkm" path="res://Arts/quadro_bash.png" id="2_ucknx"]
 [ext_resource type="Texture2D" uid="uid://ctq0lm5emsx3h" path="res://Arts/objetos senha/keypad.png" id="3_84iyn"]
+[ext_resource type="Texture2D" uid="uid://3fuvtx28ka4v" path="res://carta_tutorial(1).png" id="3_iyitu"]
 [ext_resource type="Script" uid="uid://bq1dyng7okc2e" path="res://Navigation/Itens/item_collectible.gd" id="3_t52mh"]
 [ext_resource type="PackedScene" uid="uid://djo1q3ihdfkw0" path="res://Inventory/inventory.tscn" id="4_fp6hx"]
 [ext_resource type="PackedScene" uid="uid://ckowb7fsl5gx3" path="res://Menus/Menu config rooms/config_rooms.tscn" id="5_84iyn"]
@@ -16,26 +16,28 @@ anchors_preset = 0
 script = ExtResource("1_e0sa4")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=775173970]
-position = Vector2(576.50006, 323.75003)
-scale = Vector2(0.8853846, 0.8506578)
+position = Vector2(568.00006, 151.00002)
+scale = Vector2(1.5223076, 1.5276314)
 texture = ExtResource("1_t52mh")
 
 [node name="Door" type="TextureButton" parent="." unique_id=602717531]
 layout_mode = 0
-offset_left = 518.0
-offset_top = 376.0
-offset_right = 633.0
-offset_bottom = 519.0
+offset_left = 466.0
+offset_top = 243.0
+offset_right = 668.0
+offset_bottom = 501.0
 mouse_default_cursor_shape = 2
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Letter" type="Button" parent="." unique_id=934303783]
 layout_mode = 0
-offset_left = 408.0
-offset_top = 365.0
-offset_right = 474.0
-offset_bottom = 432.0
+offset_left = 298.0
+offset_top = 427.0
+offset_right = 364.0
+offset_bottom = 494.0
 mouse_default_cursor_shape = 2
-icon = ExtResource("2_ucknx")
+icon = ExtResource("3_iyitu")
 flat = true
 expand_icon = true
 script = ExtResource("3_t52mh")
@@ -47,12 +49,13 @@ metadata/_custom_type_script = "uid://bq1dyng7okc2e"
 
 [node name="Keypad" parent="." unique_id=107717112 instance=ExtResource("2_fp6hx")]
 layout_mode = 0
-offset_left = 943.0
-offset_top = 278.0
-offset_right = 943.0
-offset_bottom = 278.0
+offset_left = 678.0
+offset_top = 306.0
+offset_right = 1111.3335
+offset_bottom = 906.0
 scale = Vector2(0.15, 0.15)
 icon = ExtResource("3_84iyn")
+expand_icon = true
 cena_zoom = ExtResource("8_rtjeg")
 item_name = "Keypad_tutorial"
 

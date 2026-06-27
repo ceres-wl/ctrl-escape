@@ -14,8 +14,7 @@ func _ready() -> void:
 	
 func abrir_porta():
 	porta_trancada = false
-	#print("sinal recebido")
-	#mudar textura aqui
+	porta.texture_normal = load("res://Arts/porta_aberta.png")
 	
 func _on_porta_pressed():
 	if(porta_trancada == false):
