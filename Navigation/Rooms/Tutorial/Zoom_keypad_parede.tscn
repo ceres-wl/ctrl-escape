@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cbhbbbmxy1a1a"]
+[gd_scene format=3 uid="uid://viyy3os4yy8j"]
 
 [ext_resource type="Texture2D" uid="uid://cx831fere2j77" path="res://Arts/menu background.png" id="1_n2dn3"]
 [ext_resource type="PackedScene" uid="uid://gbdvc7gedua2" path="res://Navigation/Itens/itens senha/Keypad.tscn" id="2_1x622"]

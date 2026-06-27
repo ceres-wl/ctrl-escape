@@ -25,7 +25,6 @@ func change_container():
 		if filho is item:
 			if(filho.type_atual != type_item.COLLECTIBLE || !filho.coletado):
 				filho.visible = open
-	
 
 func save():
 	var dict = super.save();
