@@ -13,7 +13,7 @@ texture_filter = 1
 script = ExtResource("2_dw0ot")
 need_arrow = true
 
-[node name="Walls" parent="." index="2" unique_id=2098237260]
+[node name="Walls" parent="." index="3" unique_id=2098237260]
 script = ExtResource("3_50c7m")
 
 [node name="Wall_North" parent="Walls" index="0" unique_id=1256029917 instance=ExtResource("4_kdrev")]

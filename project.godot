@@ -27,6 +27,7 @@ NavigationManager="*uid://cokq8wbeqkjdy"
 DialogueManager="*uid://csl71u3j5reeq"
 ProgressionManager="*uid://cnq16gxkkljlg"
 PersistanceManager="*uid://bren6v515r2in"
+HintManager="*uid://rlwo4atf0srq"
 
 [display]
 
