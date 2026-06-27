@@ -44,8 +44,8 @@ func submit_object_action(id: String, action: String):
 		"computador_sala01":
 			set_event("cabo_conectado_sala01");
 			# TODO permitir que o terminal seja acessado
-		"terminal_sala01" when action == "abrir":
-			events.append("terminal_aberto1_sala01");
+		"terminal_sala01" when action == "pwd":
+			set_event("terminal_pwd_sala01");
 		"terminal_sala01" when action == "inserir_pendrive_branco":
 			# TODO inserir dados do pendrive no fs
 			set_event("pendrive_branco_inserido_sala01");

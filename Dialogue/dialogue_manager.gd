@@ -16,8 +16,11 @@ var dialogues = {
 		"O ls (list) mostra quais os arquivos e diretórios que estão guardados no diretório em que você se encontra atualmente. As pastas são exibidas em azul e os arquivos, em vermelho.",
 		"O cd (change directory) serve para você mudar o seu diretório atual. Você pode mudar para um diretório que se encontra dentro do diretório em que você está no momento ou então ir para o diretório pai do seu diretório atual, ou seja, o diretório dentro do qual o seu diretório está! É importante lembrar que há um diretório do sistema que não possui pai. Este é o chamado diretório raiz, dentro do qual se encontram todos os arquivos e diretórios do seu computador, direta ou indiretamente.",
 		"Por fim, quero que você entenda como usar o cat (concatenate). Sei que o nome dele é meio estranho, mas ele serve basicamente para visualizar o conteúdo de um arquivo. Nesse computador que você vai usar, quase todos os arquivos são arquivos de texto, o que significa que ao visualizar o conteúdo deles você encontrará um conjunto de letras, números, espaços e outros caracteres que formam um texto que pode ser lido por nós.",
-		"Agora vamos ver isso na prática."
-
+		"Agora vamos ver isso na prática.",
+		"Primeiro, entre no terminal e escreva o comando pwd."
+	],
+	"terminal_pwd_sala01": [
+		"Como você pode ver pela saída do comando pwd, atualmente você se encontra no diretório /. Este é exatamente o diretório raiz, que não contém pai."
 	]
 }
 
