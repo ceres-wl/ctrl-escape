@@ -4,7 +4,7 @@ var events = ["inicio_tutorial"];
 
 # HACK pra dar a volta no sistema de inserir pendrive no terminal
 # o ideal seria fazer um sistema que permita que o terminal receba dados
-var cur_fs;
+var cur_fs: FileSystem = null;
 
 # dicionario usado para as senhas (PODE SER EXCLUIDO, PENSE DUAS VEZES
 # ANTES DE USAR, VOCE FOI AVISADO)
@@ -21,6 +21,9 @@ func get_status_senha(id_senha: String):
 	if status_senha.has(id_senha):
 		return status_senha[id_senha]
 	return false
+
+func _ready():
+	add_to_group("persist")
 
 # id é um identificador único do objeto 
 # e action é um identificador único da ação sofrida
@@ -109,3 +112,20 @@ signal on_event(name: String);
 # ---------------------------
 #11. Ao inserir essa no elevador, o jogador é levado à tela de despedida
 # "fim_sala01" - submit_object_action("elevador_sala01", "entrar")
+
+# Só deus sabe se isso tá funcionando, tem que testar depois
+func save():
+	var fs = null;
+	if(cur_fs): fs = cur_fs.get_path();
+	return {
+		"path": get_path(),
+		"events": events,
+		"fs": fs,
+		"senhas": status_senha
+	}
+
+func load_self(data: Dictionary):
+	if data.get("fs") != null: cur_fs = get_node(data.get("fs"));
+	events = data.get("events");
+	status_senha = data.get("senhas");
+	
