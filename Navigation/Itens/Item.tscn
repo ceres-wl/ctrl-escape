@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djprsnlfeklco" path="res://Navigation/Itens/item.gd" id="1_5dbf6"]
 
-[node name="Item" type="Button" unique_id=1039591916]
+[node name="Item" type="Button" unique_id=1039591916 groups=["persist"]]
 mouse_default_cursor_shape = 2
 flat = true
 script = ExtResource("1_5dbf6")

@@ -26,3 +26,13 @@ func change_container():
 			if(filho.type_atual != type_item.COLLECTIBLE || !filho.coletado):
 				filho.visible = open
 	
+
+func save():
+	var dict = super.save();
+	dict.set("open", open);
+	return dict;
+
+func load_self(data: Dictionary):
+	# HACK o ideal seria fazer um set_open e um set_close, algo assim
+	open = !data.get("open");
+	change_container()

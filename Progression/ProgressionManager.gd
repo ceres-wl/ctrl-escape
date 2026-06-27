@@ -2,6 +2,10 @@ extends Node
 
 var events = ["inicio_tutorial"];
 
+# HACK pra dar a volta no sistema de inserir pendrive no terminal
+# o ideal seria fazer um sistema que permita que o terminal receba dados
+var cur_fs;
+
 # dicionario usado para as senhas (PODE SER EXCLUIDO, PENSE DUAS VEZES
 # ANTES DE USAR, VOCE FOI AVISADO)
 
@@ -30,11 +34,14 @@ func submit_object_action(id: String, action: String):
 			events.append("inicio_sala01");
 		"computador_sala01":
 			events.append("cabo_conectado_sala01");
+			# TODO permitir que o terminal seja acessado
 		"terminal_sala01" when action == "abrir":
 			events.append("terminal_aberto1_sala01");
 		"terminal_sala01" when action == "inserir_pendrive_branco":
+			# TODO inserir dados do pendrive no fs
 			events.append("pendrive_branco_inserido_sala01");
 		"terminal_sala01" when action == "inserir_pendrive_vermelho":
+			# TODO inserir dados do pendrive no fs
 			events.append("pendrive_vermelho_inserido_sala01")
 		"cofre_sala01":
 			events.append("cofre_aberto_sala01");
@@ -45,6 +52,7 @@ func submit_object_action(id: String, action: String):
 	on_event.emit(events.get(events.size()-1));
 
 func submit_terminal_action(fs: FileSystem, cmd: String, stdout: String):
+	cur_fs = fs;
 	# TODO implementar lógica que checa se o evento aconteceu ou nn
 	# "cd1_sala01" - submit_terminal_action(fs, "cd ?", "")
 	# "cat_senha1_sala01" - submit_terminal_action(fs, "cat ?", "?senha?")

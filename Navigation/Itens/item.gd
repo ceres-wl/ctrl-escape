@@ -31,3 +31,11 @@ func change_room() -> void:
 
 func _on_pressed() -> void:
 	interact()
+
+func save():
+	return {
+		"path": get_path()
+	}
+
+func load_self(_data: Dictionary):
+	pass

@@ -3,6 +3,11 @@ extends Node
 # Maior parte desse código vem daqui:
 # https://docs.godotengine.org/en/stable/tutorials/io/saving_games.html
 
+func _ready():
+	# só pra testes
+	#clear_save();
+	pass
+
 func save_game():
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("persist")
@@ -57,3 +62,6 @@ func load_game():
 
 func has_save() -> bool:
 	return FileAccess.file_exists("user://savegame.save")
+
+func clear_save():
+	DirAccess.remove_absolute("user://savegame.save");

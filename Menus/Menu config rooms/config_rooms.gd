@@ -20,3 +20,4 @@ func _on_slider_som_value_changed(value: float) -> void:
 
 func _on_salvar_e_sair_pressed() -> void:
 	PersistanceManager.save_game();
+	get_tree().quit();

@@ -7,5 +7,16 @@ func _ready():
 
 func collect() -> void:
 	if(Inventory.add_item(self)):
-		self.visible = false
+		visible = false
 		coletado = true
+
+func save():
+	var dict = super.save();
+	dict.set("collected", coletado);
+	dict.set("visible", visible);
+	return dict;
+
+func load_self(data: Dictionary):
+	if data.get("collected"):
+		collect();
+	
