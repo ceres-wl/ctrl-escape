@@ -10,7 +10,7 @@ var dialogues = {
 	],
 	"cabo_conectado_sala01": [
 		"Excelente! Agora irei ensiná-lo o básico sobre o terminal.",
-		"Se você se esquecer do que eu acabei de dizer, basta abrir o menu principal clicando na engrenagem que aparece no canto superior direito da tela para rever o que eu te expliquei.",
+		#"Se você se esquecer do que eu acabei de dizer, basta abrir o menu principal clicando na engrenagem que aparece no canto superior direito da tela para rever o que eu te expliquei.",
 		"Quero que você use 4 comandos: pwd, ls, cd e cat.",
 		"O pwd (print working directory) te diz qual o diretório em que você está. Um diretório é basicamente uma pasta no seu computador ou, em outra palavras, um \"lugar\" que guarda arquivos e outros diretórios dentro de si. Movendo-se pelos diretórios você tem acesso aos diferentes arquivos do computador, inclusive aos que contém as informações necessárias para sairmos daqui juntos!",
 		"O ls (list) mostra quais os arquivos e diretórios que estão guardados no diretório em que você se encontra atualmente. As pastas são exibidas em azul e os arquivos, em vermelho.",
