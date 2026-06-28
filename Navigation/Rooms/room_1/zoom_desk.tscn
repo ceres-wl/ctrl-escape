@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bj4a2t5cx7oo3" path="res://Arts/jogo background vazio.png" id="1_vdlrr"]
 [ext_resource type="Texture2D" uid="uid://uuq4l8vamkib" path="res://Arts/escrivaninha.png" id="2_7nufj"]
+[ext_resource type="Texture2D" uid="uid://h2exp171883k" path="res://Arts/tomada.png" id="2_g1q7e"]
+[ext_resource type="Texture2D" uid="uid://db8s2mogj61iv" path="res://Arts/cabo_plugado.png" id="3_ariht"]
 [ext_resource type="Texture2D" uid="uid://b2qxlb3miiy7i" path="res://Arts/gaveta_aberta.png" id="3_lrfk7"]
 [ext_resource type="Texture2D" uid="uid://bjjaa661d4ve0" path="res://Arts/cadeira.png" id="3_xpnlv"]
 [ext_resource type="Texture2D" uid="uid://c7snmcf23gj3t" path="res://Arts/gaveta_aberta grande.png" id="4_o4e1f"]
@@ -24,6 +26,31 @@ texture_filter = 1
 position = Vector2(1623, -140)
 scale = Vector2(3, 3)
 texture = ExtResource("1_vdlrr")
+
+[node name="Tomada" type="TextureRect" parent="." unique_id=1883139821]
+offset_left = 878.0
+offset_top = -22.0
+offset_right = 918.0
+offset_bottom = 28.0
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("2_g1q7e")
+
+[node name="Cabo_plugado" type="TextureRect" parent="." unique_id=1496741752]
+visible = false
+offset_left = 646.0
+offset_top = 9.0
+offset_right = 813.0
+offset_bottom = 49.0
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("3_ariht")
+
+[node name="Computador" type="TextureRect" parent="." unique_id=1548860985]
+offset_left = 196.99998
+offset_top = -181.0
+offset_right = 365.0
+offset_bottom = -106.0
+scale = Vector2(3.45, 3.45)
+texture = ExtResource("6_g761v")
 
 [node name="Mesa" type="TextureRect" parent="." unique_id=1142256359]
 offset_left = 100.0
@@ -120,11 +147,3 @@ offset_bottom = 270.0
 scale = Vector2(3.6, 3.6)
 mouse_filter = 2
 texture = ExtResource("3_xpnlv")
-
-[node name="Computador" type="TextureRect" parent="." unique_id=1548860985]
-offset_left = 196.99998
-offset_top = -181.0
-offset_right = 365.0
-offset_bottom = -106.0
-scale = Vector2(3.45, 3.45)
-texture = ExtResource("6_g761v")

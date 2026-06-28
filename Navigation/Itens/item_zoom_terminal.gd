@@ -21,5 +21,8 @@ func _on_pressed() -> void:
 	else:
 		if item_selecionado and item_selecionado.item_name == "Cabo":
 			ligado = true
+			var zoom = NavigationManager.zooms[$"../Mesa".cena_zoom.resource_path]
+			zoom.get_node("Cabo_plugado").visible = true
+			$"../Cabo_plugado".visible = true
 			Inventory.remove_item(item_selecionado)
 			ProgressionManager.submit_object_action("computador_sala01", "ligado")

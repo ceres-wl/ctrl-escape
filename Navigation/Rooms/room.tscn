@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://chg6gp1wv4cvy" path="res://Navigation/Rooms/room.gd" id="1_04qk7"]
 [ext_resource type="PackedScene" uid="uid://ckowb7fsl5gx3" path="res://Menus/Menu config rooms/config_rooms.tscn" id="1_5ncum"]
 [ext_resource type="PackedScene" uid="uid://djo1q3ihdfkw0" path="res://Inventory/inventory.tscn" id="2_r4jcj"]
-[ext_resource type="PackedScene" uid="uid://bwdj62q36kiwp" path="res://Dialogue/Hint.tscn" id="4_n1gt5"]
+[ext_resource type="PackedScene" uid="uid://oyxpyia88xsg" path="res://Dialogue/Hint.tscn" id="4_n1gt5"]
 [ext_resource type="PackedScene" uid="uid://bvqe4aojog7el" path="res://Dialogue/HintPopup.tscn" id="5_vtf6p"]
 
 [node name="Room" type="Control" unique_id=599518434]
@@ -30,7 +30,7 @@ script = ExtResource("1_04qk7")
 [node name="Hint" parent="." unique_id=2095969743 instance=ExtResource("4_n1gt5")]
 layout_mode = 0
 anchors_preset = 0
-offset_left = 21.0
+offset_left = 1020.0
 offset_top = 25.0
-offset_right = 63.0
+offset_right = 1061.0
 offset_bottom = 66.0
