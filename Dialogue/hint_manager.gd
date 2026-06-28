@@ -5,12 +5,11 @@ signal esconder_dica()
 
 var dicionario_dicas = {
 	"inicio_tutorial": "Tente ver o que está escrito na carta no seu inventário (tecla E)",
-	"elevador_tutorial": "A porta do elevador está aberta! Entre nele para prosseguir"
+	"senha_correta_tutorial": "A porta do elevador está aberta! Entre nele para prosseguir"
 }
 
 func pedir_dica():
-	var eventos = ProgressionManager.events
-	if(eventos.size() > 0):
-		var ultimo_evento = eventos[eventos.size() - 1]
-		var dica = dicionario_dicas.get(ultimo_evento, "Continue explorando o ambiente e interagindo com os objetos")
-		mostrar_dica.emit(dica)
+	var ultimo_evento = ProgressionManager.lastEvent
+	var dica = dicionario_dicas.get(ultimo_evento, "Continue explorando o ambiente e interagindo com os objetos")
+	
+	mostrar_dica.emit(dica)

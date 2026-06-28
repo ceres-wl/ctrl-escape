@@ -27,8 +27,8 @@ func _ready():
 	add_to_group("persist")
 
 func set_event(event: String):
-	if not events.get(event):
-		events.set(event, true)
+	if not events.has(event):
+		events[event] = true
 		lastEvent = event
 
 # id é um identificador único do objeto 
@@ -58,7 +58,7 @@ func submit_object_action(id: String, action: String):
 			set_event("gaveta_senha_aberta_sala01");
 		"elevador_sala01":
 			set_event("fim_sala01")
-	on_event.emit(events.get(events.size()-1));
+	on_event.emit(lastEvent)
 
 func submit_terminal_action(fs: FileSystem, cmd: String, stdout: String):
 	cur_fs = fs;
@@ -72,7 +72,7 @@ func submit_terminal_action(fs: FileSystem, cmd: String, stdout: String):
 	# "pendrive_vermelho_montado_sala01" - submit_terminal_action(fs, "?", "?")
 	# "pptx_enviado_sala01" - submit_terminal_action(fs, "cat enigma.pptx > /dev/projetor", "")
 	
-	on_event.emit(events.get(events.size()-1));
+	on_event.emit(lastEvent)
 
 signal on_event(name: String);
 
