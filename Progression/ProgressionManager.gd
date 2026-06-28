@@ -125,6 +125,7 @@ func save():
 	if(cur_fs): fs = cur_fs.get_path();
 	return {
 		"path": get_path(),
+		"lastEvent": lastEvent,
 		"events": events,
 		"fs": fs,
 		"senhas": status_senha
@@ -132,6 +133,7 @@ func save():
 
 func load_self(data: Dictionary):
 	if data.get("fs") != null: cur_fs = get_node(data.get("fs"));
+	lastEvent = data.get("lastEvent")
 	events = data.get("events");
 	status_senha = data.get("senhas");
 	
