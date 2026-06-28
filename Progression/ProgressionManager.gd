@@ -44,8 +44,6 @@ func submit_object_action(id: String, action: String):
 		"computador_sala01":
 			set_event("cabo_conectado_sala01");
 			# TODO permitir que o terminal seja acessado
-		"terminal_sala01" when action == "pwd":
-			set_event("terminal_pwd_sala01");
 		"terminal_sala01" when action == "inserir_pendrive_branco":
 			# TODO inserir dados do pendrive no fs
 			set_event("pendrive_branco_inserido_sala01");
@@ -60,7 +58,8 @@ func submit_object_action(id: String, action: String):
 			set_event("fim_sala01")
 	on_event.emit(lastEvent)
 
-func submit_terminal_action(fs: FileSystem, cmd: String, stdout: String):
+# cmd é um dicionario: {command: "", operands: "", flags: ""}
+func submit_terminal_action(fs: FileSystem, cmd: Dictionary, stdout: String):
 	cur_fs = fs;
 	# TODO implementar lógica que checa se o evento aconteceu ou nn
 	# "cd1_sala01" - submit_terminal_action(fs, "cd ?", "")
@@ -72,7 +71,11 @@ func submit_terminal_action(fs: FileSystem, cmd: String, stdout: String):
 	# "pendrive_vermelho_montado_sala01" - submit_terminal_action(fs, "?", "?")
 	# "pptx_enviado_sala01" - submit_terminal_action(fs, "cat enigma.pptx > /dev/projetor", "")
 	
-	on_event.emit(lastEvent)
+	if cmd.command == "pwd" and lastEvent == "cabo_conectado_sala01":
+		set_event("terminal_pwd_sala01");
+		DialogueManager.start_dialogue();
+	
+	on_event.emit(lastEvent);
 
 signal on_event(name: String);
 

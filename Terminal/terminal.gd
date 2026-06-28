@@ -209,9 +209,7 @@ func parse(input: String):
 			var output = ACTIONS[cmd.command].call(cmd.operands, cmd.flags);
 			if output == null: break; # Se algum comando falhar, os outros são cancelados
 			
-			if cmd.command == "pwd" and ProgressionManager.lastEvent == "cabo_conectado_sala01":
-				ProgressionManager.submit_object_action("terminal_sala01", "pwd")
-				DialogueManager.start_dialogue()
+			ProgressionManager.submit_terminal_action(%FileSystem, cmd, output);
 			
 			match op:
 				">>": # Append

@@ -18,5 +18,6 @@ func save():
 
 func load_self(data: Dictionary):
 	if data.get("collected"):
-		collect();
+		visible = false
+		coletado = true
 	

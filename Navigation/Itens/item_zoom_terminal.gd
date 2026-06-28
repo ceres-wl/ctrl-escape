@@ -21,8 +21,26 @@ func _on_pressed() -> void:
 	else:
 		if item_selecionado and item_selecionado.item_name == "Cabo":
 			ligado = true
-			var zoom = NavigationManager.zooms[$"../Mesa".cena_zoom.resource_path]
-			zoom.get_node("Cabo_plugado").visible = true
+			
+			# FIXME Essas linhas não tavam fazendo nada eu acho, alguém confirma depois
+			#var zoom = NavigationManager.zooms[$"../Mesa".cena_zoom.resource_path]
+			#zoom.get_node("Cabo_plugado").visible = true
+			
 			$"../Cabo_plugado".visible = true
+			
 			Inventory.remove_item(item_selecionado)
 			ProgressionManager.submit_object_action("computador_sala01", "ligado")
+
+func save():
+	return {
+		"path": get_path(),
+		"ligado": ligado,
+		"pendrive": pendrive
+	}
+
+func load_self(data: Dictionary):
+	ligado = data.get("ligado");
+	if ligado:
+		$"../Cabo_plugado".visible = true
+	pendrive = data.get("pendrive");
+	pass

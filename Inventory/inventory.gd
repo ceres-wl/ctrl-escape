@@ -10,6 +10,9 @@ var hotbar:Array[item_coletavel]
 var selected_slot:int=0
 var inventory_enabled := true
 
+func _ready():
+	add_to_group("persist")
+
 func _init():
 	for i in HOTBAR_SIZE:
 		hotbar.append(null)
@@ -38,3 +41,13 @@ func remove_item(item_usado: item_coletavel):
 
 func get_selected_item():
 	return hotbar[selected_slot]
+
+func save():
+	return {
+		"path": get_path(),
+		"hotbar": hotbar.map(func(e): return e.get_path() if e else null)
+	}
+
+func load_self(data: Dictionary):
+	for item_salvo in data.get("hotbar"):
+		if item_salvo != null: add_item(get_node(item_salvo));
