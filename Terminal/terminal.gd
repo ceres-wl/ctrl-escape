@@ -46,6 +46,7 @@ var lastOutput = "";
 
 func _ready():
 	%DisplayPath.text = %FileSystem.cur_path;
+	ProgressionManager.set_fs(%FileSystem)
 
 # Função de uso interno, com opção de sanitizar o bbcode
 func t_print(text_: String, sanitize = false, newline = true):
@@ -209,7 +210,7 @@ func parse(input: String):
 			var output = ACTIONS[cmd.command].call(cmd.operands, cmd.flags);
 			if output == null: break; # Se algum comando falhar, os outros são cancelados
 			
-			ProgressionManager.submit_terminal_action(%FileSystem, cmd, output);
+			ProgressionManager.submit_terminal_action(cmd, output);
 			
 			match op:
 				">>": # Append
