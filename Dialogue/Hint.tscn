@@ -4,10 +4,15 @@
 [ext_resource type="Script" uid="uid://dmbca76yksbfa" path="res://Dialogue/hint.gd" id="2_keexg"]
 
 [node name="Hint" type="TextureButton" unique_id=2095969743]
-offset_left = 1020.0
-offset_top = 25.0
-offset_right = 1061.0
-offset_bottom = 66.0
+anchors_preset = -1
+anchor_left = 0.88500005
+anchor_top = 0.039
+anchor_right = 0.88500005
+anchor_bottom = 0.039
+offset_left = 0.47991943
+offset_top = -0.27200127
+offset_right = 41.47992
+offset_bottom = 40.727997
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("1_rrbqa")
 ignore_texture_size = true

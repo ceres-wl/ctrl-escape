@@ -9,12 +9,19 @@
 [ext_resource type="PackedScene" uid="uid://djo1q3ihdfkw0" path="res://Inventory/inventory.tscn" id="4_fp6hx"]
 [ext_resource type="PackedScene" uid="uid://ckowb7fsl5gx3" path="res://Menus/Menu config rooms/config_rooms.tscn" id="5_84iyn"]
 [ext_resource type="PackedScene" uid="uid://dri3rm8co2sjo" path="res://Navigation/Rooms/Tutorial/KeypadZoomTutorial.tscn" id="8_rtjeg"]
-[ext_resource type="PackedScene" uid="uid://oyxpyia88xsg" path="res://Dialogue/Hint.tscn" id="10_8av8a"]
+[ext_resource type="PackedScene" uid="uid://oyxpyia88xsg" path="res://Dialogue/hint.tscn" id="10_8av8a"]
 [ext_resource type="PackedScene" uid="uid://bvqe4aojog7el" path="res://Dialogue/HintPopup.tscn" id="11_6y2yh"]
 
 [node name="TutorialRoom" type="Control" unique_id=212492870]
 layout_mode = 3
-anchors_preset = 0
+anchor_left = 0.882
+anchor_top = 0.035
+anchor_right = 0.882
+anchor_bottom = 0.035
+offset_left = -1016.064
+offset_top = -22.68
+offset_right = -1016.064
+offset_bottom = -22.68
 script = ExtResource("1_e0sa4")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=775173970]
@@ -67,6 +74,10 @@ item_name = "Keypad_tutorial"
 [node name="Hint" parent="." unique_id=2095969743 instance=ExtResource("10_8av8a")]
 layout_mode = 0
 anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 1020.0
 offset_top = 25.0
 offset_right = 1061.0

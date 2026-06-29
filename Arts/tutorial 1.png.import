@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd3r83cdokjut"
-path="res://.godot/imported/botao_continuar_apagado.png-674c3001b0ebea01e509b45f9e16d407.ctex"
+uid="uid://dfy0h51pfual8"
+path="res://.godot/imported/tutorial 1.png-c0ca86f74465381a7bf5db8d5fc38b25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://botao_continuar_apagado.png"
-dest_files=["res://.godot/imported/botao_continuar_apagado.png-674c3001b0ebea01e509b45f9e16d407.ctex"]
+source_file="res://Arts/tutorial 1.png"
+dest_files=["res://.godot/imported/tutorial 1.png-c0ca86f74465381a7bf5db8d5fc38b25.ctex"]
 
 [params]
 

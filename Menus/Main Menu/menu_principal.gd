@@ -1,4 +1,3 @@
-
 extends Control
 
 var config = ConfigFile.new()
