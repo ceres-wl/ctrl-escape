@@ -26,10 +26,15 @@ func get_status_senha(id_senha: String):
 func _ready():
 	add_to_group("persist")
 
+func set_fs(fs: FileSystem):
+	cur_fs = fs;
+
 func set_event(event: String):
 	if not events.has(event):
 		events[event] = true
 		lastEvent = event
+		return true;
+	return false;
 
 # id é um identificador único do objeto 
 # e action é um identificador único da ação sofrida
@@ -40,12 +45,18 @@ func submit_object_action(id: String, action: String):
 		"painel_tutorial":
 			set_event("senha_correta_tutorial");
 		"elevador_tutorial":
-			set_event("inicio_sala01");
+			if(set_event("inicio_sala01")):
+				
+				# TODO Se o jogador apagar a pasta, é impossível recuperar
+				# pra consertar isso seria legal passar essa lógica mexer no FS
+				# pra outro método, ou se a gente implementasse permissões daria certo tbm
+				
+				# Criando arquivos do desafio inicial
+				cur_fs.create_folder("/Senhas");
+				cur_fs.create_file("/Senhas/senha_do_cofre.txt");
+				cur_fs.set_content("/Senhas/senha_do_cofre.txt", "7398");
 		"computador_sala01":
 			set_event("cabo_conectado_sala01");
-			# TODO permitir que o terminal seja acessado
-		"terminal_sala01" when action == "pwd":
-			set_event("terminal_pwd_sala01");
 		"terminal_sala01" when action == "inserir_pendrive_branco":
 			# TODO inserir dados do pendrive no fs
 			set_event("pendrive_branco_inserido_sala01");
@@ -60,8 +71,8 @@ func submit_object_action(id: String, action: String):
 			set_event("fim_sala01")
 	on_event.emit(lastEvent)
 
-func submit_terminal_action(fs: FileSystem, cmd: String, stdout: String):
-	cur_fs = fs;
+# cmd é um dicionario: {command: "", operands: "", flags: ""}
+func submit_terminal_action(cmd: Dictionary, stdout: String):
 	# TODO implementar lógica que checa se o evento aconteceu ou nn
 	# "cd1_sala01" - submit_terminal_action(fs, "cd ?", "")
 	# "cat_senha1_sala01" - submit_terminal_action(fs, "cat ?", "?senha?")
@@ -72,7 +83,11 @@ func submit_terminal_action(fs: FileSystem, cmd: String, stdout: String):
 	# "pendrive_vermelho_montado_sala01" - submit_terminal_action(fs, "?", "?")
 	# "pptx_enviado_sala01" - submit_terminal_action(fs, "cat enigma.pptx > /dev/projetor", "")
 	
-	on_event.emit(lastEvent)
+	if cmd.command == "pwd" and lastEvent == "cabo_conectado_sala01":
+		set_event("terminal_pwd_sala01");
+		DialogueManager.start_dialogue();
+	
+	on_event.emit(lastEvent);
 
 signal on_event(name: String);
 

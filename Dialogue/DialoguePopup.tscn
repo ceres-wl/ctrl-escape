@@ -2,17 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://l6pftu5y7o2t" path="res://Arts/botoes/seta navegação.png" id="1_ju8qd"]
 [ext_resource type="Script" uid="uid://d1xpwnmn8m5up" path="res://Dialogue/dialogue_popup.gd" id="1_rgyuy"]
+[ext_resource type="Texture2D" uid="uid://caoekp2sve2vt" path="res://Arts/caixa_dialogo.png" id="2_6yvj5"]
 [ext_resource type="Texture2D" uid="uid://b76augd2k5axi" path="res://Arts/botoes/seta navegação clara.png" id="2_rgyuy"]
 
 [node name="DialoguePopup" type="CanvasLayer" unique_id=36251990]
 script = ExtResource("1_rgyuy")
 
-[node name="Background" type="Panel" parent="." unique_id=331075257]
-offset_left = 201.0
-offset_top = 7.0
-offset_right = 940.0
-offset_bottom = 86.0
-mouse_filter = 2
+[node name="Background" type="TextureRect" parent="." unique_id=1391632595]
+offset_left = 195.0
+offset_top = 15.0
+offset_right = 995.0
+offset_bottom = 215.0
+texture = ExtResource("2_6yvj5")
 
 [node name="Text" type="RichTextLabel" parent="Background" unique_id=1297520034]
 layout_mode = 1
@@ -21,10 +22,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -350.5
-offset_top = -27.0
-offset_right = 350.5
-offset_bottom = 27.0
+offset_left = -395.0
+offset_top = -45.0
+offset_right = 138.0
+offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -32,10 +33,10 @@ mouse_filter = 2
 [node name="NextButton" type="TextureButton" parent="Background" unique_id=1752028409]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 744.0
-offset_top = 18.0
-offset_right = 796.0
-offset_bottom = 70.0
+offset_left = 549.0
+offset_top = 80.0
+offset_right = 590.0
+offset_bottom = 121.0
 mouse_default_cursor_shape = 2
 action_mode = 0
 texture_normal = ExtResource("1_ju8qd")
