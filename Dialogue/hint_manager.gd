@@ -11,5 +11,4 @@ var dicionario_dicas = {
 func pedir_dica():
 	var ultimo_evento = ProgressionManager.lastEvent
 	var dica = dicionario_dicas.get(ultimo_evento, "Continue explorando o ambiente e interagindo com os objetos")
-	
 	mostrar_dica.emit(dica)
