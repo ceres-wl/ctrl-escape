@@ -32,6 +32,8 @@ HintManager="*uid://rlwo4atf0srq"
 [display]
 
 window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [dotnet]
 
