@@ -100,8 +100,24 @@ func submit_terminal_action(cmd: Dictionary, stdout: String):
 	# "pendrive_vermelho_montado_sala01" - submit_terminal_action(fs, "?", "?")
 	# "pptx_enviado_sala01" - submit_terminal_action(fs, "cat enigma.pptx > /dev/projetor", "")
 	
-	if cmd.command == "pwd" and lastEvent == "cabo_conectado_sala01":
+	print(cmd.command, cmd.operands)
+	if lastEvent == "cabo_conectado_sala01" and cmd.command == "pwd":
 		set_event("terminal_pwd_sala01");
+		DialogueManager.start_dialogue();
+	elif lastEvent == "terminal_pwd_sala01" and cmd.command == "cd" and cmd.operands == PackedStringArray(["/"]):
+		set_event("terminal_cd_slash_sala01");
+		DialogueManager.start_dialogue();
+	elif lastEvent == "terminal_cd_slash_sala01" and cmd.command == "ls" and cmd.operands == PackedStringArray() and cur_fs.cur_path == "/":
+		set_event("terminal_ls_root_sala01");
+		DialogueManager.start_dialogue();
+	elif lastEvent == "terminal_ls_root_sala01" and cur_fs.cur_path == "/Senhas":
+		set_event("terminal_cd_senhas_sala01");
+		DialogueManager.start_dialogue();
+	elif lastEvent == "terminal_cd_senhas_sala01" and cmd.command == "ls" and cmd.operands == PackedStringArray() and cur_fs.cur_path == "/Senhas":
+		set_event("terminal_ls_senhas_sala01");
+		DialogueManager.start_dialogue();
+	elif lastEvent == "terminal_ls_senhas_sala01" and cmd.command == "cat" and cmd.operands == PackedStringArray(["Senha do Cofre.txt"]) and cur_fs.cur_path == "/Senhas":
+		set_event("terminal_cat_senhacofre_sala01");
 		DialogueManager.start_dialogue();
 	
 	on_event.emit(lastEvent);

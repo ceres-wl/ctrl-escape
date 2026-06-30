@@ -69,6 +69,7 @@ func echo(operands: PackedStringArray, flags: Dictionary):
 func cd(operands: PackedStringArray, flags: Dictionary):
 	%FileSystem.navigate("".join(operands));
 	%DisplayPath.text = %FileSystem.cur_path;
+	return ""
 
 func ls(operands: PackedStringArray, flags: Dictionary):
 	var tokens = PackedStringArray();
