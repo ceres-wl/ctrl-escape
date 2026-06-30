@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bbmb7p4vibwxp" path="res://Arts/botoes/botão_salvar_e_sair_claro.png" id="6_33ssu"]
 [ext_resource type="Texture2D" uid="uid://dnu4qb381rpeh" path="res://Arts/botoes/botão x.png" id="7_dbmnh"]
 [ext_resource type="Texture2D" uid="uid://dmdxjh6rq4hw3" path="res://Arts/botoes/botão x claro.png" id="8_c25kd"]
+[ext_resource type="Texture2D" uid="uid://3br7gcplhdkm" path="res://Arts/quadro_bash.png" id="9_q1qsk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqcci"]
 bg_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
@@ -133,8 +134,60 @@ texture_hover = ExtResource("8_c25kd")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="Historico" type="TextureButton" parent="CanvasLayer/Menu_Config" unique_id=1836197962]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 399.0
+offset_right = 466.0
+offset_bottom = 439.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("9_q1qsk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="JanelaHistorico" type="Panel" parent="CanvasLayer/Menu_Config" unique_id=1959298643]
+visible = false
+layout_mode = 0
+offset_top = 1.0
+offset_right = 702.0
+offset_bottom = 503.0
+
+[node name="FundoPreto" type="ColorRect" parent="CanvasLayer/Menu_Config/JanelaHistorico" unique_id=1842539220]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 701.0
+offset_bottom = 502.0
+color = Color(0.11372549, 0.12156863, 0.14509805, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Menu_Config/JanelaHistorico" unique_id=788933611]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 22.0
+offset_right = 681.0
+offset_bottom = 480.0
+horizontal_scroll_mode = 0
+
+[node name="TextoHistorico" type="Label" parent="CanvasLayer/Menu_Config/JanelaHistorico/ScrollContainer" unique_id=1308166412]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+autowrap_mode = 3
+
+[node name="FecharHistorico" type="TextureButton" parent="CanvasLayer/Menu_Config/JanelaHistorico" unique_id=347990436]
+layout_mode = 0
+offset_left = 703.0
+offset_right = 743.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_dbmnh")
+texture_pressed = ExtResource("8_c25kd")
+texture_hover = ExtResource("8_c25kd")
+
 [connection signal="pressed" from="Button_Config" to="." method="_on_button_config_pressed"]
 [connection signal="value_changed" from="CanvasLayer/Menu_Config/Slider musica" to="." method="_on_slider_musica_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/Menu_Config/Slider som" to="." method="_on_slider_som_value_changed"]
 [connection signal="pressed" from="CanvasLayer/Menu_Config/Salvar_e_Sair" to="." method="_on_salvar_e_sair_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu_Config/X" to="." method="_on_x_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu_Config/Historico" to="." method="_on_button_historico_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu_Config/JanelaHistorico/FecharHistorico" to="." method="_on_x_historico_pressed"]

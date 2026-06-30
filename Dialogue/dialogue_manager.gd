@@ -46,6 +46,7 @@ var dialogues = {
 var current_dialogue_label = ""
 var current_dialogue = []
 var dialogue_idx = 0
+var historico: Array[String] = []
 
 signal show_text(text: String)
 signal close_dialogue()
@@ -54,6 +55,11 @@ func start_dialogue():
 	current_dialogue_label = ProgressionManager.lastEvent
 	current_dialogue = dialogues[current_dialogue_label]
 	dialogue_idx = 0
+	
+	for frase in current_dialogue:
+		if(not historico.has(frase)):
+			historico.append(frase)
+	
 	show_text.emit(current_dialogue[dialogue_idx])
 
 func next_sentence():
