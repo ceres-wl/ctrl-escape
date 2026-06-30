@@ -100,7 +100,6 @@ func submit_terminal_action(cmd: Dictionary, stdout: String):
 	# "pendrive_vermelho_montado_sala01" - submit_terminal_action(fs, "?", "?")
 	# "pptx_enviado_sala01" - submit_terminal_action(fs, "cat enigma.pptx > /dev/projetor", "")
 	
-	print(cmd.command, cmd.operands)
 	if lastEvent == "cabo_conectado_sala01" and cmd.command == "pwd":
 		set_event("terminal_pwd_sala01");
 		DialogueManager.start_dialogue();
