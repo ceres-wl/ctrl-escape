@@ -61,6 +61,7 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=129069860]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1387881080]
 anchors_preset = 15
