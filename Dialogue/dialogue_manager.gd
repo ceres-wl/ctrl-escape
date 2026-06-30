@@ -12,7 +12,7 @@ var dialogues = {
 		"Excelente! Agora irei ensiná-lo o básico sobre o terminal.",
 		#"Se você se esquecer do que eu acabei de dizer, basta abrir o menu principal clicando na engrenagem que aparece no canto superior direito da tela para rever o que eu te expliquei.",
 		"Quero que você use 4 comandos: pwd, ls, cd e cat.",
-		"Vamos brincar um pouco com eles.",
+		"Vamos ver como eles funcionam na prática.",
 		"Primeiro, entre no terminal e escreva o comando pwd."
 	],
 	"terminal_pwd_sala01": [
