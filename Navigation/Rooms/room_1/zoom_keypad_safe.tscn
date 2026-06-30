@@ -17,5 +17,5 @@ texture = ExtResource("1_o7wcb")
 [node name="Keypad" parent="." unique_id=126821551 instance=ExtResource("2_o7wcb")]
 position = Vector2(571, 328)
 scale = Vector2(1.4, 1.4)
-senha_correta = "1 2 3 4"
+senha_correta = "7 3 9 8"
 id_senha = "3"
