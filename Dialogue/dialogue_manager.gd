@@ -47,10 +47,14 @@ var dialogues = {
 var current_dialogue_label = ""
 var current_dialogue = []
 var dialogue_idx = 0
-var historico: Array[String] = []
+
+var historico = []
 
 signal show_text(text: String)
 signal close_dialogue()
+
+func _ready():
+	add_to_group("persist");
 
 func start_dialogue():
 	current_dialogue_label = ProgressionManager.lastEvent
@@ -69,3 +73,12 @@ func next_sentence():
 		show_text.emit(current_dialogue[dialogue_idx])
 	else:
 		close_dialogue.emit()
+
+func save():
+	return {
+		"path": get_path(),
+		"historico": historico
+	}
+
+func load_self(data: Dictionary):
+	historico = data.get("historico");

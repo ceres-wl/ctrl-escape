@@ -33,7 +33,7 @@ func _on_button_historico_pressed() -> void:
 		texto_final = "Nenhuma fala foi dita ainda!"
 	else:
 		for frase in lista_falas:
-			texto_final += frase + "\n__________________________________________________________________________\n"
+			texto_final += frase + "[br][hr width=100%][br]"
 	
 	texto_historico.text = texto_final
 	#$CanvasLayer.visible = false
