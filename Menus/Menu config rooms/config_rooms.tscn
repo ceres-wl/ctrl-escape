@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bbmb7p4vibwxp" path="res://Arts/botoes/botão_salvar_e_sair_claro.png" id="6_33ssu"]
 [ext_resource type="Texture2D" uid="uid://dnu4qb381rpeh" path="res://Arts/botoes/botão x.png" id="7_dbmnh"]
 [ext_resource type="Texture2D" uid="uid://dmdxjh6rq4hw3" path="res://Arts/botoes/botão x claro.png" id="8_c25kd"]
-[ext_resource type="Texture2D" uid="uid://3br7gcplhdkm" path="res://Arts/quadro_bash.png" id="9_q1qsk"]
+[ext_resource type="Texture2D" uid="uid://bkwknbjwx1e0j" path="res://Arts/botoes/botao_historico.png" id="9_xrfgk"]
+[ext_resource type="Texture2D" uid="uid://dgs36kiyklhnk" path="res://Arts/botoes/botao_historico_claro.png" id="10_vsvbv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqcci"]
 bg_color = Color(0.29411766, 0.29411766, 0.29411766, 1)
@@ -60,7 +61,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=129069860]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1387881080]
 anchors_preset = 15
@@ -135,13 +135,15 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Historico" type="TextureButton" parent="CanvasLayer/Menu_Config" unique_id=1836197962]
+texture_filter = 1
 layout_mode = 0
 offset_left = 236.0
 offset_top = 399.0
 offset_right = 466.0
 offset_bottom = 439.0
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("9_q1qsk")
+texture_normal = ExtResource("9_xrfgk")
+texture_hover = ExtResource("10_vsvbv")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -168,11 +170,12 @@ offset_right = 681.0
 offset_bottom = 480.0
 horizontal_scroll_mode = 0
 
-[node name="TextoHistorico" type="Label" parent="CanvasLayer/Menu_Config/JanelaHistorico/ScrollContainer" unique_id=1308166412]
+[node name="TextoHistorico" type="RichTextLabel" parent="CanvasLayer/Menu_Config/JanelaHistorico/ScrollContainer" unique_id=872105360]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 6
-autowrap_mode = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+horizontal_alignment = 1
 
 [node name="FecharHistorico" type="TextureButton" parent="CanvasLayer/Menu_Config/JanelaHistorico" unique_id=347990436]
 layout_mode = 0
