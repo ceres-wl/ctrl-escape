@@ -34,7 +34,7 @@ var dialogues = {
 	],
 	"terminal_ls_senhas_sala01": [
 		"Agora temos que visualizar o conteúdo do arquivo com a senha do cofre. Perceba, entretanto que ele possui espaços em branco no seu nome.",
-		"Por causa disso, utilizaremos aspas para delimitar o nome do arquivo na chamada do próximo comando.",
+		"Por causa disso, utilizaremos aspas duplas para delimitar o nome do arquivo na chamada do próximo comando.",
 		"Escreva cat \"Senha do Cofre.txt\""
 	],
 	"terminal_cat_senhacofre_sala01": [

@@ -69,8 +69,8 @@ func submit_object_action(id: String, action: String):
 				Primeiro tornarei-me o mestre das máquinas e então, o mestre das pessoas!
 				""");
 				cur_fs.create_folder("/Senhas");
-				cur_fs.create_file("/Senhas/senha_do_cofre.txt");
-				cur_fs.set_content("/Senhas/senha_do_cofre.txt", "7398");
+				cur_fs.create_file("/Senhas/Senha do Cofre.txt");
+				cur_fs.set_content("/Senhas/Senha do Cofre.txt", "7398");
 				cur_fs.navigate("/Planos");
 		"computador_sala01":
 			set_event("cabo_conectado_sala01");
