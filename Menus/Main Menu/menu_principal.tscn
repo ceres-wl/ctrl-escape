@@ -228,9 +228,10 @@ offset_left = 475.0
 offset_top = 545.0
 offset_right = 678.0
 offset_bottom = 612.0
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("18_cbqsc")
 texture_pressed = ExtResource("19_sb38x")
-texture_hover = ExtResource("18_cbqsc")
+texture_hover = ExtResource("19_sb38x")
 ignore_texture_size = true
 stretch_mode = 5
 
