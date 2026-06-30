@@ -17,7 +17,8 @@ var dialogues = {
 	],
 	"terminal_pwd_sala01": [
 		"O pwd (print working directory) te diz qual o diretório em que você está. Um diretório é basicamente uma pasta no seu computador ou, em outra palavras, um \"lugar\" que guarda arquivos e outros diretórios dentro de si. Movendo-se pelos diretórios você tem acesso aos diferentes arquivos do computador, inclusive aos que contém as informações necessárias para sairmos daqui juntos!",
-		"Seguindo em frente, você pode escrever \"cd /\" para ir imediatamente à pasta raiz a qualquer momento. Tente fazer isso agora."
+		"Seguindo para o próximo comando...",
+		"A qualquer momento, você pode escrever \"cd /\" para ir imediatamente para a pasta raiz. Tente fazer isso agora."
 	],
 	"terminal_cd_slash_sala01": [
 		"O cd (change directory) serve para você mudar o seu diretório atual. Executando \"cd /\", você seguiu diretamente para a pasta raiz, que é onde todos os arquivos do sistema estão guardados.",

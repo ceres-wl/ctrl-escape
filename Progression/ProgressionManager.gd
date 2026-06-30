@@ -52,9 +52,26 @@ func submit_object_action(id: String, action: String):
 				# pra outro método, ou se a gente implementasse permissões daria certo tbm
 				
 				# Criando arquivos do desafio inicial
+				cur_fs.create_folder("/Planos");
+				cur_fs.create_file("/Planos/captura_do_tux.txt");
+				cur_fs.set_content("/Planos/captura_do_tux.txt", """
+				Tux, o Pinguim...O que eu não faria para capturar esse grande inimigo meu!
+				Ele e sua legião de admiradores, pregadores do software livre...
+				Se eu o capturasse, eles se encheriam de medo e ficariam desesperados...
+				Vou capturá-lo e colocá-lo dentro de uma jaula de onde ele não sairá nunca mais!
+				""");
+				cur_fs.create_file("/Planos/o_fim_do_software_livre.txt");
+				cur_fs.set_content("/Planos/o_fim_do_software_livre.txt", """
+				Maldito seja aquele hippie que criou o movimento software livre!
+				Se não houvesse essa palhaçada, eu poderia obrigar todos a usarem o meu sistema operacional em seus computadores...
+				Com isso, seria capaz de escanear os seus dados e usá-los para me tornar ainda mais poderoso...
+				Vou acabar com o software livre!
+				Primeiro tornarei-me o mestre das máquinas e então, o mestre das pessoas!
+				""");
 				cur_fs.create_folder("/Senhas");
 				cur_fs.create_file("/Senhas/senha_do_cofre.txt");
 				cur_fs.set_content("/Senhas/senha_do_cofre.txt", "7398");
+				cur_fs.navigate("/Planos");
 		"computador_sala01":
 			set_event("cabo_conectado_sala01");
 		"terminal_sala01" when action == "inserir_pendrive_branco":
